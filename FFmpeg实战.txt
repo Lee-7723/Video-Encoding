@@ -1,0 +1,86 @@
+ffmpeg -ss 01:02:47.00 -i "E:\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit-CHD\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit- Lee-7723.mkv" -t 00:04:21 -map 0:0 -map 0:1 -ac 2 -b:a 320k -c:v copy -c:a aac "E:\Frozen Series\SY.mp4"
+
+
+多轨道截取
+ffmpeg -ss 00:08:27 -i "F:\Frozen Series\Frozen2test.mkv" -t 00:04:13  -map 0:v:0 -c:v copy  -map 0:a -c:a copy -map 0:s:5 -map 0:s:3 -map 0:s:8 -map 0:s:4 -map 0:s:7 -c:s copy -max_muxing_queue_size 9999 "F:\Frozen Series\HDR Part test.mkv"
+
+
+ffmpeg -i "F:\Alita.Battle.Angel.mkv" -map 0:0 -map 0:1 -c:v libx265  -crf 25 -c:a copy -c:s copy "F:\Alita.Battle.Angel.x265.mkv"
+
+
+ffmpeg -i "E:\Show Yourself(From Frozen 2019)\粤语.mp4" -c:v copy -color_primaries bt2020 -colorspace bt2020nc -color_trc smpte2084"F:\test HDR add.mkv"
+
+
+HDR+SVP
+ffmpeg -i "C:\Users\李竞择\Documents\avs脚本\3x动画.avs" -c:v libx265 -x265-params "level=6:colorprim=bt2020:colormatrix=bt2020nc:transfer=smpte2084:master-display=G(13250,34500)B(7500,3000)R(34000,16000)WP(15635,16450)L(10000000,1)" -pass 2 -b:v 50000k -preset fast -c:a copy "F:\test HDR.mkv"
+
+
+ffmpeg -i "C:\Users\李竞择\Documents\Tencent Files\1981671849\FileRecv\3306c6.avs" -c:v hevc_nvenc -rc 7 -b:v 100M -preset 1 -qmin 1 -qmax 35 -color_primaries bt2020 -colorspace bt2020nc -color_trc smpte2084 "F:\12323.mkv"
+
+
+ffmpeg -i "C:\Users\李竞择\Documents\Tencent Files\1981671849\FileRecv\3306c6.avs" -c:v libx265  -crf 10 -preset slow -c:a copy "F:\EDGE下载\2x.mkv"
+
+
+ffmpeg -i "C:\Users\李竞择\Documents\Tencent Files\1981671849\FileRecv\3306c6.avs" -c:v libx265 -x265-params "level=6:colorprim=bt2020:colormatrix=bt2020nc:transfer=smpte2084:master-display=G(13250,34500)B(7500,3000)R(34000,16000)WP(15635,16450)L(10000000,1)" -crf 24 -preset ultrafast "C:\Users\李竞择\Documents\Tencent Files\1981671849\FileRecv\1232423.mkv"
+
+
+合并用
+ffmpeg -f concat -safe 0 -i "C:\Users\李竞择\Documents\avs脚本\合并.txt" -map 0:v -c:v copy -map 0:a -c:a copy -map 0:s -c:s copy "F:\合并.mkv"
+
+
+SVP HDR Project temp for 20
+ffmpeg -i "C:\Users\李竞择\Documents\Tencent Files\1981671849\FileRecv\3306c6.avs"  -c:v libx265 -crf 10 -preset veryfast -x265-params "keyint=230:repeat-headers=1:aq-mode=2:qpmin=0:qpmax=16:colorprim=bt2020:colormatrix=bt2020nc:transfer=smpte2084:master-display=G(13250,34500)B(7500,3000)R(34000,16000)WP(15635,16450)L(10000000,500)"  "E:\SVP Project\Frozen II - Ultra HD™-020---.mkv"
+
+
+ffmpeg -i "C:\Users\李竞择\Documents\Tencent Files\1981671849\FileRecv\3306c6.avs"  -c:v libx265 -crf 8 -preset slow -x265-params "keyint=230:repeat-headers=1:aq-mode=2:qpmin=3:qpmax=14:colorprim=bt2020:colormatrix=bt2020nc:transfer=smpte2084:master-display=G(13250,34500)B(7500,3000)R(34000,16000)WP(15635,16450)L(10000000,500)"  "E:\SVP Project\Frozen II - Ultra HD™-011---.mkv"
+
+
+gif编码
+ffmpeg -ss 00:06:25 -i "E:\Minions.2015.720p.BluRay.x264-WiKi\Minions.2015.720p.BluRay.x264-WiKi.mkv" -t 00:00:30 -c:v gif "f:\out.gif"
+
+设备
+ffmpeg -list_devices true -f dshow -i dummy
+录屏
+ffmpeg -f gdigrab -i desktop -c:v v410 "F:\out.mkv"
+
+录音（麦克风）
+ffmpeg -f dshow -i audio="@device_cm_{33D9A762-90C8-11D0-BD43-00A0C911CE86}\wave_{59AC4CB8-DC81-41F4-8ED1-DBB00D00AFD9}"  "j:\out.wav"
+ 
+ （立体声混音）
+ffmpeg -f dshow -i audio="@device_cm_{33D9A762-90C8-11D0-BD43-00A0C911CE86}\wave_{6B19272A-66F9-4520-9DAA-1F978352C915}"  "j:\out.wav"
+
+
+avs转色域
+ffmpeg -i "C:\Users\李竞择\Documents\avs脚本\HDR转映射.avs" -c:v nvenc preset=11 "F:\out.mkv"
+
+
+转色域
+ffmpeg -ss 00:09:00 -i "E:\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit-CHD\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit- Lee-7723.mkv" -vf zscale=t=linear:npl=100,format=gbrpf32le,zscale=p=bt709,tonemap=hable:exposure=24:a=0.5:b=0.3:c=0.01:d=3:e=0.001:f=0.8:w=2,zscale=t=bt709:m=bt709:r=pc,format=yuv420p -c:v libx264 -preset veryfast -an "E:\Frozen Series\ITU--.mp4"
+
+
+转映射
+"C:\Program Files\VapourSynth\core\vspipe.exe" --y4m  "C:\Users\李竞择\Documents\vs脚本\SVP+Tonemap.vpy" - |ffmpeg -i - -i "E:\Frozen Series\SY.mp4" -map 0:0 -map 1:a -c:v libx264 -c:a copy -preset medium -crf 15 "E:\Frozen Series\ITU-120fps.mp4"
+
+
+ffmpeg -ss 00:00:00.87 -i "C:\Users\李竞择\Videos\Captures\NeedForSpeedPayback_2020_04_25_21_02_13_522.mkv" -t 00:00:12.00 -vf setpts=2*PTS,crop=2000:2000:720:0,scale=320:320,setsar=1:1 -c:v libx264 -fs 1024k -af atempo=0.5 -c:a aac -ab 96k f:/out.mp4
+
+
+裁剪
+ffmpeg -ss 00:00:03.83 -i "E:\Frozen.II.2019.1080p.TWN.Blu-ray.AVC.DTS-HD.MA.7.1-nLiBRA\BDMV\STREAM\00907.m2ts" -t 00:00:03.95 -vf setpts=2*PTS,crop=1600:1600:680:240,scale=320:320,setsar=1:1 -r 10 -c gif f:/out.gif
+
+
+烧录字幕（未成功）
+ffmpeg -ss 00:15:00 -i "E:\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit-CHD\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit- Lee-7723.mkv" -vf subtitles="E:\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit-CHD\冰2-EVO+自己压制版_Subtitle_Export\冰2-EVO+自己压制版.srt" -c:v libx265 f:\test.mp4
+
+
+混流
+ffmpeg -i "E:\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit-CHD\冰2-EVO+自己压制版.mkv" -i "E:\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit-CHD\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit- Lee-7723.mp4" -map 0:0 -c:v copy -c:a aac -b:a 320k "f:\码率.mp4"
+
+
+Bilibili上传用
+ffmpeg -i "C:\Users\李竞择\Documents\avs脚本\5x动画.avs" -c:a aac -b:a 320k -vf format=yuv420p -c:v libx264 -preset slow -x264-params "keyint=230" -b:v 20000k -bufsize 3000k -maxrate 50000k -pass 1 -f mp4 NUL
+ffmpeg -i "C:\Users\李竞择\Documents\avs脚本\5x动画.avs" -c:a aac -b:a 320k -vf format=yuv420p -c:v libx264 -preset slow -x264-params "keyint=230" -b:v 20000k -bufsize 3000k -maxrate 50000k -pass 2 "j:\temp\Try Everything SVP 120fps.mp4"
+
+
+转m3u8
+ffmpeg -i "C:\Users\李竞择\Documents\avs脚本\5x动画.avs" -c:v copy -c:a aac -b:a 320k -f hls -hls_time 5 -hls_list_size 0 J:/temp/m3u8/test.m3u8
