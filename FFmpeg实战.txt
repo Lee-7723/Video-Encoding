@@ -1,4 +1,4 @@
-ffmpeg -ss 01:02:47.00 -i "E:\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit-CHD\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit- Lee-7723.mkv" -t 00:04:21 -map 0:0 -map 0:1 -ac 2 -b:a 320k -c:v copy -c:a aac "E:\Frozen Series\SY.mp4"
+ffmpeg -ss 00:10:06.00 -i "I:\Zootopia.2016.2160p.UHD.BluRay.x265-TERMiNAL.mkv" -t 00:02:39.50 -map 0:0 -map 0:1 -ac 2 -b:a 320k -c:v copy -c:a aac "J:\temp\TE.mp4"
 
 
 多轨道截取
@@ -18,7 +18,8 @@ ffmpeg -i "C:\Users\李竞择\Documents\avs脚本\3x动画.avs" -c:v libx265 -x2
 ffmpeg -i "C:\Users\李竞择\Documents\Tencent Files\1981671849\FileRecv\3306c6.avs" -c:v hevc_nvenc -rc 7 -b:v 100M -preset 1 -qmin 1 -qmax 35 -color_primaries bt2020 -colorspace bt2020nc -color_trc smpte2084 "F:\12323.mkv"
 
 
-ffmpeg -i "C:\Users\李竞择\Documents\Tencent Files\1981671849\FileRecv\3306c6.avs" -c:v libx265  -crf 10 -preset slow -c:a copy "F:\EDGE下载\2x.mkv"
+去水印
+ffmpeg -i "J:\temp\test.mp4" -vf delogo=x=50:y=50:w=500:h=107 -c:v hevc_nvenc -vb 6000k -c:a copy "J:\temp\test1.mkv"
 
 
 ffmpeg -i "C:\Users\李竞择\Documents\Tencent Files\1981671849\FileRecv\3306c6.avs" -c:v libx265 -x265-params "level=6:colorprim=bt2020:colormatrix=bt2020nc:transfer=smpte2084:master-display=G(13250,34500)B(7500,3000)R(34000,16000)WP(15635,16450)L(10000000,1)" -crf 24 -preset ultrafast "C:\Users\李竞择\Documents\Tencent Files\1981671849\FileRecv\1232423.mkv"
@@ -40,8 +41,11 @@ ffmpeg -ss 00:06:25 -i "E:\Minions.2015.720p.BluRay.x264-WiKi\Minions.2015.720p.
 
 设备
 ffmpeg -list_devices true -f dshow -i dummy
+
 录屏
-ffmpeg -f gdigrab -i desktop -c:v v410 "F:\out.mkv"
+ffmpeg -f gdigrab -i desktop -c:v png "j:\temp\test.mkv"
+
+ffmpeg -y  -f dshow -i video="screen-capture-recorder"  -r 60 -c:v hevc_nvenc -b:v 8000k "j:\temp\test.mkv"
 
 录音（麦克风）
 ffmpeg -f dshow -i audio="@device_cm_{33D9A762-90C8-11D0-BD43-00A0C911CE86}\wave_{59AC4CB8-DC81-41F4-8ED1-DBB00D00AFD9}"  "j:\out.wav"
@@ -59,7 +63,7 @@ ffmpeg -ss 00:09:00 -i "E:\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 
 
 
 转映射
-"C:\Program Files\VapourSynth\core\vspipe.exe" --y4m  "C:\Users\李竞择\Documents\vs脚本\SVP+Tonemap.vpy" - |ffmpeg -i - -i "E:\Frozen Series\SY.mp4" -map 0:0 -map 1:a -c:v libx264 -c:a copy -preset medium -crf 15 "E:\Frozen Series\ITU-120fps.mp4"
+"C:\Program Files\VapourSynth\core\vspipe.exe" --y4m  "C:\Users\李竞择\Documents\vs脚本\Tonemap.vpy" - |ffmpeg -i - -i "J:\temp\TE.mp4" -vf scale=1920:804,format=yuv420p -map 0:0 -map 1:a -c:v libx264 -c:a copy -preset medium -crf 15 "J:\temp\TE-.mp4"
 
 
 ffmpeg -ss 00:00:00.87 -i "C:\Users\李竞择\Videos\Captures\NeedForSpeedPayback_2020_04_25_21_02_13_522.mkv" -t 00:00:12.00 -vf setpts=2*PTS,crop=2000:2000:720:0,scale=320:320,setsar=1:1 -c:v libx264 -fs 1024k -af atempo=0.5 -c:a aac -ab 96k f:/out.mp4

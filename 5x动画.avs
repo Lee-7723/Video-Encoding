@@ -12,7 +12,7 @@ SetFilterMTMode("DEFAULT_MT_MODE",2)
 SetFilterMTMode("SVSuper",1)
 SetFilterMTMode("SVAnalyse",1)
 LoadPlugin("C:\Program Files (x86)\AviSynth+\plugins64\LSMASHSource.dll")
-LWLibavVideoSource("J:\temp\Try Everything Original.mov",format="yuv420p8")
+LWLibavVideoSource("J:\temp\107078362-1-30112.mp4",format="yuv420p8")
 
 ConvertToYV12()
 
@@ -20,7 +20,7 @@ global crop_string  = ""
 global resize_string = ""
 global super_params     = "{scale:{up:0},gpu:1,rc:true}"
 global analyse_params   = "{block:{overlap:0},main:{search:{coarse:{distance:-12,bad:{sad:2000,range:24}},type:2}}}"
-global smoothfps_params = "{gpuid:11,rate:{num:5,den:1},algo:13,mask:{area:25},scene:{mode:0}}"
+global smoothfps_params = "{gpuid:11,rate:{num:5,den:1},algo:2,mask:{area:25},scene:{mode:0}}"
 
 global demo_mode=0
 global stereo_type=0
