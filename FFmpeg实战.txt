@@ -1,4 +1,4 @@
-ffmpeg -ss 00:10:06.00 -i "I:\Zootopia.2016.2160p.UHD.BluRay.x265-TERMiNAL.mkv" -t 00:02:39.50 -map 0:0 -map 0:1 -ac 2 -b:a 320k -c:v copy -c:a aac "J:\temp\TE.mp4"
+ffmpeg  -i "J:\temp\198593393-1-112.flv" -vf crop=1078:1818:0:100 -c:v h264_nvenc -b:v 8000k -c:a copy "J:\temp\1.mp4"
 
 
 多轨道截取
@@ -77,6 +77,9 @@ ffmpeg -ss 00:00:03.83 -i "E:\Frozen.II.2019.1080p.TWN.Blu-ray.AVC.DTS-HD.MA.7.1
 ffmpeg -ss 00:15:00 -i "E:\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit-CHD\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit- Lee-7723.mkv" -vf subtitles="E:\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit-CHD\冰2-EVO+自己压制版_Subtitle_Export\冰2-EVO+自己压制版.srt" -c:v libx265 f:\test.mp4
 
 
+图片序列编码为视频
+ffmpeg -threads 2 -f image2 -i "J:\temp\Emoji\表情包用%03d.png"  -vcodec gif -vf scale=320:180 -r 24 J:\temp\Emoji.gif
+
 混流
 ffmpeg -i "E:\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit-CHD\冰2-EVO+自己压制版.mkv" -i "E:\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit-CHD\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit- Lee-7723.mp4" -map 0:0 -c:v copy -c:a aac -b:a 320k "f:\码率.mp4"
 
@@ -88,3 +91,9 @@ ffmpeg -i "C:\Users\李竞择\Documents\avs脚本\5x动画.avs" -c:a aac -b:a 32
 
 转m3u8
 ffmpeg -i "C:\Users\李竞择\Documents\avs脚本\5x动画.avs" -c:v copy -c:a aac -b:a 320k -f hls -hls_time 5 -hls_list_size 0 J:/temp/m3u8/test.m3u8
+
+硬解测试
+ffmpeg -hwaccel dxva2 -threads 1 -max_muxing_queue_size 1024 -i INPUT -f null  -  -benchmark
+ffmpeg -hwaccel cuvid -threads 1 -i "I:\Frozen.2013.2160p.UHD.BluRay.TrueHD.7.1.Atmos.HDR.x265-BlzT.mkv" -max_muxing_queue_size 1024 -f null  -  -benchmark
+
+加上 -movflags +faststart。这样分享文件给别人的时候可以边下边看。
