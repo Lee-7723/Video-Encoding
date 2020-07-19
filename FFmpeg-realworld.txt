@@ -73,8 +73,13 @@ ffmpeg -ss 00:00:00.87 -i "C:\Users\李竞择\Videos\Captures\NeedForSpeedPaybac
 ffmpeg -ss 00:00:03.83 -i "E:\Frozen.II.2019.1080p.TWN.Blu-ray.AVC.DTS-HD.MA.7.1-nLiBRA\BDMV\STREAM\00907.m2ts" -t 00:00:03.95 -vf setpts=2*PTS,crop=1600:1600:680:240,scale=320:320,setsar=1:1 -r 10 -c gif f:/out.gif
 
 
-烧录字幕（需要在要编辑的视频目录下打开命令行）
+烧录字幕（需要在要编辑的视频目录下打开命令行，不能用于非文字类字幕）
 ffmpeg -ss 00:00:00 -i "E:\Green Book 2018 1080p BluRay DD+7.1 x264-DON\Green Book 2018 1080p BluRay DD+7.1 x264-DON.mkv" -t 00:05:00 -vf "subtitles=Green Book 2018 1080p BluRay DD+7.1 x264-DON.ass" -c:v hevc_nvenc "E:\Green Book 2018 1080p BluRay DD+7.1 x264-DON\Green Book subs.mkv"
+
+
+烧录字幕（另一种滤镜，可用于sup（PGS）图形字幕）
+ffmpeg -i 00919.m2ts -filter_complex [0:v][0:s:0]overlay[v] -map [v] -map 0:a -c:v h264_nvenc -c:a copy -cq 1 j:\temp\test-sub.mkv
+
 
 
 图片序列编码为视频
