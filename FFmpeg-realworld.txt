@@ -2,10 +2,10 @@ ffmpeg  -i "J:\temp\198593393-1-112.flv" -vf crop=1078:1818:0:100 -c:v h264_nven
 
 
 多轨道截取
-ffmpeg -ss 00:08:27 -i "F:\Frozen Series\Frozen2test.mkv" -t 00:04:13  -map 0:v:0 -c:v copy  -map 0:a -c:a copy -map 0:s:5 -map 0:s:3 -map 0:s:8 -map 0:s:4 -map 0:s:7 -c:s copy -max_muxing_queue_size 9999 "F:\Frozen Series\HDR Part test.mkv"
+ffmpeg -ss 00:54:28.05 -i "E:\Frozen.II.2019.1080p.TWN.Blu-ray.AVC.DTS-HD.MA.7.1-nLiBRA\BDMV\STREAM\00907.m2ts" -t 00:04:28.90  -map 0:v:0 -c:v copy  -map 0:a -c:a copy -map 0:s -c:s copy -max_muxing_queue_size 9999 "J:\temp\SY.mkv"
 
 
-ffmpeg -i "F:\Alita.Battle.Angel.mkv" -map 0:0 -map 0:1 -c:v libx265  -crf 25 -c:a copy -c:s copy "F:\Alita.Battle.Angel.x265.mkv"
+ffmpeg -i "J:\temp\AIF1.mkv|J:\temp\AIF2.mkv"  -map 0:v:0 -c:v copy  -map 0:a -c:a copy -map 0:s -c:s copy -max_muxing_queue_size 9999 "J:\temp\AIF.mkv"
 
 
 ffmpeg -i "E:\Show Yourself(From Frozen 2019)\粤语.mp4" -c:v copy -color_primaries bt2020 -colorspace bt2020nc -color_trc smpte2084"F:\test HDR add.mkv"
@@ -73,18 +73,19 @@ ffmpeg -ss 00:00:00.87 -i "C:\Users\李竞择\Videos\Captures\NeedForSpeedPaybac
 ffmpeg -ss 00:00:03.83 -i "E:\Frozen.II.2019.1080p.TWN.Blu-ray.AVC.DTS-HD.MA.7.1-nLiBRA\BDMV\STREAM\00907.m2ts" -t 00:00:03.95 -vf setpts=2*PTS,crop=1600:1600:680:240,scale=320:320,setsar=1:1 -r 10 -c gif f:/out.gif
 
 
-烧录字幕（未成功）
-ffmpeg -ss 00:15:00 -i "E:\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit-CHD\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit- Lee-7723.mkv" -vf subtitles="E:\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit-CHD\冰2-EVO+自己压制版_Subtitle_Export\冰2-EVO+自己压制版.srt" -c:v libx265 f:\test.mp4
+烧录字幕（需要在要编辑的视频目录下打开命令行）
+ffmpeg -ss 00:00:00 -i "E:\Green Book 2018 1080p BluRay DD+7.1 x264-DON\Green Book 2018 1080p BluRay DD+7.1 x264-DON.mkv" -t 00:05:00 -vf "subtitles=Green Book 2018 1080p BluRay DD+7.1 x264-DON.ass" -c:v hevc_nvenc "E:\Green Book 2018 1080p BluRay DD+7.1 x264-DON\Green Book subs.mkv"
 
 
 图片序列编码为视频
 ffmpeg -threads 2 -f image2 -i "J:\temp\Emoji\表情包用%03d.png"  -vcodec gif -vf scale=320:180 -r 24 J:\temp\Emoji.gif
 
+
 混流
 ffmpeg -i "E:\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit-CHD\冰2-EVO+自己压制版.mkv" -i "E:\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit-CHD\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit- Lee-7723.mp4" -map 0:0 -c:v copy -c:a aac -b:a 320k "f:\码率.mp4"
 
 
-Bilibili上传用
+Bilibili上传用（失效）
 ffmpeg -i "C:\Users\李竞择\Documents\avs脚本\5x动画.avs" -c:a aac -b:a 320k -vf format=yuv420p -c:v libx264 -preset slow -x264-params "keyint=230" -b:v 20000k -bufsize 3000k -maxrate 50000k -pass 1 -f mp4 NUL
 ffmpeg -i "C:\Users\李竞择\Documents\avs脚本\5x动画.avs" -c:a aac -b:a 320k -vf format=yuv420p -c:v libx264 -preset slow -x264-params "keyint=230" -b:v 20000k -bufsize 3000k -maxrate 50000k -pass 2 "j:\temp\Try Everything SVP 120fps.mp4"
 
@@ -92,8 +93,24 @@ ffmpeg -i "C:\Users\李竞择\Documents\avs脚本\5x动画.avs" -c:a aac -b:a 32
 转m3u8
 ffmpeg -i "C:\Users\李竞择\Documents\avs脚本\5x动画.avs" -c:v copy -c:a aac -b:a 320k -f hls -hls_time 5 -hls_list_size 0 J:/temp/m3u8/test.m3u8
 
+
 硬解测试
 ffmpeg -hwaccel dxva2 -threads 1 -max_muxing_queue_size 1024 -i INPUT -f null  -  -benchmark
 ffmpeg -hwaccel cuvid -threads 1 -i "I:\Frozen.2013.2160p.UHD.BluRay.TrueHD.7.1.Atmos.HDR.x265-BlzT.mkv" -max_muxing_queue_size 1024 -f null  -  -benchmark
 
-加上 -movflags +faststart。这样分享文件给别人的时候可以边下边看。
+
+显示视频详细信息
+ffprobe -show_format -print_format json -show_streams 
+
+
+测试OGG
+ffmpeg -i "C:\Users\Lee7723\Documents\Tencent Files\1981671849\FileRecv\Starset - My Demons.wav" -c:a libvorbis "C:\Users\Lee7723\Documents\Tencent Files\1981671849\FileRecv\Starset - My Demons.ogg"
+
+
+指定声道混音
+ffmpeg -i "E:\Frozen Series\Frozen 2 Domestic Trailer 1.mov" -vn  -af "pan=5.1|c0=stream1|c1=stream1|c2=stream1|c3=stream1|c4=stream1|stream1" -c:a ac3 "E:\Frozen Series\Frozen 2 Domestic Trailer 1.mka"
+
+
+ProRes Proxy
+ffmpeg -i J:\temp\test.mkv -vf unsharp -c:v prores_ks -profile 0 -an -vb 1600k J:\temp\test1080P-proxy.mov
+mp4加上 -movflags +faststart。这样分享文件给别人的时候可以边下边看。
