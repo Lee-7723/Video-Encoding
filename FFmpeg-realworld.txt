@@ -2,7 +2,7 @@ ffmpeg  -i "Paddington 2 2017 1080p BluRay DD-EX 5.1 x264-TayTO.mkv" -vf scale=1
 
 
 多轨道截取
-ffmpeg -ss 00:54:28.05 -i "E:\Frozen.II.2019.1080p.TWN.Blu-ray.AVC.DTS-HD.MA.7.1-nLiBRA\BDMV\STREAM\00907.m2ts" -t 00:04:28.90  -map 0:v:0 -c:v copy  -map 0:a -c:a copy -map 0:s -c:s copy -max_muxing_queue_size 9999 "J:\temp\SY.mkv"
+ffmpeg -ss 00:54:28.05 -i "E:\Frozen.II.2019.1080p.TWN.Blu-ray.AVC.DTS-HD.MA.7.1-nLiBRA\BDMV\STREAM\00907.m2ts" -t 00:04:28.90  -map 0:v:0 -c:v copy  -map 0:a -c:a copy -map 0:s -c:s copy -map_metadata -max_muxing_queue_size 9999 "J:\temp\SY.mkv"
 
 
 ffmpeg -i "Ted.2.2015.BluRay.1080p.DTS-HD.MA5.1.x265.10bit-BeiTai.mkv"  -map 0:a:0 -c:a aac -ab 192k -ac 2 -max_muxing_queue_size 9999 "Ted 2.aac"
@@ -63,7 +63,7 @@ ffmpeg -ss 00:09:00 -i "E:\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 
 
 
 转映射
-"C:\Program Files\VapourSynth\core\vspipe.exe" --y4m  "C:\Users\李竞择\Documents\vs脚本\SVP+Tonemap.vpy" - |ffmpeg -i - -i "J:\temp\TE.mp4" -vf scale=1920:804,format=yuv420p -map 0:0 -map 1:a -c:v libx264 -c:a copy -preset medium -crf 15 "Frozen.2013.2160p.Blu-ray.HFR.HEVC.DTS-HD.MA 7.1-Lee7723.mkv"
+"C:\Program Files\VapourSynth\core\vspipe.exe" --y4m  "C:\Users\Lee7723\Documents\avs脚本\SVP+Tonemap.vpy" - |ffmpeg -i - -i "Frozen.2013.2160p.UHD.BluRay.TrueHD.7.1.Atmos.HDR.x265-BlzT.mkv"  -vf format=yuv420p -map 0:0 -map 1:a -map 1:s -c:v hevc_nvenc -preset 1 -2pass 1 -b:v 18000k -c:a copy -c:s copy "j:\temp\Frozen.2013.2160p.Blu-ray.HFR.HEVC.DTS-HD.MA 7.1-Lee7723.mkv"
 
 裁剪
 ffmpeg -ss 00:00:00.87 -i "C:\Users\李竞择\Videos\Captures\NeedForSpeedPayback_2020_04_25_21_02_13_522.mkv" -t 00:00:12.00 -vf setpts=2*PTS,crop=2000:2000:720:0,scale=320:320,setsar=1:1 -c:v libx264 -fs 1024k -af atempo=0.5 -c:a aac -ab 96k f:/out.mp4
