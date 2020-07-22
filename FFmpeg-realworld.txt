@@ -1,11 +1,11 @@
-ffmpeg  -i "J:\temp\198593393-1-112.flv" -vf crop=1078:1818:0:100 -c:v h264_nvenc -b:v 8000k -c:a copy "J:\temp\1.mp4"
+ffmpeg  -i "Paddington 2 2017 1080p BluRay DD-EX 5.1 x264-TayTO.mkv" -vf scale=1280:-1 -map 0:v -map 0:1 -map 0:s -c:s copy -c:v hevc_nvenc -preset 1 -qp 24 -c:a aac -ac 2 -ab 192k -f Matroska "Paddington 2 2017 720p BluRay DD-EX 5.1 h265-TayTO.mkv"
 
 
 多轨道截取
 ffmpeg -ss 00:54:28.05 -i "E:\Frozen.II.2019.1080p.TWN.Blu-ray.AVC.DTS-HD.MA.7.1-nLiBRA\BDMV\STREAM\00907.m2ts" -t 00:04:28.90  -map 0:v:0 -c:v copy  -map 0:a -c:a copy -map 0:s -c:s copy -max_muxing_queue_size 9999 "J:\temp\SY.mkv"
 
 
-ffmpeg -i "J:\temp\AIF1.mkv|J:\temp\AIF2.mkv"  -map 0:v:0 -c:v copy  -map 0:a -c:a copy -map 0:s -c:s copy -max_muxing_queue_size 9999 "J:\temp\AIF.mkv"
+ffmpeg -i "Ted.2.2015.BluRay.1080p.DTS-HD.MA5.1.x265.10bit-BeiTai.mkv"  -map 0:a:0 -c:a aac -ab 192k -ac 2 -max_muxing_queue_size 9999 "Ted 2.aac"
 
 
 ffmpeg -i "E:\Show Yourself(From Frozen 2019)\粤语.mp4" -c:v copy -color_primaries bt2020 -colorspace bt2020nc -color_trc smpte2084"F:\test HDR add.mkv"
@@ -19,7 +19,7 @@ ffmpeg -i "C:\Users\李竞择\Documents\Tencent Files\1981671849\FileRecv\3306c6
 
 
 去水印
-ffmpeg -i "J:\temp\test.mp4" -vf delogo=x=50:y=50:w=500:h=107 -c:v hevc_nvenc -vb 6000k -c:a copy "J:\temp\test1.mkv"
+ffmpeg -i "120fps测试.mkv" -vf delogo=x=983:y=23:w=275:h=65 -c:v hevc_nvenc -vb 6000k -c:a copy "delogo sample.mkv"
 
 
 ffmpeg -i "C:\Users\李竞择\Documents\Tencent Files\1981671849\FileRecv\3306c6.avs" -c:v libx265 -x265-params "level=6:colorprim=bt2020:colormatrix=bt2020nc:transfer=smpte2084:master-display=G(13250,34500)B(7500,3000)R(34000,16000)WP(15635,16450)L(10000000,1)" -crf 24 -preset ultrafast "C:\Users\李竞择\Documents\Tencent Files\1981671849\FileRecv\1232423.mkv"
@@ -63,9 +63,9 @@ ffmpeg -ss 00:09:00 -i "E:\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 
 
 
 转映射
-"C:\Program Files\VapourSynth\core\vspipe.exe" --y4m  "C:\Users\李竞择\Documents\vs脚本\Tonemap.vpy" - |ffmpeg -i - -i "J:\temp\TE.mp4" -vf scale=1920:804,format=yuv420p -map 0:0 -map 1:a -c:v libx264 -c:a copy -preset medium -crf 15 "J:\temp\TE-.mp4"
+"C:\Program Files\VapourSynth\core\vspipe.exe" --y4m  "C:\Users\李竞择\Documents\vs脚本\SVP+Tonemap.vpy" - |ffmpeg -i - -i "J:\temp\TE.mp4" -vf scale=1920:804,format=yuv420p -map 0:0 -map 1:a -c:v libx264 -c:a copy -preset medium -crf 15 "Frozen.2013.2160p.Blu-ray.HFR.HEVC.DTS-HD.MA 7.1-Lee7723.mkv"
 
-
+裁剪
 ffmpeg -ss 00:00:00.87 -i "C:\Users\李竞择\Videos\Captures\NeedForSpeedPayback_2020_04_25_21_02_13_522.mkv" -t 00:00:12.00 -vf setpts=2*PTS,crop=2000:2000:720:0,scale=320:320,setsar=1:1 -c:v libx264 -fs 1024k -af atempo=0.5 -c:a aac -ab 96k f:/out.mp4
 
 
