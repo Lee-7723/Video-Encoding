@@ -1,2 +1,2 @@
-file 'J:\temp\AIF1.mkv'
-file 'J:\temp\AIF2.mkv'
+file 'J:\temp\AIF-pt1.mkv'
+file 'J:\temp\AIF-pt2.mkv'

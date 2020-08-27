@@ -1,8 +1,8 @@
-ffmpeg  -i "Paddington 2 2017 1080p BluRay DD-EX 5.1 x264-TayTO.mkv" -vf scale=1280:-1 -map 0:v -map 0:1 -map 0:s -c:s copy -c:v hevc_nvenc -preset 1 -qp 24 -c:a aac -ac 2 -ab 192k -f Matroska "Paddington 2 2017 720p BluRay DD-EX 5.1 h265-TayTO.mkv"
+ffmpeg -ss 00:31:05 -i "I:\Frozen.2013.2160p.UHD.BluRay.TrueHD.7.1.Atmos.HDR.x265-BlzT.mkv" -t 00:03:41.40 -map 0:v -map 0:1 -map 0:s -c:s copy -c:v copy -c:a aac -ac 2 -ab 320k -f Matroska "j:\temp\LIG.mkv"
 
 
 多轨道截取
-ffmpeg -ss 00:54:28.05 -i "E:\Frozen.II.2019.1080p.TWN.Blu-ray.AVC.DTS-HD.MA.7.1-nLiBRA\BDMV\STREAM\00907.m2ts" -t 00:04:28.90  -map 0:v:0 -c:v copy  -map 0:a -c:a copy -map 0:s -c:s copy -map_metadata -max_muxing_queue_size 9999 "J:\temp\SY.mkv"
+ffmpeg -ss 00:00:00 -i "E:\Frozen.II.2019.1080p.TWN.Blu-ray.AVC.DTS-HD.MA.7.1-nLiBRA\BDMV\STREAM\00906.m2ts" -t 00:01:02.60 -map 0:v -c:v copy  -map 0:a -c:a copy -map 0:s -c:s copy -map_metadata 0  -max_muxing_queue_size 9999 "J:\temp\AIF-pt2.mkv"
 
 
 ffmpeg -i "Ted.2.2015.BluRay.1080p.DTS-HD.MA5.1.x265.10bit-BeiTai.mkv"  -map 0:a:0 -c:a aac -ab 192k -ac 2 -max_muxing_queue_size 9999 "Ted 2.aac"
@@ -26,7 +26,7 @@ ffmpeg -i "C:\Users\李竞择\Documents\Tencent Files\1981671849\FileRecv\3306c6
 
 
 合并用
-ffmpeg -f concat -safe 0 -i "C:\Users\李竞择\Documents\avs脚本\合并.txt" -map 0:v -c:v copy -map 0:a -c:a copy -map 0:s -c:s copy "F:\合并.mkv"
+ffmpeg -f concat -safe 0 -i "C:\Users\Lee7723\Documents\avs脚本\合并.txt" -map 0 -c copy "J:\AIF.mkv"
 
 
 SVP HDR Project temp for 20
@@ -59,11 +59,18 @@ ffmpeg -i "C:\Users\李竞择\Documents\avs脚本\HDR转映射.avs" -c:v nvenc p
 
 
 转色域
-ffmpeg -ss 00:09:00 -i "E:\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit-CHD\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit- Lee-7723.mkv" -vf zscale=t=linear:npl=100,format=gbrpf32le,zscale=p=bt709,tonemap=hable:exposure=24:a=0.5:b=0.3:c=0.01:d=3:e=0.001:f=0.8:w=2,zscale=t=bt709:m=bt709:r=pc,format=yuv420p -c:v libx264 -preset veryfast -an "E:\Frozen Series\ITU--.mp4"
+ffmpeg -ss 00:09:00 -i "E:\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit-CHD\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit- Lee-7723.mkv" -vf zscale=t=linear:npl=100,format=gbrpf32le,zscale=p=bt709,tonemap=clip,zscale=t=bt709:m=bt709:r=pc,format=yuv420p -c:v libx264 -preset veryfast -an "E:\Frozen Series\ITU--.mp4"
+
+hable:desat=0:peak=6
 
 
-转映射
-"C:\Program Files\VapourSynth\core\vspipe.exe" --y4m  "C:\Users\Lee7723\Documents\avs脚本\SVP+Tonemap.vpy" - |ffmpeg -i - -i "Frozen.2013.2160p.UHD.BluRay.TrueHD.7.1.Atmos.HDR.x265-BlzT.mkv"  -vf format=yuv420p -map 0:0 -map 1:a -map 1:s -c:v hevc_nvenc -preset 1 -2pass 1 -b:v 18000k -c:a copy -c:s copy "j:\temp\Frozen.2013.2160p.Blu-ray.HFR.HEVC.DTS-HD.MA 7.1-Lee7723.mkv"
+转映射+SVP
+"C:\Program Files\VapourSynth\core\vspipe.exe" --y4m  "C:\Users\Lee7723\Documents\avs脚本\SVP+Tonemap.vpy" - |ffmpeg -i - -i "K:\Movies\Frozen.I-II.2014-2019.UHD.BluRay.2160p.10bit.HDR.4Audio.TrueHD(Atmos).7.1.x265-beAst\Frozen.II.2019.RERIP.UHD.BluRay.2160p.10bit.HDR.4Audio.TrueHD(Atmos).7.1.x265-beAst\UTF-8vocals.wav"  -vf format=yuv420p -map 0:0 -map 1:a -c:v h264_nvenc -preset 1 -2pass 1 -b:v 30000k -c:a aac -ab 320k  "AIF-vocal.mp4"
+
+
+转映射Open-CL
+ffmpeg -i I:\Frozen.2013.2160p.UHD.BluRay.TrueHD.7.1.Atmos.HDR.x265-BlzT.mkv -vf "format=p010,hwupload,tonemap_opencl=t=bt2020:tonemap=linear:format=p010,hwdownload,format=p010" -c:v libx264 -r 0.1 J:\temp\test.mkv
+
 
 裁剪
 ffmpeg -ss 00:00:00.87 -i "C:\Users\李竞择\Videos\Captures\NeedForSpeedPayback_2020_04_25_21_02_13_522.mkv" -t 00:00:12.00 -vf setpts=2*PTS,crop=2000:2000:720:0,scale=320:320,setsar=1:1 -c:v libx264 -fs 1024k -af atempo=0.5 -c:a aac -ab 96k f:/out.mp4
@@ -83,7 +90,7 @@ ffmpeg -i 00919.m2ts -filter_complex [0:v][0:s:0]overlay[v] -map [v] -map 0:a -c
 
 
 图片序列编码为视频
-ffmpeg -threads 2 -f image2 -i "J:\temp\Emoji\表情包用%03d.png"  -vcodec gif -vf scale=320:180 -r 24 J:\temp\Emoji.gif
+ffmpeg -threads 2 -f image2 -i "J:\temp\Emoji\表情包用%03d.png"  -c:v libx264 -crf 18 -r 24 ""
 
 
 混流
@@ -96,11 +103,13 @@ ffmpeg -i "C:\Users\李竞择\Documents\avs脚本\5x动画.avs" -c:a aac -b:a 32
 
 
 转m3u8
-ffmpeg -i "C:\Users\李竞择\Documents\avs脚本\5x动画.avs" -c:v copy -c:a aac -b:a 320k -f hls -hls_time 5 -hls_list_size 0 J:/temp/m3u8/test.m3u8
+ffmpeg -i "E:\Ford.v.Ferrari.2019.1080p.BluRay.x264-AAA\Ford.v.Ferrari.2019.1080p.BluRay.x264-AAA.mkv" -c:v h264_nvenc -vb 4000k -preset slow -c:a aac -f hls -hls_time 5 -hls_list_size 0 test.m3u8
+
+ffmpeg -i "J:\temp\m3u8test\m3u8-ori.mp4" -f segment -segment_time 4 -segment_format mpegts -segment_list video_name.m3u8 -c copy -bsf:v h264_mp4toannexb -map 0 course-%04d.ts
 
 
 硬解测试
-ffmpeg -hwaccel dxva2 -threads 1 -max_muxing_queue_size 1024 -i INPUT -f null  -  -benchmark
+ffmpeg -hwaccel qsv -threads 1 -i INPUT -max_muxing_queue_size 1024 -f null  -  -benchmark
 ffmpeg -hwaccel cuvid -threads 1 -i "I:\Frozen.2013.2160p.UHD.BluRay.TrueHD.7.1.Atmos.HDR.x265-BlzT.mkv" -max_muxing_queue_size 1024 -f null  -  -benchmark
 
 
@@ -114,6 +123,9 @@ ffmpeg -i "C:\Users\Lee7723\Documents\Tencent Files\1981671849\FileRecv\Starset 
 
 指定声道混音
 ffmpeg -i "E:\Frozen Series\Frozen 2 Domestic Trailer 1.mov" -vn  -af "pan=5.1|c0=stream1|c1=stream1|c2=stream1|c3=stream1|c4=stream1|stream1" -c:a ac3 "E:\Frozen Series\Frozen 2 Domestic Trailer 1.mka"
+
+静音某声道
+ffmpeg -ss 00:06:00.00 -i "K:\Movies\FROZEN~1.X26\FROZEN~1.X26\FROZEN~1.MKV"  -t 00:01:51.07 -c:v copy -af "pan=7.1|c0=c0|c1=c1|c3=c3|c4=c4|c5=c5|c6=c6|c7=c7" -c:a aac -ac 2 -ab 320k "AIF.mp4"
 
 
 ProRes Proxy
