@@ -1,6 +1,6 @@
 import vapoursynth as vs
 core = vs.get_core()
-core.max_cache_size = 6000
+core.max_cache_size = 4000
 clip = core.lsmas.LWLibavSource(source=r"K:\Movies\Frozen.I-II.2014-2019.UHD.BluRay.2160p.10bit.HDR.4Audio.TrueHD(Atmos).7.1.x265-beAst\Frozen.II.2019.RERIP.UHD.BluRay.2160p.10bit.HDR.4Audio.TrueHD(Atmos).7.1.x265-beAst\out.mkv")
 clip = core.resize.Lanczos(clip=clip, format=vs.RGBS, width=None, height=None,matrix_in_s="2020ncl",transfer_in_s="std-b67", transfer_s="linear",nominal_luminance=1000)
 

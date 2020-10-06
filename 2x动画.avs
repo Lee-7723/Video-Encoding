@@ -5,14 +5,10 @@ SetMemoryMax(6000)
 
 global threads=25
 
-LoadPlugin("C:\Program Files (x86)\AviSynth+\plugins64\svpflow1.dll")
-LoadPlugin("C:\Program Files (x86)\AviSynth+\plugins64\svpflow2.dll")
-
 SetFilterMTMode("DEFAULT_MT_MODE",2)
 SetFilterMTMode("SVSuper",1)
 SetFilterMTMode("SVAnalyse",1)
-LoadPlugin("C:\Program Files (x86)\AviSynth+\plugins64\LSMASHSource.dll")
-LWLibavVideoSource("F:\EDGE下载\cut.mkv", format="YUV420P8")
+LWLibavVideoSource("F:\Formula.1.Drive.to.Survive.S02.1080p.NF.WEB-DL.DDP5.1.x264-NTG\Formula.1.Drive.to.Survive.S02E03.Dogfight.1080p.NF.WEB-DL.DDP5.1.x264-NTG.mkv", format="YUV420P8")
 
 ConvertToYV12()
 
@@ -20,7 +16,7 @@ global crop_string  = ""
 global resize_string = ""
 global super_params     = "{scale:{up:0},gpu:1,rc:true}"
 global analyse_params   = "{block:{w:8,overlap:0},main:{search:{coarse:{distance:-12,bad:{sad:2000}},type:2}}, refine:[{thsad:1000}]}"
-global smoothfps_params = "{gpuid:11,rate:{num:3,den:1},algo:23,mask:{area:25,cover:80},scene:{mode:0}}"
+global smoothfps_params = "{gpuid:11,rate:{num:2,den:1},algo:11,mask:{area:25,cover:80},scene:{mode:0}}"
 
 global demo_mode=0
 global stereo_type=0

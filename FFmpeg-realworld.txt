@@ -1,4 +1,4 @@
-ffmpeg -ss 00:31:05 -i "I:\Frozen.2013.2160p.UHD.BluRay.TrueHD.7.1.Atmos.HDR.x265-BlzT.mkv" -t 00:03:41.40 -map 0:v -map 0:1 -map 0:s -c:s copy -c:v copy -c:a aac -ac 2 -ab 320k -f Matroska "j:\temp\LIG.mkv"
+ffmpeg -ss 00:54:36 -i "F:\Frozen.II.2019.1080p.TWN.Blu-ray.AVC.DTS-HD.MA.7.1-nLiBRA\BDMV\STREAM\00907.m2ts" -af "pan=7.1|c0=c0|c1=c1|c3=c3|c4=c4|c5=c5|c6=c6|c7=c7" -t 00:04:04 -map 0:1 -c:v copy -c:a flac -ac 8 "SY-Instrumental.flac"
 
 
 多轨道截取
@@ -67,6 +67,10 @@ hable:desat=0:peak=6
 转映射+SVP
 "C:\Program Files\VapourSynth\core\vspipe.exe" --y4m  "C:\Users\Lee7723\Documents\avs脚本\SVP+Tonemap.vpy" - |ffmpeg -i - -i "K:\Movies\Frozen.I-II.2014-2019.UHD.BluRay.2160p.10bit.HDR.4Audio.TrueHD(Atmos).7.1.x265-beAst\Frozen.II.2019.RERIP.UHD.BluRay.2160p.10bit.HDR.4Audio.TrueHD(Atmos).7.1.x265-beAst\UTF-8vocals.wav"  -vf format=yuv420p -map 0:0 -map 1:a -c:v h264_nvenc -preset 1 -2pass 1 -b:v 30000k -c:a aac -ab 320k  "AIF-vocal.mp4"
 
+转映射
+vspipe --y4m  "C:\Users\19816\Documents\Video Encoding\转映射.vpy" - |ffmpeg -i - -i "D:\Temporary Work Space\LIG(multi audio track).mkv" -vf format=yuv420p,"subtitles=LIG(multi audio track).ass" -map 0:0 -map 1:a:0 -c:v h264_qsv -preset veryslow -b:v 10000k -look_ahead 1 -sn -c:a aac -ab 320k  "LIG 4K.mp4"
+
+
 
 转映射Open-CL
 ffmpeg -i I:\Frozen.2013.2160p.UHD.BluRay.TrueHD.7.1.Atmos.HDR.x265-BlzT.mkv -vf "format=p010,hwupload,tonemap_opencl=t=bt2020:tonemap=linear:format=p010,hwdownload,format=p010" -c:v libx264 -r 0.1 J:\temp\test.mkv
@@ -130,4 +134,17 @@ ffmpeg -ss 00:06:00.00 -i "K:\Movies\FROZEN~1.X26\FROZEN~1.X26\FROZEN~1.MKV"  -t
 
 ProRes Proxy
 ffmpeg -i J:\temp\test.mkv -vf unsharp -c:v prores_ks -profile 0 -an -vb 1600k J:\temp\test1080P-proxy.mov
+
+
+图片扩展出空像素
+ffmpeg  -f image2 -i "D:\Drivers\QQfiles\1981671849\FileRecv\MobileFile\mono\下载%2d.png" -filter_complex "nullsrc=size=1000x1250;[background][0:v] overlay=0:200" -c png -vframes 24 "D:\Drivers\QQfiles\1981671849\FileRecv\MobileFile\mono\mono-white\wallpaper%2d.png"
+
+
+上一个的基础上背景填充为白色
+ffmpeg  -f image2 -i "D:\Drivers\QQfiles\1981671849\FileRecv\MobileFile\mono\下载%2d.png" -filter_complex "nullsrc=size=1000x1250,lutrgb='r= 255:g=255:b=255'[background];[background][0:v] overlay=0:200" -c png -vframes 24 "D:\Drivers\QQfiles\1981671849\FileRecv\MobileFile\mono\mono-white\wallpaper%2d.png"
+
+
+ffmpeg  -f image2 -i "D:\Drivers\QQfiles\1981671849\FileRecv\MobileFile\mono\下载%2d.png" -i "C:\Users\19816\Pictures\bg.png" -filter_complex "[1:v][0:v] overlay=0:400" -c png -vframes 24 "D:\Drivers\QQfiles\1981671849\FileRecv\MobileFile\mono\mono-colored\wallpaper%2d.png"
+
+
 mp4加上 -movflags +faststart。这样分享文件给别人的时候可以边下边看。
