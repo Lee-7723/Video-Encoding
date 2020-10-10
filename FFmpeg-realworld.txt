@@ -147,4 +147,17 @@ ffmpeg  -f image2 -i "D:\Drivers\QQfiles\1981671849\FileRecv\MobileFile\mono\下
 ffmpeg  -f image2 -i "D:\Drivers\QQfiles\1981671849\FileRecv\MobileFile\mono\下载%2d.png" -i "C:\Users\19816\Pictures\bg.png" -filter_complex "[1:v][0:v] overlay=0:400" -c png -vframes 24 "D:\Drivers\QQfiles\1981671849\FileRecv\MobileFile\mono\mono-colored\wallpaper%2d.png"
 
 
+计算SSIM(avs)
+ffmpeg -i "C:\Users\19816\Documents\Video Encoding\SSIM.avs" -f null -
+
+计算SSIM(ffmpeg)
+ffmpeg -i "E:\SSIM_test\clips\00910.m2ts"  -i "E:\SSIM_test\clips\Pr.mp4"  -lavfi ssim="stats_file=/SSIM_test/ssim-ffmpeg/pr.log" -f null -
+
+
+曲线调色(PS曲线预设)
+ffmpeg -i Lanczos4Resize000039.png -lavfi curves=psfile=未命名.acv -c png curve.png
+
+曲线调色(自定点生成曲线)
+ffmpeg -i Lanczos4Resize000039.png -lavfi curves=all="0/0 0.25/0.2 0.75/0.8 1/1" -c png curve2.png
+
 mp4加上 -movflags +faststart。这样分享文件给别人的时候可以边下边看。
