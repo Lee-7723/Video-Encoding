@@ -107,9 +107,13 @@ ffmpeg -i "C:\Users\李竞择\Documents\avs脚本\5x动画.avs" -c:a aac -b:a 32
 
 
 转m3u8
-ffmpeg -i "E:\Ford.v.Ferrari.2019.1080p.BluRay.x264-AAA\Ford.v.Ferrari.2019.1080p.BluRay.x264-AAA.mkv" -c:v h264_nvenc -vb 4000k -preset slow -c:a aac -f hls -hls_time 5 -hls_list_size 0 test.m3u8
+ffmpeg -i "F:\Formula.1.Drive.to.Survive.S02.1080p.NF.WEB-DL.DDP5.1.x264-NTG\Formula.1.Drive.to.Survive.S02E01.Lights.Out.1080p.NF.WEB-DL.DDP5.1.x264-NTG.mkv" -c:v libx264 -preset slow -tune film -vb 3000k -c:a copy -map 0:s -map 0:v -map 0:a -c:s copy -f hls -hls_time 60 -hls_list_size 0 D:\temp\hls-test\test.m3u8
 
-ffmpeg -i "J:\temp\m3u8test\m3u8-ori.mp4" -f segment -segment_time 4 -segment_format mpegts -segment_list video_name.m3u8 -c copy -bsf:v h264_mp4toannexb -map 0 course-%04d.ts
+ffmpeg -i "F:\Formula.1.Drive.to.Survive.S02.1080p.NF.WEB-DL.DDP5.1.x264-NTG\Formula.1.Drive.to.Survive.S02E01.Lights.Out.1080p.NF.WEB-DL.DDP5.1.x264-NTG.mkv" -f segment -segment_time 60 -segment_format mpegts -segment_list D:\temp\hls-test\test.m3u8 -c:v h264_qsv -preset veryslow -vb 3000k -map 0 -c:a copy -c:s copy -bsf:v h264_mp4toannexb D:\temp\hls-test\test%3d.ts
+
+ffmpeg -i "E:\SSIM_test\clips\00910.m2ts" -c:v libx264 -preset slow -tune film -vb 3000k -c:a copy -map 0:s -map 0:v -map 0:a -c:s copy -flags +cgop -g 30 -hls_time 60 hls\out.m3u8
+
+ffmpeg -re -i "E:\SSIM_test\clips\00910.m2ts" -codec copy -map 0 -f segment -segment_list hls/playlist.m3u8 -segment_list_flags +live -segment_time 3 hls\out%03d.mkv
 
 
 硬解测试
@@ -151,7 +155,7 @@ ffmpeg  -f image2 -i "D:\Drivers\QQfiles\1981671849\FileRecv\MobileFile\mono\下
 ffmpeg -i "C:\Users\19816\Documents\Video Encoding\SSIM.avs" -f null -
 
 计算SSIM(ffmpeg)
-ffmpeg -i "E:\SSIM_test\clips\00910.m2ts"  -i "E:\SSIM_test\clips\Pr.mp4"  -lavfi ssim="stats_file=/SSIM_test/ssim-ffmpeg/pr.log" -f null -
+ffmpeg -i "E:\SSIM_test\clips\00910.m2ts"  -i "E:\SSIM_test\clips\low-x264-slower-ssim.mkv"  -lavfi ssim="stats_file=/SSIM_test/ssim-ffmpeg/low-x264-slower-ssim.log" -f null -
 
 
 曲线调色(PS曲线预设)
