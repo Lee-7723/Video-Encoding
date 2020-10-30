@@ -1,0 +1,7 @@
+#LoadCPlugin("D:\Program Files\AviSynth+\plugins64\AvsInPaint.dll")
+#logo=LWLibavVideoSource(source="C:\Users\19816\Pictures\logoarea.png", stream_index=-1, threads=0, cache=True, seek_mode=0, seek_threshold=10, dr=False, repeat=False, dominance=0, stacked=False, format="")
+LWLibavVideoSource(source="D:\迅雷下载\logo.m4s", stream_index=-1, threads=0, cache=True, seek_mode=0, seek_threshold=10, dr=False, repeat=False, dominance=0, stacked=False, format="YUV420P8")
+mask=LWLibavVideoSource(source="C:\Users\19816\Pictures\logoarea.png")
+#InpaintLogo(clip=last,Mask=mask, Radius=,30,0.5,40,0,1,80,false,1.0,-1)
+mask=mask.ConvertToRGB24(matrix="Rec709", interlaced=false)
+AvsInPaint_InpaintLogo(Mask=mask, Radius=6, Sharpness=30, PreBlur=0.5, PostBlur=4, ChromaWeight=0, PreBlurSize=1, PostBlurSize=8, ChromaTensor=false, PixelAspect=1, Steps=-1)

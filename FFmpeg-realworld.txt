@@ -1,4 +1,4 @@
-ffmpeg -ss 00:54:36 -i "F:\Frozen.II.2019.1080p.TWN.Blu-ray.AVC.DTS-HD.MA.7.1-nLiBRA\BDMV\STREAM\00907.m2ts" -af "pan=7.1|c0=c0|c1=c1|c3=c3|c4=c4|c5=c5|c6=c6|c7=c7" -t 00:04:04 -map 0:1 -c:v copy -c:a flac -ac 8 "SY-Instrumental.flac"
+ffmpeg -i "C:\Users\19816\Documents\Video Encoding\resize.avs" -i "D:\byrbt\Once.Upon.a.Snowman.2020.DSNYP.1080p.WEBRip.X264.Atmos-EVO\Once.Upon.a.Snowman.2020.DSNYP.1080p.WEBRip.X264.Atmos-EVO (Lee-7723搬).mkv" -metadata mux="FFmpeg(by Lee-7723)" -metadata:s:v:0 title="Enlarged by Lee-7723" -metadata:s:v:0 comment="Encodeing & subtitle by Lee-7723" -map 0 -map 1:a -c:v libx265 -crf 16 -preset medium  -c:a copy -c:s copy upscale-test.mkv
 
 
 多轨道截取
@@ -85,7 +85,7 @@ ffmpeg -ss 00:00:03.83 -i "E:\Frozen.II.2019.1080p.TWN.Blu-ray.AVC.DTS-HD.MA.7.1
 
 
 烧录字幕（需要在要编辑的视频目录下打开命令行，不能用于非文字类字幕）
-ffmpeg -ss 00:00:00 -i "E:\Green Book 2018 1080p BluRay DD+7.1 x264-DON\Green Book 2018 1080p BluRay DD+7.1 x264-DON.mkv" -t 00:05:00 -vf "subtitles=Green Book 2018 1080p BluRay DD+7.1 x264-DON.ass" -c:v hevc_nvenc "E:\Green Book 2018 1080p BluRay DD+7.1 x264-DON\Green Book subs.mkv"
+ffmpeg -i "C:\Users\19816\Documents\Video Encoding\temp.avs" -vf subtitles="Once.Upon.a.Snowman.2020.DSNYP.1080p.WEBRip.X264.Atmos-EVO(Lee-7723搬).ass" -c:v libx264 -preset slow  -crf 20 "netease.mp4"
 
 
 烧录字幕（另一种滤镜，可用于sup（PGS）图形字幕）
@@ -109,7 +109,7 @@ ffmpeg -i "C:\Users\李竞择\Documents\avs脚本\5x动画.avs" -c:a aac -b:a 32
 转m3u8
 ffmpeg -i "F:\Formula.1.Drive.to.Survive.S02.1080p.NF.WEB-DL.DDP5.1.x264-NTG\Formula.1.Drive.to.Survive.S02E01.Lights.Out.1080p.NF.WEB-DL.DDP5.1.x264-NTG.mkv" -c:v libx264 -preset slow -tune film -vb 3000k -c:a copy -map 0:s -map 0:v -map 0:a -c:s copy -f hls -hls_time 60 -hls_list_size 0 D:\temp\hls-test\test.m3u8
 
-ffmpeg -i "F:\Formula.1.Drive.to.Survive.S02.1080p.NF.WEB-DL.DDP5.1.x264-NTG\Formula.1.Drive.to.Survive.S02E01.Lights.Out.1080p.NF.WEB-DL.DDP5.1.x264-NTG.mkv" -f segment -segment_time 60 -segment_format mpegts -segment_list D:\temp\hls-test\test.m3u8 -c:v h264_qsv -preset veryslow -vb 3000k -map 0 -c:a copy -c:s copy -bsf:v h264_mp4toannexb D:\temp\hls-test\test%3d.ts
+ffmpeg -i "F:\Formula.1.Drive.to.Survive.S02.1080p.NF.WEB-DL.DDP5.1.x264-NTG\Formula.1.Drive.to.Survive.S02E01.Lights.Out.1080p.NF.WEB-DL.DDP5.1.x264-NTG.mkv" -f segment -segment_time 30 -segment_format mpegts -segment_list D:\temp\hls-test\test.m3u8 -c:v h264_qsv -preset veryslow -vb 2500k -map 0 -c:a copy -c:s copy -bsf:v h264_mp4toannexb D:\temp\hls-test\test%3d.ts
 
 ffmpeg -i "E:\SSIM_test\clips\00910.m2ts" -c:v libx264 -preset slow -tune film -vb 3000k -c:a copy -map 0:s -map 0:v -map 0:a -c:s copy -flags +cgop -g 30 -hls_time 60 hls\out.m3u8
 
@@ -148,14 +148,18 @@ ffmpeg  -f image2 -i "D:\Drivers\QQfiles\1981671849\FileRecv\MobileFile\mono\下
 ffmpeg  -f image2 -i "D:\Drivers\QQfiles\1981671849\FileRecv\MobileFile\mono\下载%2d.png" -filter_complex "nullsrc=size=1000x1250,lutrgb='r= 255:g=255:b=255'[background];[background][0:v] overlay=0:200" -c png -vframes 24 "D:\Drivers\QQfiles\1981671849\FileRecv\MobileFile\mono\mono-white\wallpaper%2d.png"
 
 
-ffmpeg  -f image2 -i "D:\Drivers\QQfiles\1981671849\FileRecv\MobileFile\mono\下载%2d.png" -i "C:\Users\19816\Pictures\bg.png" -filter_complex "[1:v][0:v] overlay=0:400" -c png -vframes 24 "D:\Drivers\QQfiles\1981671849\FileRecv\MobileFile\mono\mono-colored\wallpaper%2d.png"
+ffmpeg  -f image2 -i "D:\Drivers\QQfiles\1981671849\FileRecv\MobileFile\mono\下载%2d.png" -i "C:\Users\19816\Pictures\bg.png" -filter_complex "[1:v][0:v] overlay=0:400,format=rgb24" -c png -vframes 32 "D:\Drivers\QQfiles\1981671849\FileRecv\MobileFile\mono\mono-colored\wallpaper%2d.png"
 
 
 计算SSIM(avs)
 ffmpeg -i "C:\Users\19816\Documents\Video Encoding\SSIM.avs" -f null -
 
 计算SSIM(ffmpeg)
-ffmpeg -i "E:\SSIM_test\clips\00910.m2ts"  -i "E:\SSIM_test\clips\low-x264-slower-ssim.mkv"  -lavfi ssim="stats_file=/SSIM_test/ssim-ffmpeg/low-x264-slower-ssim.log" -f null -
+ffmpeg -i "E:\SSIM_test\clips\00910.m2ts"  -i "E:\SSIM_test\clips\prores.mkv"  -lavfi ssim="stats_file=/SSIM_test/ssim-ffmpeg/prores.log" -f null -
+
+
+计算PSNR
+ffmpeg -i "E:\SSIM_test\clips\00910.m2ts"  -i "E:\SSIM_test\clips\prores.mkv"  -lavfi psnr="stats_file=/SSIM_test/psnr-ffmpeg/prores.log" -f null -
 
 
 曲线调色(PS曲线预设)
@@ -163,5 +167,13 @@ ffmpeg -i Lanczos4Resize000039.png -lavfi curves=psfile=未命名.acv -c png cur
 
 曲线调色(自定点生成曲线)
 ffmpeg -i Lanczos4Resize000039.png -lavfi curves=all="0/0 0.25/0.2 0.75/0.8 1/1" -c png curve2.png
+
+
+MVTools(in progress)
+ffmpeg -i "C:\Users\19816\Documents\Video Encoding\mvtools.avs" -c:v h264_qsv -preset veryslow -vb 8000k -movflags +faststart test.mp4
+
+
+元数据
+ffmpeg -i "E:\SSIM_test\clips\high.mkv" -c copy -metadata:s:v:0 title="Enlarged by Lee-7723" -metadata:s:v:0 comment="Encodeing & subtitle by Lee-7723" metatest.mkv
 
 mp4加上 -movflags +faststart。这样分享文件给别人的时候可以边下边看。

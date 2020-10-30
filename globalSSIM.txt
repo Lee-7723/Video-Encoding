@@ -1,2 +1,2 @@
 SSIM: Structural Similarity Index Metric 0.25 - AI b1
-Average SSIM= 81.66986464
+Average SSIM= 94.28839887
