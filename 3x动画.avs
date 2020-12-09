@@ -1,4 +1,3 @@
-
 SetMemoryMax(6000)
 
 global threads=25
@@ -6,7 +5,7 @@ global threads=25
 SetFilterMTMode("DEFAULT_MT_MODE",2)
 SetFilterMTMode("SVSuper",1)
 SetFilterMTMode("SVAnalyse",1)
-LWLibavVideoSource("F:\Formula.1.Drive.to.Survive.S02.1080p.NF.WEB-DL.DDP5.1.x264-NTG\Formula.1.Drive.to.Survive.S02E03.Dogfight.1080p.NF.WEB-DL.DDP5.1.x264-NTG.mkv",format="yuv420p8")
+LWLibavVideoSource("",format="yuv420p8")
 
 ConvertToYV12()
 

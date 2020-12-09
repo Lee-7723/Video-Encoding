@@ -1,0 +1,52 @@
+you-get: version 0.4.1488, a tiny downloader that scrapes the web.
+usage: you-get [OPTION]... URL...
+
+A tiny downloader that scrapes the web
+
+optional arguments:
+  -V, --version         Print version and exit
+  -h, --help            Print this help message and exit
+
+Dry-run options:
+  (no actual downloading)
+
+  -i, --info            Print extracted information
+  -u, --url             Print extracted information with URLs
+  --json                Print extracted URLs in JSON format
+
+Download options:
+  -n, --no-merge        Do not merge video parts
+  --no-caption          Do not download captions (subtitles, lyrics, danmaku,
+                        ...)
+  -f, --force           Force overwriting existing files
+  --skip-existing-file-size-check
+                        Skip existing file without checking file size
+  -F STREAM_ID, --format STREAM_ID
+                        Set video format to STREAM_ID
+  -O FILE, --output-filename FILE
+                        Set output filename
+  -o DIR, --output-dir DIR
+                        Set output directory
+  -p PLAYER, --player PLAYER
+                        Stream extracted URL to a PLAYER
+  -c COOKIES_FILE, --cookies COOKIES_FILE
+                        Load cookies.txt or cookies.sqlite
+  -t SECONDS, --timeout SECONDS
+                        Set socket timeout
+  -d, --debug           Show traceback and other debug info
+  -I FILE, --input-file FILE
+                        Read non-playlist URLs from FILE
+  -P PASSWORD, --password PASSWORD
+                        Set video visit password to PASSWORD
+  -l, --playlist        Prefer to download a playlist
+  -a, --auto-rename     Auto rename same name different files
+  -k, --insecure        ignore ssl errors
+
+Proxy options:
+  -x HOST:PORT, --http-proxy HOST:PORT
+                        Use an HTTP proxy for downloading
+  -y HOST:PORT, --extractor-proxy HOST:PORT
+                        Use an HTTP proxy for extracting only
+  --no-proxy            Never use a proxy
+  -s HOST:PORT or USERNAME:PASSWORD@HOST:PORT, --socks-proxy HOST:PORT or USERNAME:PASSWORD@HOST:PORT
+                        Use an SOCKS5 proxy for downloading
