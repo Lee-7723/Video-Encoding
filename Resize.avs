@@ -1,6 +1,6 @@
 SetMemoryMax(6000)
 
-LWLibavVideoSource("E:\SSIM_test\clips\00910.m2ts", format="YUV420P8")
+LWLibavVideoSource("D:\Ñ¸À×ÏÂÔØ\Who gave the lobster a knife (VRChat)-UxRLjrcLrzQ.jpg", format="YUV444P10")
 
 ##Resize:
 #Lanczos4Resize(clip, 7680,4320, src_left=0.0, src_top=0.0, src_width=1920, src_height=1080)
@@ -9,5 +9,5 @@ LWLibavVideoSource("E:\SSIM_test\clips\00910.m2ts", format="YUV420P8")
 nnedi3_rpow2(rfactor=4, nsize=0, nns=3, qual=1, etype=0, pscrn=2, threads=0, opt=0, fapprox=15)
 
 ##Sharpen:
-aWarpSharp2(thresh=240, blur=2, type=0, depth=20, chroma=3)
-#vsMSharpen(threshold=5,strength=60,chroma=true)
+#aWarpSharp2(thresh=200, blur=2, type=0, depth=20, chroma=3)
+#vsMSharpen(threshold=10,strength=60,chroma=true)
