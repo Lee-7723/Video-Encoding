@@ -1,0 +1,1 @@
+ffmpeg -i "C:\Users\李竞择\Documents\avs脚本\2x动画.avs" -c:v libx265 -x265-params "level=5.2:colorprim=bt2020:colormatrix=bt2020nc:transfer=smpte2084" -crf 10 -preset slow -c:a copy "F:\Frozen Series\SVP-HDR test.mkv"
