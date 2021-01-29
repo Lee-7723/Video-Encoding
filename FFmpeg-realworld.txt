@@ -1,11 +1,20 @@
+转播用
+$url=$(youtube-dl -g https://www.twitch.tv/itwasmeeio );for($i=1;$i-lt 20;$i--) {ffmpeg -hwaccel dxva2 -re -f hls  -http_proxy "socks5://127.0.0.1:10808" -reconnect_at_eof  1 -itsoffset 5s -reconnect_streamed 1  -rtbufsize 1000M -max_delay 5000000 -i "$url" -c copy -f flv -ignore_io_errors 1 "rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=def5381fa58bcc8e2f235d250f2888a7&schedule=rtmp"}
+
+$url=$(youtube-dl -g https://www.twitch.tv/itwasmeeio );for($i=1;$i-lt 20;$i--) {ffmpeg -hwaccel dxva2 -re -f hls -reconnect_at_eof  1 -itsoffset 5s -reconnect_streamed 1  -rtbufsize 1000M -max_delay 5000000 -i "$url" -c:v h264_nvenc -vb 6000k -preset slow -c:a aac -f flv -ignore_io_errors 1 "rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=def5381fa58bcc8e2f235d250f2888a7&schedule=rtmp"}
 
 
-ffmpeg -i "E:\SSIM_test\clips\00910.m2ts" -pix_fmt yuv420p -c:v libx264 -b:v 20000k -preset fast -c:a aac -ac 2 -ab 320k "x264 8bits.mkv"
+for($i=1;$i-lt 20;$i--) {ffmpeg -hwaccel dxva2 -re -f hls -reconnect_at_eof  1 -itsoffset 10s -reconnect_streamed 1  -rtbufsize 1000M -max_delay 5000000 -i "https://video-weaver.ymq01.hls.ttvnw.net/v1/playlist/CpEF3dltOi99BqlwSm7TaNCA8l3sQaPXUhA3wGlt458YYhzEJg12IdegcQlvARP7hOJFzwkkaZtf4jB9JVjli9IrKw2_GeIOx8DoRIASpq6OZu6048LiNzwMD8dHWkfIWf5J4imQ2p1ciOVkDhEiQwueV82O1FqunxgD0vA_T5NSb4wLoI6krk0fvqgPDl-gXFVjc692m3kE7RiDXwqsxTvUUQVaCU9an07y1yn3fILGY5U26PXEDiBr3PEMJawz_ra7oWwbiwPPacvKWUdJ7G7UTX3mZ8TkfpxeiIr366hry-45be4HkOX_JgZoLBLYuPIAWKJvxD4z5v4_yyaVWHOJJKJnf3bTwtPeKo0_YLwvCapXTiNXYJatMhkE2cn2gtlbGTewcViZzZqnKmZeKEJeCDVM-7fT9sPfjKPkhuuTcK1QS27gH7ipo0Jr_6J7fof4hcCAfXKAmATeiFzAHtQJdOhbwsjsjgDtD1gufp-FB4sFhoZQmiYl1KLJpYeBVPb9GOWcqifLV7cQan3uZTnnj3i8h979kmnbEm9oIBbYNXo4cs4X0ZoFz6AO4HSDvjnzSbu1Lbi7jY5g1T3vpVFr_9Io68qNB1MGL9TbDSGcHH40UCe69gKFN0ak0TlGp5PZXyAE5SURnsXvNhdBl0Kv30Fcfmj-X7BngCsb9riFxwqrl0nTGmKsLr3rGKp4rLW0iH_4Y-V_bZXWJup7TY_KKGLRv3WhZxnM6bu5MedyCxeYUm4xLzNHr3Fv96Ihz-8bBfwFsT9OxCxsdVZojTp5GBxqWQpICj4FqUA_iwnoLrFzwBONyaaGkcumzxnvU-Qnl9VAisYM-OqeosAfIExbuzii8J80ouZKz8DSOvfBp7FpEhCQKg1rESGjUHsL81Q9AwIcGgz9CVNlHM9wXtvkwbs.m3u8" -c copy -f flv -ignore_io_errors 1 "rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=def5381fa58bcc8e2f235d250f2888a7&schedule=rtmp"}
  
 
 ffmpeg -i "E:\SSIM_test\clips\00910.m2ts" -pix_fmt yuv420p -c:v h264_qsv -b:v 20000k -preset veryslow -c:a aac -ac 2 -ab 320k "h264.mkv"
 
 
+Powershell循环语句
+for($i=1;$i-lt 20;$i++) {ffmpeg}
+
+CMD循环语句
+for /l %a in (1,1,100) do 
 
 多轨道截取
 ffmpeg -ss 00:00:00 -i "E:\Frozen.II.2019.1080p.TWN.Blu-ray.AVC.DTS-HD.MA.7.1-nLiBRA\BDMV\STREAM\00906.m2ts" -t 00:01:02.60 -map 0:v -c:v copy  -map 0:a -c:a copy -map 0:s -c:s copy -map_metadata 0  -max_muxing_queue_size 9999 "J:\temp\AIF-pt2.mkv"
@@ -35,6 +44,37 @@ ffmpeg -i "C:\Users\李竞择\Documents\Tencent Files\1981671849\FileRecv\3306c6
 ffmpeg -f concat -safe 0 -i "C:\Users\Lee7723\Documents\avs脚本\合并.txt" -map 0 -c copy "J:\AIF.mkv"
 
 
+时间轴编辑(简单剪辑)
+ffmpeg -i "D:\temp\SCARING PEOPLE IN VRCHAT _ VRCHAT Funny Moments-_9a4nGkeWoo.mkv" -lavfi "[0:v]trim=0:395.45,setpts=PTS-STARTPTS[a];
+[0:a]atrim=0:397.33,asetpts=PTS-STARTPTS[aa];
+[0:v]trim=395.45:397.36,setpts=PTS-STARTPTS[a1];
+[a1]crop=1283:684:318:178,avgblur=25,setpts=PTS-STARTPTS[ablur];
+[0:v]trim=395.45:397.36,setpts=PTS-STARTPTS[a1];
+[a1][ablur]overlay=318:178[a1];
+[0:v]trim=start=397.36,setpts=PTS-STARTPTS[b];
+[0:a]atrim=start=397.33,asetpts=PTS-STARTPTS[ba];
+[a][a1]concat[a];
+[a][aa][b][ba]concat=n=2:v=1:a=1[outv][outa]" -c:v h264_nvenc -preset:v slow -vb 8000k -c:a aac -ab 320k -map [outv] -map [outa] trim.mkv
+
+ffmpeg -hwaccel d3d11va -i "D:\temp\HOW TO KISS IN VRCHAT _ Best VRFunny Moments-p9LC7GgGdCE.mkv" -lavfi "
+[0:v]trim=0:133.3,setpts=PTS-STARTPTS[a1];
+[0:v]trim=133.3:141.80,setpts=PTS-STARTPTS[a2];
+[a2]gblur=30,setpts=PTS-STARTPTS[a2];
+[0:v]trim=141.80:339.25,setpts=PTS-STARTPTS[a3];
+[0:v]trim=339.25:341.30,setpts=PTS-STARTPTS[a4];
+[a4]crop=583:585:667:177,gblur=30,setpts=PTS-STARTPTS[a4];
+[0:v]trim=339.25:341.30,setpts=PTS-STARTPTS[a4b];
+[a4b][a4]overlay=667:177[a4];
+[0:v]trim=341.30,setpts=PTS-STARTPTS[a5];
+[a1][a2][a3][a4][a5]concat=n=5[outv]
+" -map [outv] -map 0:a -c:v h264_nvenc -preset:v slow -vb 7500k -c:a aac -ab 320k blur.mkv
+
+ffmpeg -i "D:\temp\trim.mkv" -lavfi "
+[0:a]atrim=0:274.2,asetpts=PTS-STARTPTS[a5a];
+[0:a]atrim=283.6:514,asetpts=PTS-STARTPTS[a7a];
+[0:a]atrim=start=569.171,asetpts=PTS-STARTPTS[a8a];
+[a5a][a7a][a8a]concat=n=3:v=0:a=1[outa]" -vn -map [outa]  -c:a aac -ab 320k trim2audio.aac
+
 SVP HDR Project temp for 20
 ffmpeg -i "C:\Users\李竞择\Documents\Tencent Files\1981671849\FileRecv\3306c6.avs"  -c:v libx265 -crf 10 -preset veryfast -x265-params "keyint=230:repeat-headers=1:aq-mode=2:qpmin=0:qpmax=16:colorprim=bt2020:colormatrix=bt2020nc:transfer=smpte2084:master-display=G(13250,34500)B(7500,3000)R(34000,16000)WP(15635,16450)L(10000000,500)"  "E:\SVP Project\Frozen II - Ultra HD™-020---.mkv"
 
@@ -53,6 +93,15 @@ ffmpeg -f gdigrab -i desktop -c:v png "j:\temp\test.mkv"
 
 ffmpeg -y  -f dshow -i video="screen-capture-recorder"  -r 60 -c:v hevc_nvenc -b:v 8000k "j:\temp\test.mkv"
 
+
+B站直播推流
+ffmpeg -re -rtbufsize 1000M -stream_loop -1 -i "https://video-weaver.cph01.hls.ttvnw.net/v1/playlist/CowFoacrAZUumDs4LRYPqnwDVsIFxA_8DkV_bUWHsWI-SsJ3DMpFdkK_FvIQTPlX6ZcJ4RNiaSaHNg7rdWBXHB-cOVqy1sC2UrVzBy0aOF4IQrRkzG9iHgR8fTu0ti1fO3t3-bxbPpc72So-BjE-9UrVN_2BhI2aofW1TSmfyNfg-JoPR24Nz8-vl5Y6LntLXGpHENyCiZ-iVKrZyVp4eaGmA6BZR6DzJNebfO9JsPEmgH63yVSfWYiCxL7zKNKdyIhCmn8s1jdHsoNl4PWWhTZhurXtkRzdU2faj90YqDFyzsJXq558mJUyK5hNMZ2M95_SrB3WEEAdg7uBUQ2ttkgHHcrmbZVwyCbxKNuccFDY8c731lUr9QJxC6CVYXKPeEwoslRSkYnAQ0lkx5QjktKRQ8KWQdwUKn-EK43-_o_bEBhnXqzXXkAW8ai32dn4cK3Omx24lAXZX7WGfbXMPkHBRvBcMLCLqOh3C8XdOTbNlUKJGu8UZnL3bkPuM7M8U7l9wtWeZG5TLHypKAZOzyFEwwUr49A_2OpDKzw5fmT4ty8Jinlg7TX3Ns5E-2FEkG4smc4YjFFQ9XYvAWHBVU6IqNyFF7ZWtpECpan1UXZ6JNfwtIENjN2XWheXRGTYK2cpKXxCe26NpmTdPYuBnlK4WfjpFeBb_WzHsDrjWkyf06lwyY2ejRMX2k76ihJmB58Wtn2kGj_zttgeyWWAYcJVjPSK7VCRasqbZpeXQt6TwzmMj4QMCeqE9fBlfb2pCbmkSlfmJPFy1q2Bt00x6zlarcmXex8jmvevwOQNSUtRCXza8MAzGY6I7elScGm_4SqGaxeH6gyUC52kKVw5Z572kBulhKMmnwAw09kAjhIQq4DKmsN6mVGHHYojk4y4aRoMQeyagbzJ6cVW1mQs.m3u8" -c copy -f flv "rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=def5381fa58bcc8e2f235d250f2888a7&schedule=rtmp"
+
+-thread_queue_size 128 -rtbufsize 1000M -f dshow -i video="OBS Virtual Camera" -thread_queue_size 128 -rtbufsize 500M -f dshow -i audio="OBS-Audio"
+-pix_fmt yuv420p -c:v h264_nvenc -vb 8000k -preset:v slow -c:a aac -ab 320k
+-rtsp_transport tcp
+
+ 
 录音（麦克风）
 ffmpeg -f dshow -i audio="@device_cm_{33D9A762-90C8-11D0-BD43-00A0C911CE86}\wave_{59AC4CB8-DC81-41F4-8ED1-DBB00D00AFD9}"  "j:\out.wav"
  
@@ -94,7 +143,9 @@ ffmpeg -ss 00:00:03.83 -i "E:\Frozen.II.2019.1080p.TWN.Blu-ray.AVC.DTS-HD.MA.7.1
 
 
 烧录字幕（需要在要编辑的视频目录下打开命令行，不能用于非文字类字幕）
-ffmpeg -i "C:\Users\19816\Documents\Video Encoding\temp.avs" -vf subtitles="Once.Upon.a.Snowman.2020.DSNYP.1080p.WEBRip.X264.Atmos-EVO(Lee-7723搬).ass" -c:v libx264 -preset slow  -crf 20 "netease.mp4"
+ffmpeg -hwaccel dxva2 -i "D:\temp\The Church of Emi.-rR3BXI05nDQ.mkv" -vf subtitles="The Church of Emi.-rR3BXI05nDQ.ass" -c:v h264_nvenc -preset slow -vb 7.5M -c:a aac -ab 320k "sub.mkv"
+
+完整路径写法：  D\\:/temp/I caught them kissing in the cafeteria-SUEYMGuAiVA.ass
 
 
 烧录字幕（另一种滤镜，可用于sup（PGS）图形字幕）

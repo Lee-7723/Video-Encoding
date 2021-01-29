@@ -1,6 +1,6 @@
 SetMemoryMax(6000)
 
-LWLibavVideoSource("D:\я╦ювобть\Who gave the lobster a knife (VRChat)-UxRLjrcLrzQ.jpg", format="YUV444P10")
+LWLibavVideoSource("C:\Users\19816\Pictures\out.png")
 
 ##Resize:
 #Lanczos4Resize(clip, 7680,4320, src_left=0.0, src_top=0.0, src_width=1920, src_height=1080)
