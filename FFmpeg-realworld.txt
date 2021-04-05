@@ -118,6 +118,10 @@ ffmpeg -i "C:\Users\李竞择\Documents\avs脚本\5x动画.avs" -c:a aac -b:a 32
 ffmpeg -i "C:\Users\李竞择\Documents\avs脚本\5x动画.avs" -c:a aac -b:a 320k -vf format=yuv420p -c:v libx264 -preset slow -x264-params "keyint=230" -b:v 20000k -bufsize 3000k -maxrate 50000k -pass 2 "j:\temp\Try Everything SVP 120fps.mp4"
 
 
+转播用
+$url=$(youtube-dl -g https://www.twitch.tv/dva_vr );for($i=1;$i-lt 20;$i--) {ffmpeg -re -f hls  -reconnect_at_eof  1 -reconnect_streamed 1  -rtbufsize 10M -i "$url" -c copy -f flv -ignore_io_errors 1 "rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=def5381fa58bcc8e2f235d250f2888a7&schedule=rtmp"}
+
+
 转m3u8
 ffmpeg -i "F:\Formula.1.Drive.to.Survive.S02.1080p.NF.WEB-DL.DDP5.1.x264-NTG\Formula.1.Drive.to.Survive.S02E01.Lights.Out.1080p.NF.WEB-DL.DDP5.1.x264-NTG.mkv" -c:v libx264 -preset slow -tune film -vb 3000k -c:a copy -map 0:s -map 0:v -map 0:a -c:s copy -f hls -hls_time 60 -hls_list_size 0 D:\temp\hls-test\test.m3u8
 
