@@ -1,10 +1,20 @@
 
+mpv --http-header-fields='referer:https://www.aliyundrive.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://bj29.cn-beijing.data.alicloudccp.com/5fc8cb8a62e968228ff546e8b076ffb8b79bdaca%2F5fc8cb8acfd3e6b66aa7406e8ea277278ff2caf2?di=bj29&dr=845445&f=602e4ae86896b1c266394b6096d01eb9c16269d3&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27onlineplaytest.mp4&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1619106499&x-oss-signature=PbCuRqSe1nTGlTZy27SzNzgSxq98amTpNoZ9U3kT3ag%3D&x-oss-signature-version=OSS2"
 
-ffmpeg -i "E:\SSIM_test\clips\00910.m2ts" -pix_fmt yuv420p -c:v libx264 -b:v 20000k -preset fast -c:a aac -ac 2 -ab 320k "x264 8bits.mkv"
- 
+mpv --http-header-fields='referer:https://www.bilibili.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://cn-tj2-cmcc-bcache-07.bilivideo.com/upgcxcode/69/19/327441969/327441969-1-30116.m4s?e=ig8euxZM2rNcNbdlhoNvNC8BqJIzNbfqXBvEqxTEto8BTrNvN0GvT90W5JZMkX_YN0MvXg8gNEV4NC8xNEV4N03eN0B5tZlqNxTEto8BTrNvNeZVuJ10Kj_g2UB02J0mN0B5tZlqNCNEto8BTrNvNC7MTX502C8f2jmMQJ6mqF2fka1mqx6gqj0eN0B599M=&uipk=5&nbs=1&deadline=1619103211&gen=playurlv2&os=bcache&oi=3746062882&trid=1f051c5903aa402bba9997c96340722au&platform=pc&upsig=d76d0b489fc75e329f0513ded489a50d&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&cdnid=6778&mid=310265481&orderid=0,3&agrr=0&logo=80000000" --audio-files="https://cn-hbsjz-cmcc-bcache-07.bilivideo.com/upgcxcode/69/19/327441969/327441969-1-30280.m4s?e=ig8euxZM2rNcNbdlhoNvNC8BqJIzNbfqXBvEqxTEto8BTrNvN0GvT90W5JZMkX_YN0MvXg8gNEV4NC8xNEV4N03eN0B5tZlqNxTEto8BTrNvNeZVuJ10Kj_g2UB02J0mN0B5tZlqNCNEto8BTrNvNC7MTX502C8f2jmMQJ6mqF2fka1mqx6gqj0eN0B599M=&uipk=5&nbs=1&deadline=1619103211&gen=playurlv2&os=bcache&oi=3746062882&trid=1f051c5903aa402bba9997c96340722au&platform=pc&upsig=b4ca277eca1e0484d70bebc15b60bde7&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&cdnid=5212&mid=310265481&orderid=0,3&agrr=0&logo=80000000"
 
-ffmpeg -i "E:\SSIM_test\clips\00910.m2ts" -pix_fmt yuv420p -c:v h264_qsv -b:v 20000k -preset veryslow -c:a aac -ac 2 -ab 320k "h264.mkv"
 
+Referer下载视频：
+
+B站：
+ffplay -headers "referer:https://www.bilibili.com/video/av205203642/" -headers "user-agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39"  -i "https://cn-tj2-cmcc-bcache-08.bilivideo.com/upgcxcode/03/08/327030803/327030803-1-116.flv?e=ig8euxZM2rNcNbRjhbdVhwdlhWTghwdVhoNvNC8BqJIzNbfqXBvEqxTEto8BTrNvN0GvT90W5JZMkX_YN0MvXg8gNEV4NC8xNEV4N03eN0B5tZlqNxTEto8BTrNvNeZVuJ10Kj_g2UB02J0mN0B5tZlqNCNEto8BTrNvNC7MTX502C8f2jmMQJ6mqF2fka1mqx6gqj0eN0B599M=&uipk=5&nbs=1&deadline=1619060176&gen=playurlv2&os=bcache&oi=3746063178&trid=eef39aa00b6d4be5a3cfee8f945dd248u&platform=pc&upsig=b61d8f5a577c949ab3252e99d8deb976&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&cdnid=6779&mid=310265481&orderid=0,3&agrr=0&logo=80000000" 
+
+阿里云盘
+ffplay -headers "referer:https://www.aliyundrive.com/" -user_agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39" -i "https://bj29.cn-beijing.data.alicloudccp.com/5fc351dac3b639b7c82e49d7a927f551ba17a8c1%2F5fc351daefd6f532f9d347e2bc8930f04fd6a612?di=bj29&dr=845445&f=5fc351dac3b639b7c82e49d7a927f551ba17a8c1&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27Formula.1.Drive.to.Survive.S01E10.2019.Netflix.WEB-DL.4k.HEVC.DDP-AREY.mkv&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1619109646&x-oss-signature=HkzFUEM2e8AkweC%2B6m4A1xi7j91Pfw%2FpJSuS%2F1nIU4w%3D&x-oss-signature-version=OSS2" 
+
+
+Powershell批量
+get-childitem -name -r *.png | foreach-object {ffmpeg -i $_  "D:\Drivers\QQfiles\1981671849\FileRecv\11班同学照片\from 董岩博\png\$_"}
 
 
 多轨道截取
@@ -29,6 +39,15 @@ ffmpeg -i "120fps测试.mkv" -vf delogo=x=983:y=23:w=275:h=65 -c:v hevc_nvenc -v
 
 
 ffmpeg -i "C:\Users\李竞择\Documents\Tencent Files\1981671849\FileRecv\3306c6.avs" -c:v libx265 -x265-params "level=6:colorprim=bt2020:colormatrix=bt2020nc:transfer=smpte2084:master-display=G(13250,34500)B(7500,3000)R(34000,16000)WP(15635,16450)L(10000000,1)" -crf 24 -preset ultrafast "C:\Users\李竞择\Documents\Tencent Files\1981671849\FileRecv\1232423.mkv"
+
+
+打码
+ffmpeg -hwaccel dxva2 -i "E:\ONIICHAN REJECTS YOU _ VRCHAT Funny Moments-JZgVdH5orYE.mp4" -lavfi "
+[0:v]trim=0:444.3,setpts=PTS-STARTPTS[a],
+[0:v]trim=444.3:450.867,gblur=50,setpts=PTS-STARTPTS[b],
+[0:v]trim=start=450.867,setpts=PTS-STARTPTS[c],
+[a][b][c]concat=n=3[out]
+" -map [out] -map 0:a -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 8M -c:a aac -ab 320k blur.mkv
 
 
 合并用
@@ -119,7 +138,32 @@ ffmpeg -i "C:\Users\李竞择\Documents\avs脚本\5x动画.avs" -c:a aac -b:a 32
 
 
 转播用
-$url=$(youtube-dl -g https://www.twitch.tv/dva_vr );for($i=1;$i-lt 20;$i--) {ffmpeg -re -f hls  -reconnect_at_eof  1 -reconnect_streamed 1  -rtbufsize 10M -i "$url" -c copy -f flv -ignore_io_errors 1 "rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=def5381fa58bcc8e2f235d250f2888a7&schedule=rtmp"}
+$url=$(youtube-dl -g https://www.twitch.tv/glubbable );`
+for($i=1;$i-lt 20;$i--) `
+{ffmpeg `
+-re `
+-f hls  `
+-reconnect_at_eof  1 `
+-reconnect_streamed 1  `
+-rtbufsize 10M `
+-i "$url" `
+-c copy `
+-f flv `
+-ignore_io_errors 1 `
+"rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=def5381fa58bcc8e2f235d250f2888a7&schedule=rtmp"}
+
+
+$url=$(youtube-dl -g https://www.twitch.tv/fustylugsvr );`
+for($i=1;$i-lt 20;$i--) `
+{ffmpeg `
+-re `
+-rtbufsize 10M `
+-i "$url" `
+-c copy `
+-f flv `
+-ignore_io_errors 1 `
+"rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=def5381fa58bcc8e2f235d250f2888a7&schedule=rtmp"}
+
 
 
 转m3u8
@@ -210,3 +254,15 @@ master-display=G(13250,34500)B(7500,3000)R(34000,16000)WP(15635,16450)L(10000000
 （master-display P3）
 
 mp4加上 -movflags +faststart。这样分享文件给别人的时候可以边下边看。
+
+
+编码预设
+-c:a aac `
+-ab 320k 
+
+-c:v h264_qsv `
+-preset veryslow `
+-look_ahead 1 `
+-look_ahead_depth 60 `
+-look_ahead_downsampling 3 `
+-vb 10M `
