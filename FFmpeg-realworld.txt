@@ -1,7 +1,17 @@
+ffplay -i "D:\byrbt\Beginning.of.the.Great.Revival.2011.1080p.BluRay.x265.10bit.DTS-PTH\Beginning.of.the.Great.Revival.2011.1080p.BluRay.x265.10bit.DTS-PTH.mkv"  -af "pan=5.1|c0=c0|c1=c1|c3=c3|c4=c4|c5=c5"
 
-mpv --http-header-fields='referer:https://www.aliyundrive.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://bj29.cn-beijing.data.alicloudccp.com/5fc8cb8a62e968228ff546e8b076ffb8b79bdaca%2F5fc8cb8acfd3e6b66aa7406e8ea277278ff2caf2?di=bj29&dr=845445&f=602e4ae86896b1c266394b6096d01eb9c16269d3&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27onlineplaytest.mp4&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1619106499&x-oss-signature=PbCuRqSe1nTGlTZy27SzNzgSxq98amTpNoZ9U3kT3ag%3D&x-oss-signature-version=OSS2"
 
-mpv --http-header-fields='referer:https://www.bilibili.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://cn-tj2-cmcc-bcache-07.bilivideo.com/upgcxcode/69/19/327441969/327441969-1-30116.m4s?e=ig8euxZM2rNcNbdlhoNvNC8BqJIzNbfqXBvEqxTEto8BTrNvN0GvT90W5JZMkX_YN0MvXg8gNEV4NC8xNEV4N03eN0B5tZlqNxTEto8BTrNvNeZVuJ10Kj_g2UB02J0mN0B5tZlqNCNEto8BTrNvNC7MTX502C8f2jmMQJ6mqF2fka1mqx6gqj0eN0B599M=&uipk=5&nbs=1&deadline=1619103211&gen=playurlv2&os=bcache&oi=3746062882&trid=1f051c5903aa402bba9997c96340722au&platform=pc&upsig=d76d0b489fc75e329f0513ded489a50d&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&cdnid=6778&mid=310265481&orderid=0,3&agrr=0&logo=80000000" --audio-files="https://cn-hbsjz-cmcc-bcache-07.bilivideo.com/upgcxcode/69/19/327441969/327441969-1-30280.m4s?e=ig8euxZM2rNcNbdlhoNvNC8BqJIzNbfqXBvEqxTEto8BTrNvN0GvT90W5JZMkX_YN0MvXg8gNEV4NC8xNEV4N03eN0B5tZlqNxTEto8BTrNvNeZVuJ10Kj_g2UB02J0mN0B5tZlqNCNEto8BTrNvNC7MTX502C8f2jmMQJ6mqF2fka1mqx6gqj0eN0B599M=&uipk=5&nbs=1&deadline=1619103211&gen=playurlv2&os=bcache&oi=3746062882&trid=1f051c5903aa402bba9997c96340722au&platform=pc&upsig=b4ca277eca1e0484d70bebc15b60bde7&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&cdnid=5212&mid=310265481&orderid=0,3&agrr=0&logo=80000000"
+
+在线播放
+
+阿里云盘：
+mpv --http-header-fields='referer:https://www.aliyundrive.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://bj29.cn-beijing.data.alicloudccp.com/LbNIHOFT%2F845445%2F605a738027ae0652bf8e4312a89ea8d8fca6501c%2F605a7380835f4b844650461e87ef3e439c2b1202?di=bj29&dr=845445&f=605a738027ae0652bf8e4312a89ea8d8fca6501c&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27Mission.Impossible.Fallout.2018.1080p.BluRay.DD-EX.5.1.x264-DON.mkv&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1619169041&x-oss-signature=4Vw5iiEHBbW8rQz1ozaNNrwhQJSCnBG3Q6f8M%2FYHUnk%3D&x-oss-signature-version=OSS2"
+
+B站：
+mpv --http-header-fields='referer:https://www.bilibili.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://cn-tj2-cmcc-bcache-06.bilivideo.com/upgcxcode/42/77/327387742/327387742-1-464.mp4?e=ig8euxZM2rNcNbu1hwdVhoMahWdVhwdEto8g5X10ugNcXBlqNxHxNEVE5XREto8KqJZHUa6m5J0SqE85tZvEuENvNo8g2ENvNo8i8o859r1qXg8xNEVE5XREto8GuFGv2U7SuxI72X6fTr859r1qXg8gNEVE5XREto8z5JZC2X2gkX5L5F1eTX1jkXlsTXHeux_f2o859IB_&uipk=5&nbs=1&deadline=1619265276&gen=playurlv2&os=bcache&oi=3746062579&trid=d5f83c065e804f579c015bdfcbec5e53p&platform=pc&upsig=ca7ac94e8c0f7cb3ad249ebb1b88a96c&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&cdnid=6777&mid=310265481&orderid=0,3&agrr=1&logo=80000000"
+
+Onedrive：
+mpv --http-header-fields='cookie: rtFa=vgws1pgojsLBSNC2HynN768A8LX1AkHGbCS13e/G08QmQ0RGNDg5NjEtNTdBOS00MTE0LTk3NzYtN0FCNTVFQTU1RTFDk9wJbg3Q1nvxCGhkOjnTpW3TBWmKRufpmuUtzJ0/0r5jag7fOmIMOJW96Mly4f6wmG26jeWEJWBPnpLkV6yRN2+YvnDZ44u4DW23GNGX7waRev4W5vjWWHQCFnw/RAW5ssFYyPSDmakg+eGQuOmCL2qxKsPk/GbTWOL4w8B7LMsHtFRYVZtsCaM3duXqF5poWasWF6obFxBzMFzwpVMsDc8mAjhXwznwMSTxbteGfCPVPhd5AUvkO/G4m6epQ0DnEPq1wnpirUj43VFpx68FYfu/H8RK70U1olKq1E9rKLYrECtqjN/6+X8ntuNF0tQ9sm8IUhz9m9D7iM07RujgnEUAAAA=; CCSInfo=MjAyMS80LzI3IDE6MjY6MjFc1v7Goo45y0fSBR4bOkgnQOd5RaA9+jtERTrtBev4D1tWjSI2rsoznmPw1ilXHy8/BAkcvV6aaw4E4vbbje0koEWoJzQJ2lpLnoRIOh9My/VJb+pjGsOXOj85HQ8EZx7OlQue8aViOue2iNBaEXMS4x7FYVUA/KTuYp+B/KBs2YUdbMtQXJLkk/Mc5dRwFEJSN5fKGzufoASEmJZQxJWd4LH/TakltLn1OFdOtjJytz8rEXEMC2gBHhS3AFaWUAwpEjdbzKgSJ+M9q7USjVKbxKws3Yv5BDdW/PFaEGIK2uvxGzNYaGSiQqobGTuiNu/qqY2BMTFZJ0W65Etdwj/1EQAAAA==; FedAuth=77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48U1A+VjksMGguZnxtZW1iZXJzaGlwfDEwMDMyMDAxMTNhNTdhYjVAbGl2ZS5jb20sMCMuZnxtZW1iZXJzaGlwfGFkdC00NjE5QGJ1cHQuZWR1LmNuLDEzMjU3MTY0NTUwMDAwMDAwMCwxMzI1Njk3MzA3NTAwMDAwMDAsMTMyNjQwNTU0ODcxODMzNTM0LDU5LjY0LjEyOS4yNDAsMyxjZGY0ODk2MS01N2E5LTQxMTQtOTc3Ni03YWI1NWVhNTVlMWMsLGFkOGQ5ODU5LWRiMGMtNDU1Mi05MjJiLTY4ODE4Mzg0ZGM5Niw1MThlYzA5Zi1iMGFiLTIwMDAtZDVmYi1mMjAxMDY1MjZmMjUsNzZmMGMwOWYtNzBkOC0yMDAwLWRhMTEtM2U1MmU2YmIyOTA0LCwwLDEzMjYzNzA5ODg3MTgzMzUzNCwxMzI2Mzg4MjY4NzE4MzM1MzQsLCxleUo0YlhOZlkyTWlPaUpiWENKRFVERmNJbDBpTENKNGJYTmZjM050SWpvaU1TSjksMjY1MDQ2Nzc0Mzk5OTk5OTk5OSwxMzI2MzUyMDU3MzAwMDAwMDAsZmZmOTJjYjQtM2ZmOS00ZWY4LTgzOTQtNDA4ZmYxMjM1YmExLCwsLCxXaXYxU20vKzh4QWxDa0hDVjQydk5VdVIxQ0hDbmZPS3Zvbjhwa3N3MHFRNDMxNXRHRHlCZWZab3BwNk9iZmNhZzdDa0NucDZrVFB3M3MyRVNMZUV5b1hlT2F6L2pQWndmME0xaDNmc1BVSHZTTEsxbThyTXR5TTBFWThZRGR4M0cySmV6NlM4TFhkeGtRTUUxK0xTTkNvcWpaNHh4NnNuV0dDWDRiRGhkUHpFamlCTWRma1pRd3RWMUYwcUhvQk9GM1lEK1Z3eGh1b3hVMHZFYXBvMmdlMDJFcDdaOUtBZXI4Z3M5TFZiUTJ2N0ZWUHNnYWM4UmwxK2N6MERJMWJKQjRueHdWWkV3eTF3cURzMmI5NXFVeWhMRVFPczQ2cEJrZXovWnNFNmFCckZ1c2NSazJjaFRqMGdvcDE2WUowZlU2U1lVZEdwdWExbGZ5SU1LME1kZ1E9PTwvU1A+; cucg=1' "https://bupteducn-my.sharepoint.com/personal/adt-4619_bupt_edu_cn/_layouts/15/download.aspx?UniqueId=3c2a4510%2D51d7%2D4c75%2D8856%2De8424c8dfa40"
 
 
 Referer下载视频：
@@ -153,7 +163,7 @@ for($i=1;$i-lt 20;$i--) `
 "rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=def5381fa58bcc8e2f235d250f2888a7&schedule=rtmp"}
 
 
-$url=$(youtube-dl -g https://www.twitch.tv/fustylugsvr );`
+$url=$(youtube-dl -g https://www.twitch.tv/sugarcube );`
 for($i=1;$i-lt 20;$i--) `
 {ffmpeg `
 -re `
@@ -257,12 +267,6 @@ mp4加上 -movflags +faststart。这样分享文件给别人的时候可以边�
 
 
 编码预设
--c:a aac `
--ab 320k 
+-c:a aac -ab 320k 
 
--c:v h264_qsv `
--preset veryslow `
--look_ahead 1 `
--look_ahead_depth 60 `
--look_ahead_downsampling 3 `
--vb 10M `
+-c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 10M
