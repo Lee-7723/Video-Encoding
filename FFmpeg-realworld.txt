@@ -1,11 +1,10 @@
-ffplay -i "D:\byrbt\Beginning.of.the.Great.Revival.2011.1080p.BluRay.x265.10bit.DTS-PTH\Beginning.of.the.Great.Revival.2011.1080p.BluRay.x265.10bit.DTS-PTH.mkv"  -af "pan=5.1|c0=c0|c1=c1|c3=c3|c4=c4|c5=c5"
-
+ ffmpeg -i "E:\VEIBAE IS NOT WEARING... _ VRCHAT Funny Moments-PP8G2heUsG0.mp4" -i "E:\censor.mp4" -lavfi "[0:v]trim=start=72.183[a], [1:v][a]concat=n=2:v=1[outv]" -map [outv] -map 0:a -c:a aac -ab 320k -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 10M  blur.mkv
 
 
 在线播放
 
 阿里云盘：
-mpv --http-header-fields='referer:https://www.aliyundrive.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://bj29.cn-beijing.data.alicloudccp.com/LbNIHOFT%2F845445%2F605a738027ae0652bf8e4312a89ea8d8fca6501c%2F605a7380835f4b844650461e87ef3e439c2b1202?di=bj29&dr=845445&f=605a738027ae0652bf8e4312a89ea8d8fca6501c&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27Mission.Impossible.Fallout.2018.1080p.BluRay.DD-EX.5.1.x264-DON.mkv&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1619169041&x-oss-signature=4Vw5iiEHBbW8rQz1ozaNNrwhQJSCnBG3Q6f8M%2FYHUnk%3D&x-oss-signature-version=OSS2"
+mpv --http-header-fields='referer:https://www.aliyundrive.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://bj29.cn-beijing.data.alicloudccp.com/5fc46d20e3a9e6d57aa8437d8e1f5fccd37ac765%2F5fc46d20f813a23cfd9c47a588e1f056881775e4?di=bj29&dr=845445&f=5fc46d20e3a9e6d57aa8437d8e1f5fccd37ac765&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27Zootopia.2016.2160p.UHD.BluRay.x265-TERMiNAL.mkv&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1619360806&x-oss-signature=U3A6pVgyvnL%2BK1mbJ47zgXMAkVodq6XzCjG765G%2FefU%3D&x-oss-signature-version=OSS2"
 
 B站：
 mpv --http-header-fields='referer:https://www.bilibili.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://cn-tj2-cmcc-bcache-06.bilivideo.com/upgcxcode/42/77/327387742/327387742-1-464.mp4?e=ig8euxZM2rNcNbu1hwdVhoMahWdVhwdEto8g5X10ugNcXBlqNxHxNEVE5XREto8KqJZHUa6m5J0SqE85tZvEuENvNo8g2ENvNo8i8o859r1qXg8xNEVE5XREto8GuFGv2U7SuxI72X6fTr859r1qXg8gNEVE5XREto8z5JZC2X2gkX5L5F1eTX1jkXlsTXHeux_f2o859IB_&uipk=5&nbs=1&deadline=1619265276&gen=playurlv2&os=bcache&oi=3746062579&trid=d5f83c065e804f579c015bdfcbec5e53p&platform=pc&upsig=ca7ac94e8c0f7cb3ad249ebb1b88a96c&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&cdnid=6777&mid=310265481&orderid=0,3&agrr=1&logo=80000000"
@@ -163,7 +162,7 @@ for($i=1;$i-lt 20;$i--) `
 "rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=def5381fa58bcc8e2f235d250f2888a7&schedule=rtmp"}
 
 
-$url=$(youtube-dl -g https://www.twitch.tv/sugarcube );`
+$url=$(youtube-dl -g https://www.twitch.tv/bigboy );`
 for($i=1;$i-lt 20;$i--) `
 {ffmpeg `
 -re `
