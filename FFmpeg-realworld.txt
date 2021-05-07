@@ -1,4 +1,5 @@
- ffmpeg -i "E:\VEIBAE IS NOT WEARING... _ VRCHAT Funny Moments-PP8G2heUsG0.mp4" -i "E:\censor.mp4" -lavfi "[0:v]trim=start=72.183[a], [1:v][a]concat=n=2:v=1[outv]" -map [outv] -map 0:a -c:a aac -ab 320k -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 10M  blur.mkv
+ ffmpeg -i {} -c:a aac -ab 320k -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 6M {}
+
 
 
 在线播放
