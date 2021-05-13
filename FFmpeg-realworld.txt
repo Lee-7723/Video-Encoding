@@ -1,11 +1,15 @@
- ffmpeg -i {} -c:a aac -ab 320k -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 6M {}
+ffmpeg -hwaccel dxva2 -i "E:\[VR Lolathon] Guess the Movie using VR Fullbody Tracking!-BUKAN_qhL0c.mkv" -headers "referer:https://www.bilibili.com/video/" -headers "user-agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39"  -hwaccel dxva2  -i "https://cn-tj2-cmcc-bcache-09.bilivideo.com/upgcxcode/34/78/337727834/337727834-1-30080.m4s?e=ig8euxZM2rNcNbdlhoNvNC8BqJIzNbfqXBvEqxTEto8BTrNvN0GvT90W5JZMkX_YN0MvXg8gNEV4NC8xNEV4N03eN0B5tZlqNxTEto8BTrNvNeZVuJ10Kj_g2UB02J0mN0B5tZlqNCNEto8BTrNvNC7MTX502C8f2jmMQJ6mqF2fka1mqx6gqj0eN0B599M=&uipk=5&nbs=1&deadline=1620888420&gen=playurlv2&os=bcache&oi=3746058299&trid=0000d8242d0289aa4330ae54ddc6b0dcefb0u&platform=pc&upsig=5121f1b842225dc4a8261f1a6484a633&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&cdnid=6780&mid=310265481&orderid=0,3&agrr=1&logo=80000000"  -lavfi [1:v]fps=30[a],[a][0:v]ssim=f=a.log -f null -
+
+
+ffmpeg -hwaccel dxva2  -i "D:\OneDrive - lijingze\文档\Video Encoding\Resize.avs" -hwaccel dxva2 -i "E:\Drumsy-sub.mkv" -map 0 -map 1:a -c:a copy -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 8M Drumsy-sub.mkv
+
 
 
 
 在线播放
 
 阿里云盘：
-mpv --http-header-fields='referer:https://www.aliyundrive.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://bj29.cn-beijing.data.alicloudccp.com/5fc46d20e3a9e6d57aa8437d8e1f5fccd37ac765%2F5fc46d20f813a23cfd9c47a588e1f056881775e4?di=bj29&dr=845445&f=5fc46d20e3a9e6d57aa8437d8e1f5fccd37ac765&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27Zootopia.2016.2160p.UHD.BluRay.x265-TERMiNAL.mkv&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1619360806&x-oss-signature=U3A6pVgyvnL%2BK1mbJ47zgXMAkVodq6XzCjG765G%2FefU%3D&x-oss-signature-version=OSS2"
+mpv --http-header-fields='referer:https://www.aliyundrive.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://bj29.cn-beijing.data.alicloudccp.com/0MiZrUQ8%2F845445%2F6082d61592903e82500b4e6d849761c77bdc78a4%2F6082d615c9392e73b3634413bec4754b4e5efcac?di=bj29&dr=845445&f=6082d61592903e82500b4e6d849761c77bdc78a4&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27Live.Free.or.Die.Hard.2007.BluRay.1080p.x264.DTS-HD.MA.5.1-HDChina.mkv&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1620826109&x-oss-signature=x55gqzrbYZUQx6bvwlgeJgm0wqKqUq%2FcYFMFra8sbCs%3D&x-oss-signature-version=OSS2"
 
 B站：
 mpv --http-header-fields='referer:https://www.bilibili.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://cn-sxty2-cu-v-05.bilivideo.com/upgcxcode/82/40/329954082/329954082_nb2-1-80.flv?e=ig8euxZM2rNcNbU3hwdVhoMBnwdVhwdEto8g5X10ugNcXBlqNxHxNEVE5XREto8KqJZHUa6m5J0SqE85tZvEuENvNo8g2ENvNo8i8o859r1qXg8xNEVE5XREto8GuFGv2U7SuxI72X6fTr859r1qXg8gNEVE5XREto8z5JZC2X2gkX5L5F1eTX1jkXlsTXHeux_f2o859IB_&uipk=5&nbs=1&deadline=1620112599&gen=playurlv2&os=vcache&oi=1026793212&trid=ed7cba696eed4047aba32d117c11345ep&platform=pc&upsig=28a3af08f1f67029d7e7fd981324b49b&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&cdnid=10927&mid=310265481&orderid=0,3&agrr=1&logo=80000000" --audio-file="a"
@@ -17,7 +21,7 @@ mpv --http-header-fields='cookie: rtFa=vgws1pgojsLBSNC2HynN768A8LX1AkHGbCS13e/G0
 Referer下载视频：
 
 B站：
-ffplay -headers "referer:https://www.bilibili.com/video/av205203642/" -headers "user-agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39"  -i "https://cn-tj2-cmcc-bcache-08.bilivideo.com/upgcxcode/03/08/327030803/327030803-1-116.flv?e=ig8euxZM2rNcNbRjhbdVhwdlhWTghwdVhoNvNC8BqJIzNbfqXBvEqxTEto8BTrNvN0GvT90W5JZMkX_YN0MvXg8gNEV4NC8xNEV4N03eN0B5tZlqNxTEto8BTrNvNeZVuJ10Kj_g2UB02J0mN0B5tZlqNCNEto8BTrNvNC7MTX502C8f2jmMQJ6mqF2fka1mqx6gqj0eN0B599M=&uipk=5&nbs=1&deadline=1619060176&gen=playurlv2&os=bcache&oi=3746063178&trid=eef39aa00b6d4be5a3cfee8f945dd248u&platform=pc&upsig=b61d8f5a577c949ab3252e99d8deb976&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&cdnid=6779&mid=310265481&orderid=0,3&agrr=0&logo=80000000" 
+ffplay -headers "referer:https://www.bilibili.com/video/" -headers "user-agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39"  -i "https://cn-tj2-cmcc-bcache-07.bilivideo.com/upgcxcode/62/68/337726862/337726862-1-30116.m4s?e=ig8euxZM2rNcNbdlhoNvNC8BqJIzNbfqXBvEqxTEto8BTrNvN0GvT90W5JZMkX_YN0MvXg8gNEV4NC8xNEV4N03eN0B5tZlqNxTEto8BTrNvNeZVuJ10Kj_g2UB02J0mN0B5tZlqNCNEto8BTrNvNC7MTX502C8f2jmMQJ6mqF2fka1mqx6gqj0eN0B599M=&uipk=5&nbs=1&deadline=1620875584&gen=playurlv2&os=bcache&oi=3746062530&trid=0000a03d330e7cef4e239f26d0a15b65efe1u&platform=pc&upsig=d885c7ca9ca7d5b7af41c44f33818a70&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&cdnid=6778&mid=310265481&orderid=0,3&agrr=0&logo=80000000" 
 
 阿里云盘
 ffplay -headers "referer:https://www.aliyundrive.com/" -user_agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39" -i "https://bj29.cn-beijing.data.alicloudccp.com/5fc351dac3b639b7c82e49d7a927f551ba17a8c1%2F5fc351daefd6f532f9d347e2bc8930f04fd6a612?di=bj29&dr=845445&f=5fc351dac3b639b7c82e49d7a927f551ba17a8c1&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27Formula.1.Drive.to.Survive.S01E10.2019.Netflix.WEB-DL.4k.HEVC.DDP-AREY.mkv&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1619109646&x-oss-signature=HkzFUEM2e8AkweC%2B6m4A1xi7j91Pfw%2FpJSuS%2F1nIU4w%3D&x-oss-signature-version=OSS2" 
@@ -163,7 +167,7 @@ for($i=1;$i-lt 20;$i--) `
 "rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=def5381fa58bcc8e2f235d250f2888a7&schedule=rtmp"}
 
 
-$url=$(youtube-dl -g https://www.twitch.tv/bigboy );`
+$url=$(youtube-dl -g https://www.twitch.tv/iluluhd );`
 for($i=1;$i-lt 20;$i--) `
 {ffmpeg `
 -re `
@@ -254,6 +258,15 @@ ffmpeg -i "C:\Users\19816\Documents\Video Encoding\mvtools.avs" -c:v h264_qsv -p
 ffmpeg -i "E:\SSIM_test\clips\high.mkv" -c copy -metadata:s:v:0 title="Enlarged by Lee-7723" -metadata:s:v:0 comment="Encodeing & subtitle by Lee-7723" metatest.mkv
 
 
+mp4\mov视频加密解密
+https://www.jianshu.com/p/ea0761f6aa04
+
+ffmpeg -i "E:\Drumsy-sub.mkv" -t 6s -encryption_scheme cenc-aes-ctr -encryption_key 6B305A0E073A9A7C6B305A0E073A9A7C -encryption_kid 6B305A0E073A9A7C6B305A0E073A9A7C -c copy test.mp4
+
+
+ffplay -decryption_key 6B305A0E073A9A7C6B305A0E073A9A7C test.mp4
+
+
 HDR元数据
 ffmpeg -i "E:\SSIM_test\clips\00910.m2ts" -vf zscale=p=2020:t=smpte2084:m=2020_ncl:pin=709:tin=bt709:min=709:npl=200,format=yuv420p10 -c:v libx265 -x265-params "level=6:colorprim=bt2020:colormatrix=bt2020nc:transfer=smpte2084:master-display=G(8500,39850)B(6550,2300)R(35400,14600)WP(15635,16450)L(10000000,50)" -b:v 20000k -preset fast -c:a aac -ac 2 -ab 320k "test-HDR.mkv"
 
@@ -267,6 +280,6 @@ mp4加上 -movflags +faststart。这样分享文件给别人的时候可以边�
 
 
 编码预设
--c:a aac -ab 320k 
+-c:a aac -ab 529k 
 
 -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 10M
