@@ -1,4 +1,4 @@
-ffmpeg -hwaccel dxva2 -i "E:\[VR Lolathon] Guess the Movie using VR Fullbody Tracking!-BUKAN_qhL0c.mkv" -headers "referer:https://www.bilibili.com/video/" -headers "user-agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39"  -hwaccel dxva2  -i "https://cn-tj2-cmcc-bcache-09.bilivideo.com/upgcxcode/34/78/337727834/337727834-1-30080.m4s?e=ig8euxZM2rNcNbdlhoNvNC8BqJIzNbfqXBvEqxTEto8BTrNvN0GvT90W5JZMkX_YN0MvXg8gNEV4NC8xNEV4N03eN0B5tZlqNxTEto8BTrNvNeZVuJ10Kj_g2UB02J0mN0B5tZlqNCNEto8BTrNvNC7MTX502C8f2jmMQJ6mqF2fka1mqx6gqj0eN0B599M=&uipk=5&nbs=1&deadline=1620888420&gen=playurlv2&os=bcache&oi=3746058299&trid=0000d8242d0289aa4330ae54ddc6b0dcefb0u&platform=pc&upsig=5121f1b842225dc4a8261f1a6484a633&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&cdnid=6780&mid=310265481&orderid=0,3&agrr=1&logo=80000000"  -lavfi [1:v]fps=30[a],[a][0:v]ssim=f=a.log -f null -
+ffmpeg -hwaccel dxva2 -i "D:\OneDrive - lijingze\文档\Video Encoding\Resize.avs" -hwaccel dxva2 -i "E:\[GreatMoonAroma] I make amazing VR art gallery in VRchat!!! -NIsypLFrQfg.mkv" -map 0 -map 1:a -c:a aac -ab 529k -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 8M GMA-sub.mkv
 
 
 ffmpeg -hwaccel dxva2  -i "D:\OneDrive - lijingze\文档\Video Encoding\Resize.avs" -hwaccel dxva2 -i "E:\Drumsy-sub.mkv" -map 0 -map 1:a -c:a copy -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 8M Drumsy-sub.mkv
@@ -28,7 +28,7 @@ ffplay -headers "referer:https://www.aliyundrive.com/" -user_agent "Mozilla/5.0 
 
 
 Powershell批量
-get-childitem -name -r *.png | foreach-object {ffmpeg -i $_  "D:\Drivers\QQfiles\1981671849\FileRecv\11班同学照片\from 董岩博\png\$_"}
+get-childitem -name -r *.png | foreach-object {ffmpeg -i $_  -vf scale=25*25 font\$_}
 
 
 多轨道截取
@@ -167,7 +167,7 @@ for($i=1;$i-lt 20;$i--) `
 "rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=def5381fa58bcc8e2f235d250f2888a7&schedule=rtmp"}
 
 
-$url=$(youtube-dl -g https://www.twitch.tv/iluluhd );`
+$url=$(youtube-dl -g https://www.twitch.tv/leafions );`
 for($i=1;$i-lt 20;$i--) `
 {ffmpeg `
 -re `

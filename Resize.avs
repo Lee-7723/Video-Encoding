@@ -1,6 +1,6 @@
 SetMemoryMax(6000)
-LWLibavVideoSource("E:\Relationship Speedrun.-o9dclQsyCXY.mkv", format="YUV420P8")
-#DuplicateFrame(1,1,1,1,1)
+LWLibavVideoSource("E:\[GreatMoonAroma] I make amazing VR art gallery in VRchat!!! -NIsypLFrQfg.mkv", format="YUV420P8")
+DuplicateFrame(1)
 #trim(1,18196)
 
 ##Resize:
@@ -15,4 +15,4 @@ LWLibavVideoSource("E:\Relationship Speedrun.-o9dclQsyCXY.mkv", format="YUV420P8
 #aSharp(T=2.0, D=4.0, B=-1.0, hqbf=false)#for 4k
 aSharp(T=0.6, D=4.0, B=-1.0, hqbf=false)#for 1080P
 
-TextSub(file="E:\Relationship Speedrun.-o9dclQsyCXY.ass",  fps=30)
+TextSub(file="E:\[GreatMoonAroma] I make amazing VR art gallery in VRchat!!!  .ass",  fps=60)
