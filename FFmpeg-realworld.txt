@@ -1,9 +1,20 @@
-ffmpeg -hwaccel dxva2 -i "D:\OneDrive - lijingze\文档\Video Encoding\Resize.avs" -hwaccel dxva2 -i "E:\[GreatMoonAroma] I make amazing VR art gallery in VRchat!!! -NIsypLFrQfg.mkv" -map 0 -map 1:a -c:a aac -ab 529k -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 8M GMA-sub.mkv
+ffmpeg `
+-re `
+-rtbufsize 10M `
+-i "encrypt_test.mp4" `
+-c copy `
+-f flv `
+-ignore_io_errors 1 `
+"rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=def5381fa58bcc8e2f235d250f2888a7&schedule=rtmp"
 
 
-ffmpeg -hwaccel dxva2  -i "D:\OneDrive - lijingze\文档\Video Encoding\Resize.avs" -hwaccel dxva2 -i "E:\Drumsy-sub.mkv" -map 0 -map 1:a -c:a copy -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 8M Drumsy-sub.mkv
-
-
+ffmpeg -hwaccel dxva2 -i "E:\[VRFunny] MY PATREON IS WHOLESOME _ VRCHAT Funny Moments-JqRrJLubkgo.mkv" -lavfi "
+[0:v]trim=0:354.521,setpts=PTS-STARTPTS[a],
+[0:v]trim=start=401.36,setpts=PTS-STARTPTS[c],
+[0:a]atrim=0:354.521,asetpts=PTS-STARTPTS[aa],
+[0:a]atrim=start=401.36,asetpts=PTS-STARTPTS[ca],
+[a][aa][c][ca]concat=n=2:a=1[out][outa]
+" -map [out] -map [outa] -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 8M -c:a aac -ab 320k blur.mkv
 
 
 在线播放
@@ -21,7 +32,7 @@ mpv --http-header-fields='cookie: rtFa=vgws1pgojsLBSNC2HynN768A8LX1AkHGbCS13e/G0
 Referer下载视频：
 
 B站：
-ffplay -headers "referer:https://www.bilibili.com/video/" -headers "user-agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39"  -i "https://cn-tj2-cmcc-bcache-07.bilivideo.com/upgcxcode/62/68/337726862/337726862-1-30116.m4s?e=ig8euxZM2rNcNbdlhoNvNC8BqJIzNbfqXBvEqxTEto8BTrNvN0GvT90W5JZMkX_YN0MvXg8gNEV4NC8xNEV4N03eN0B5tZlqNxTEto8BTrNvNeZVuJ10Kj_g2UB02J0mN0B5tZlqNCNEto8BTrNvNC7MTX502C8f2jmMQJ6mqF2fka1mqx6gqj0eN0B599M=&uipk=5&nbs=1&deadline=1620875584&gen=playurlv2&os=bcache&oi=3746062530&trid=0000a03d330e7cef4e239f26d0a15b65efe1u&platform=pc&upsig=d885c7ca9ca7d5b7af41c44f33818a70&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&cdnid=6778&mid=310265481&orderid=0,3&agrr=0&logo=80000000" 
+ffplay -headers "referer:https://www.bilibili.com/" -headers "user-agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39"  -i "https://cn-tj2-cmcc-bcache-07.bilivideo.com/upgcxcode/62/68/337726862/337726862-1-30116.m4s?e=ig8euxZM2rNcNbdlhoNvNC8BqJIzNbfqXBvEqxTEto8BTrNvN0GvT90W5JZMkX_YN0MvXg8gNEV4NC8xNEV4N03eN0B5tZlqNxTEto8BTrNvNeZVuJ10Kj_g2UB02J0mN0B5tZlqNCNEto8BTrNvNC7MTX502C8f2jmMQJ6mqF2fka1mqx6gqj0eN0B599M=&uipk=5&nbs=1&deadline=1620875584&gen=playurlv2&os=bcache&oi=3746062530&trid=0000a03d330e7cef4e239f26d0a15b65efe1u&platform=pc&upsig=d885c7ca9ca7d5b7af41c44f33818a70&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&cdnid=6778&mid=310265481&orderid=0,3&agrr=0&logo=80000000" 
 
 阿里云盘
 ffplay -headers "referer:https://www.aliyundrive.com/" -user_agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39" -i "https://bj29.cn-beijing.data.alicloudccp.com/5fc351dac3b639b7c82e49d7a927f551ba17a8c1%2F5fc351daefd6f532f9d347e2bc8930f04fd6a612?di=bj29&dr=845445&f=5fc351dac3b639b7c82e49d7a927f551ba17a8c1&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27Formula.1.Drive.to.Survive.S01E10.2019.Netflix.WEB-DL.4k.HEVC.DDP-AREY.mkv&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1619109646&x-oss-signature=HkzFUEM2e8AkweC%2B6m4A1xi7j91Pfw%2FpJSuS%2F1nIU4w%3D&x-oss-signature-version=OSS2" 
@@ -152,7 +163,7 @@ ffmpeg -i "C:\Users\李竞择\Documents\avs脚本\5x动画.avs" -c:a aac -b:a 32
 
 
 转播用
-$url=$(youtube-dl -g https://www.twitch.tv/glubbable );`
+$url=$(youtube-dl -g https://www.twitch.tv/radiantsoul_tv );`
 for($i=1;$i-lt 20;$i--) `
 {ffmpeg `
 -re `
@@ -167,7 +178,7 @@ for($i=1;$i-lt 20;$i--) `
 "rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=def5381fa58bcc8e2f235d250f2888a7&schedule=rtmp"}
 
 
-$url=$(youtube-dl -g https://www.twitch.tv/leafions );`
+$url=$(youtube-dl -g https://www.twitch.tv/sugarcube );`
 for($i=1;$i-lt 20;$i--) `
 {ffmpeg `
 -re `
@@ -261,10 +272,12 @@ ffmpeg -i "E:\SSIM_test\clips\high.mkv" -c copy -metadata:s:v:0 title="Enlarged 
 mp4\mov视频加密解密
 https://www.jianshu.com/p/ea0761f6aa04
 
-ffmpeg -i "E:\Drumsy-sub.mkv" -t 6s -encryption_scheme cenc-aes-ctr -encryption_key 6B305A0E073A9A7C6B305A0E073A9A7C -encryption_kid 6B305A0E073A9A7C6B305A0E073A9A7C -c copy test.mp4
+ffmpeg -hwaccel dxva2 -i "E:\[Extreme E] Electric Odyssey S01E01 _ Build Up to Desert X Prix _ Extreme E.mp4" -encryption_scheme cenc-aes-ctr -encryption_key 6B305A0E073A9A7C6B305A0E073A9A7C -encryption_kid 6B305A0E073A9A7C6B305A0E073A9A7C -c copy encrypt_test.mp4
 
 
 ffplay -decryption_key 6B305A0E073A9A7C6B305A0E073A9A7C test.mp4
+
+mpv --demuxer-lavf-o=decryption_key=6B305A0E073A9A7C6B305A0E073A9A7C encrypt_test.mp4
 
 
 HDR元数据
