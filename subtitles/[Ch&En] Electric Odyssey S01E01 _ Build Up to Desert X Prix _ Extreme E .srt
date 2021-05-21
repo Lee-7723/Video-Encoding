@@ -35,7 +35,7 @@ Everyone can do something.
 
 8
 00:00:34,467 --> 00:00:38,925
-而不是坐等世界流逝
+如今已经不是我们只能坐等世界流逝的时代了
 It's not a time when we can just sit and watch the world go by.
 
 9
@@ -1125,7 +1125,7 @@ that is threatened by sea level rises and plastic pollution.
 
 226
 00:15:10,285 --> 00:15:13,353
-帮助保护受到海平面上升和塑料污染威胁的重要海龟产卵地
+有些车手亲自去查看
 And some of the drivers were taken to have a look for themselves.
 
 227
@@ -1265,633 +1265,791 @@ It's very powerful, quite reactive car, so you feel so fast about the dunes on t
 
 254
 00:17:07,398 --> 00:17:08,571
+很震撼
 It's impressive.
 
 255
 00:17:09,600 --> 00:17:15,458
-The Odyssey 21 is equipped with duel motors feeding the front and rear axels independently.
+Odyssey 21配备有双电机，独立向前后传动轴输出动力
+The Odyssey 21 is equipped with duel motors feeding the front and rear axles independently.
 
 256
 00:17:15,458 --> 00:17:20,970
+车手可以直接从驾驶舱调整扭矩平衡
 The driver can move the torque balance between the motors directly from the cockpit. 
 
 257
 00:17:20,970 --> 00:17:24,362
+这有利于他们根据速度、抓地力和地形
 This allows them to maximize energy efficiency to the wheels, 
 
 258
 00:17:24,362 --> 00:17:27,690
+来最大化能量效能
 depending on factors like speed, grip and terrain.
 
 259
 00:17:28,601 --> 00:17:31,350
+这是关于车的一些知识
 So that's a bit about what powers the car
 
 260
 00:17:31,350 --> 00:17:35,980
+那么五场X-Prix的赛制是怎样的呢？
 But what about the racing format of the five X-Prix championship series?
 
 261
 00:17:35,980 --> 00:17:38,706
+一场Extreme E赛事包含两圈
 An Extreme E race consists of two laps. 
 
 262
 00:17:38,706 --> 00:17:42,802
+男女车手必须以任意顺序各完成一圈
 The male and female driver must complete one lap each in any order, 
 
 263
 00:17:42,802 --> 00:17:45,590
+并且可以在最后一刻选择谁出发
 and can choose at the last moment who starts.
 
 264
 00:17:45,590 --> 00:17:51,450
+每支队伍有两次增强推进的使用机会，他们可以在这两圈内进行使用
 Each team has two hyperdrive power boosts they can activate on lap one and lap two of the race.
 
 265
 00:17:51,450 --> 00:17:56,590
+第一天是排位赛。第一节九支车队都要上赛道
 Day one is qualifying. Session one sees all nine teams do two laps.
 
 266
 00:17:56,590 --> 00:17:58,234
+每支车队中，每位车手一圈，共两圈
 One from each of their drivers. 
 
 267
 00:17:58,234 --> 00:18:01,680
+第二节所有车队再次出来到赛道上
 Session two sees all the teams head out to the course again.
 
 268
 00:18:01,680 --> 00:18:06,170
+两节的综合成绩将决定排位名次
 The time set from both sessions are then combined to make up the qualifying order, 
 
 269
 00:18:06,170 --> 00:18:09,434
+同时，第一名将获得周末的首个积分
 and with it, the first championship points of the weekend.
 
 270
 00:18:10,285 --> 00:18:13,050
+前三名直接进入半决赛
 The top 3 go straight to the semifinal
 
 271
 00:18:13,050 --> 00:18:15,639
-Fourth, fifth and six go to the crazy race, 
+第四、五、六名进入Crazy Race
+Fourth, fifth and six go to the Crazy Race, 
 
 272
 00:18:15,639 --> 00:18:20,951
-with the bottom three heading to the shootout to decide the last three finishing places of the weekend.
+最后三名进入Shootout，来决定周末比赛的最后三名的次序
+with the bottom three heading to the Shootout to decide the last three finishing places of the weekend.
 
 273
 00:18:21,503 --> 00:18:24,030
+第二天是半决赛
 Day two start with the semifinal
 
 274
 00:18:24,030 --> 00:18:26,734
+前两名继续进入决赛
 With the top two finishes proceeding to the final, 
 
 275
 00:18:26,734 --> 00:18:31,820
+剩下的一个位置由Crazy Race的赢家代替
 leaving one spot up for grabs to be claimed by the winner of the crazy race.
 
 276
 00:18:31,820 --> 00:18:35,634
+决赛中首个冲线的队伍将赢下本场X-Prix分站赛
 The team that crosses the line first in the final wins the X-Prix, 
 
 277
 00:18:35,634 --> 00:18:39,790
+同时获得宝贵的25分年度积分
 taking with it the glory plus twenty five championship points.
 
 278
 00:18:39,790 --> 00:18:43,450
+五场X-Prix分站赛后的总积分决定年度车队总冠军
 All five X-Prixs count towards the overall team's title.
 
 279
 00:18:43,450 --> 00:18:44,786
+但在车手排行榜中
 But in the driver's championship, 
 
 280
 00:18:44,786 --> 00:18:51,548
+参赛者可以将本赛季最差的结果赌在可能的冠军车队上
 competitors can drop their worst result of the season in their bid to be crowned the first Extreme E champion.
 
 281
 00:18:53,323 --> 00:18:56,380
+现在你知道比赛是怎么进行的了
 Now you're up to speed on how the racing works. 
 
 282
 00:18:56,380 --> 00:18:59,819
+下面来看看在排位赛中，车手们在沙漠赛道上的表现
 It's time to see what happened when the drivers took to the desert course 
 
 283
 00:18:59,819 --> 00:19:03,550
+这是他们第一次以冲刺模式驾驶Odyssey 21
 and drove their Odyssey 21s in anger for the first time, 
 
 284
 00:19:03,550 --> 00:19:05,563
+这是他们第一次以冲刺模式驾驶Odyssey 21
 as they headed out for qualifying.
 
 285
 00:19:07,278 --> 00:19:10,977
-First to set a lap was Louis Hamilton's team X-44, 
+第一个做出成绩的是Lewis Hamilton的队伍X-44
+First to set a lap was Lewis Hamilton's team X-44, 
 
 286
 00:19:10,977 --> 00:19:15,548
+他们做出了一个极快的标杆成绩
 who set a super fast time to set a high standard for the others to chase. 
 
 287
 00:19:15,548 --> 00:19:18,646
+接下来出场的是Veloce Racing队
 Next to take to the dunes was Veloce Racing. 
 
 288
 00:19:18,646 --> 00:19:20,491
+téphane Sarrazin率先驾驶
 Stéphane Sarrazin took the start 
 
 289
 00:19:20,491 --> 00:19:27,097
+W Series世界冠军Jamie Chadwick在指挥中心等候接手第二程
 with W Series champion Jamie Chadwick waiting in the command center to take over for the second leg of the run.
 
 290
 00:19:27,097 --> 00:19:29,771
+不幸的是
 Unfortunately for her round the Veloce team, 
 
 291
 00:19:29,771 --> 00:19:34,766
+Stéphane在下坡段后撞到了一颗树根，导致了一次严重车祸
 Stéphane hits a tree root as he sped away from the drop and had a massive crash 
 
 292
 00:19:34,766 --> 00:19:38,436
+严重损伤了车辆的防滚架
 damaging the roll cage of their Odyssey 21 irreparably.
 
 293
 00:19:38,436 --> 00:19:40,782
+终结了他们的周末
 And ending their weekend. 
 
 294
 00:19:40,782 --> 00:19:43,428
+接下来的排位赛仍是精彩不断
 There was more drama to follow in qualifying. 
 
 295
 00:19:43,428 --> 00:19:47,342
+Andretti United车队的Timmy Hansen跑出了一个漂亮的出场圈
 Andretti United Timmy Hansen set a great opening lap.
 
 296
 00:19:47,342 --> 00:19:50,526
+但是就在他把车交给Catie Munnings之前
 but just before he handed over the car to Catie Munnings, 
 
 297
 00:19:50,526 --> 00:19:53,323
+他遇到了一个缓慢的保胎
 he picks up a slow puncture on the rear tire.
 
 298
 00:19:53,684 --> 00:19:55,160
+车的右后胎挂掉了
 The right rear's gone down on the car, 
 
 299
 00:19:55,160 --> 00:19:56,248
+你可以看到车胎飘来飘去
 you can see it flailing about, 
 
 300
 00:19:56,248 --> 00:19:57,464
+我还奇怪为什么甩出来这么多尘土
 I wonder why the dust was so much. 
 
 301
 00:19:57,464 --> 00:20:00,661
+那么Catie Munnings需要处理好这个爆胎
 So Catie Munnings is now going to have to manage that puncture. 
 
 302
 00:20:00,661 --> 00:20:02,050
+看看这场面
 Look at this.
 
 303
 00:20:02,050 --> 00:20:04,300
+Catie Munnings仍然在推
 Catie is still on a big push. 
 
 304
 00:20:04,300 --> 00:20:05,608
+加油Catie！
 Come on Catie. 
 
 305
 00:20:05,608 --> 00:20:07,080
+轮胎已经脱离轮毂了
 The tire is off the rim. 
 
 306
 00:20:07,080 --> 00:20:07,849
+确实已经脱离了
 It is off the rim. 
 
 307
 00:20:07,849 --> 00:20:09,915
+她不断地左右打死方向
 she's on the lock stocks both ways round. 
 
 308
 00:20:09,915 --> 00:20:13,022
+现在只剩下几米撑过终点线
 Now she's just got a few meters to go to make it to the finish line.
 
 309
 00:20:13,022 --> 00:20:16,060
+成功把车带回，漂亮！
 Brings the car home,  brilliant drive.  
 
 310
 00:20:16,060 --> 00:20:19,197
+我们在第一段后面显然遭遇了缓慢爆胎
 We obviously had a slow puncher, just at the end of the first sector, 
 
 311
 00:20:19,197 --> 00:20:20,989
+我过沙丘的时候后胎就直接撑不住了
 I went over a crest and the rear just snapped, 
 
 312
 00:20:20,989 --> 00:20:24,060
+之后就全是靠着轮毂撑回来的
 and from then it was just you know on the rim the whole way back.
 
 313
 00:20:24,060 --> 00:20:25,420
+从那一刻起，分秒必争
 In that moment, every second count, 
 
 314
 00:20:25,420 --> 00:20:26,700
+所以我努力开快
 so I tried to drive as far as I could, 
 
 315
 00:20:26,700 --> 00:20:30,075
+但是，这是一场漫长的比赛，我们还没就此放弃
 but, you know, it's a long race, so we're not kind of given up yet.
 
 316
 00:20:30,075 --> 00:20:33,684
+ACCIONA Sainz车队完成了无失误的两圈
 ACCIONA Sainz put together two strong issue-free laps 
 
 317
 00:20:33,684 --> 00:20:37,930
+紧随X-44排在第二位
 to put them into a close second place behind X-44.
 
 318
 00:20:37,930 --> 00:20:41,306
+ABT CUPRA车队的Mattias Ekström看起来沉着而迅速
 ABT CUPRA Mattias Ekström looked calm and fast 
 
 319
 00:20:41,306 --> 00:20:45,293
+与前三名的速度十分接近
 to put the team within touching distance of a top three qualifying time.
 
 320
 00:20:45,293 --> 00:20:48,218
+Claudia Hürtgen接手后看起来颇具竞争力
 Claudia Hürtgen took over the car and was looking strong 
 
 321
 00:20:48,218 --> 00:20:49,624
+飞速冲向终点线
 as she headed towards the finish.
 
 322
 00:20:50,676 --> 00:20:53,568
+与Sanz和Sainz的成绩仅差7秒
 Seven seconds now, the gap to Sanz and Sainz, 
 
 323
 00:20:53,568 --> 00:20:55,593
+她正在接近本圈的重点
 she is now approaching the end of the lap, 
 
 324
 00:20:55,593 --> 00:20:57,203
+这将会十分接近...
 so this is going to be close all to play... 
 
 325
 00:20:57,203 --> 00:20:59,097
+哦！车身横过来直接翻了
 Oh, side ways went into a roll. 
 
 326
 00:20:59,097 --> 00:21:00,481
+严重失误
 Massive off.
 
 327
 00:21:00,481 --> 00:21:02,165
+重大事故
 That's huge. 
 
 328
 00:21:02,165 --> 00:21:04,932
+Claudia Hürtgen遭遇了严重的车祸
 Claudia Hürtgen has had a huge crash. 
 
 329
 00:21:10,800 --> 00:21:13,533
+Claudia刚才的翻滚很剧烈，我希望她没事
 Claudia just rolled really badly, I hope she's good.
 
 330
 00:21:15,020 --> 00:21:16,932
+ABT的车刚刚遭遇了严重事故
 The ABT cars just had a big crash, 
 
 331
 00:21:16,932 --> 00:21:20,391
+他们目前还没有报她是否安全
 so uh yeah, they've not said if she's okay or not, yet.
 
 332
 00:21:21,480 --> 00:21:23,662
+我们终于看到Claudia Hürtgen从车里出来
 Finally, we've seen Claudia Hürtgen out the car, 
 
 333
 00:21:23,662 --> 00:21:26,862
+你可以看到ABT CUPRA的队员长处一口气
 and you can see the guys there from ABT CUPRA big sigh of relief. 
 
 334
 00:21:26,862 --> 00:21:29,413
+这是今天看到最好的消息了
 That is the best piece of news we've had all day.
 
 335
 00:21:30,000 --> 00:21:33,714
+从图像上来看确实很恐怖
 For sure, those pictures looked very wild and crazy
 
 336
 00:21:33,714 --> 00:21:35,944
+我很高兴Claudia能安全无恙
 I'm super happy that Claudia is in one piece, 
 
 337
 00:21:35,944 --> 00:21:40,330
+这同时也告诉我们，当你出现了这样的事故时这辆车是多么的安全
 and it also shows that the car is pretty safe when you have an accident like that.
 
 338
 00:21:41,520 --> 00:21:43,624
+我没事
 I'm here, I feel fine, 
 
 339
 00:21:43,624 --> 00:21:47,218
+我希望他们明天比赛之前能把车修好
 I hope the guys, uh can repair the car for tomorrow, 
 
 340
 00:21:47,218 --> 00:21:49,394
+我们明天再战
 and then we will go out again tomorrow.
 
 341
 00:21:50,390 --> 00:21:54,075
+这次事故给ABT队带来了不少的工作
 The crash meant there was plenty of work to do for the ABT CUPRA team 
 
 342
 00:21:54,075 --> 00:21:58,020
+他们要修好车为明天的比赛做好准备
 as they tried to fix their car ready for action the very next day.
 
 343
 00:21:58,020 --> 00:22:02,075
+赛前要把轮胎都装好准备比赛
 And even the tires was getting stuck in to get the car race ready.
 
 344
 00:22:03,530 --> 00:22:05,422
+赛道再一次被清理完毕后
 With the track clear once again, 
 
 345
 00:22:05,422 --> 00:22:09,838
+RXR队出场拿到最快成绩
 Rosberg Extreme Racing headed out to try and go top of the standings. 
 
 346
 00:22:09,838 --> 00:22:14,406
+Molly Taylor率先驾驶，全程保持在赛车线上
 Molly Taylor set out first and put it all on the line.
 
 347
 00:22:14,406 --> 00:22:16,872
+赛车尾部甩的很高
 Oh, rear end flys high. 
 
 348
 00:22:16,872 --> 00:22:18,536
-Go on Molly Taylor. 
+加油Molly Taylor！
+Go on Molly Taylor!
 
 349
 00:22:18,536 --> 00:22:20,392
+表现太亮眼了
 Absolutely lit.
 
 350
 00:22:21,443 --> 00:22:23,813
-Before she hand it over to Yohan Christopherson 
+在她把车交给Johan Kristoffersson之前
+Before she hand it over to Johan Kristoffersson 
 
 351
 00:22:23,813 --> 00:22:28,812
+以继续冲刺与X-44争夺第一名的位置
 to try and bring home the top spot in an incredibly tight battle with X-44. 
 
 352
 00:22:30,480 --> 00:22:33,054
-And is Christopherson, who takes first place .
+Kristoffersson第一名带回
+And is Kristoffersson, who takes first place .
 
 353
 00:22:33,054 --> 00:22:38,857
-and Christopherson and Taylor, they absolutely nailed this first qualifying day. 
+Kristoffersson和Taylor他们赢下了第一天的Q1
+and Kristoffersson and Taylor, they absolutely nailed this first qualifying day. 
 
 354
 00:22:38,857 --> 00:22:42,185
+太精彩了，直到结束
 What a drama it was, right until the end. 
 
 355
 00:22:42,185 --> 00:22:43,759
+所有队伍注意，所有队伍注意
 Attention all teams, attention all teams.
 
 356
 00:22:43,759 --> 00:22:45,684
+裁判的判决
 From the stewards, 
 
 357
 00:22:45,684 --> 00:22:48,511
+RXR队罚时60秒
 the penalty for Rosberg is 60 seconds.
 
 358
 00:22:48,511 --> 00:22:51,127
+换人区内车速44Km/h
 44 kilometers per hour in the switch zone. 
 
 359
 00:22:51,127 --> 00:22:55,849
+罚时直接导致他们从榜首位置掉下来
 A penalty has taken the leaders from the top of the board, and its's going to drop them down.
 
 360
 00:22:56,571 --> 00:22:59,090
+对于RXR是个很令人失望的结果
 Disappointment for RXR.
 
 361
 00:22:59,090 --> 00:23:03,020
+加上罚时后，他们仍然处在排位前三之中
 But despite that penalty, they still qualified within the top three.
 
 362
 00:23:03,020 --> 00:23:05,172
+意味着他们将直接晋级半决赛
 Meaning they would go through to the semifinal 
 
 363
 00:23:05,172 --> 00:23:09,652
+与ACCIONA Sainz队和最快的X-44队一决高下
 to battle it out with ACCIONA Sainz and the fastest qualifiers, X-44 
 
 364
 00:23:09,652 --> 00:23:11,368
+争夺决赛位置
 for a spot in the final.
 
 365
 00:23:12,970 --> 00:23:14,315
+精彩的一天
 Today, it was a great day, 
 
 366
 00:23:14,315 --> 00:23:16,171
+因为在最后我们晋级了
 because at the end of the day we went in qualifying. 
 
 367
 00:23:16,171 --> 00:23:17,594
+结果不错
 It's uh a great result,
 
 368
 00:23:17,594 --> 00:23:19,518
+名次的争抢上比较艰难
 uh, it was a tough battle, 
 
 369
 00:23:19,518 --> 00:23:22,845
+其他车手有一些失误和事故
 a few mistakes from other driver with quite big crashes, 
 
 370
 00:23:22,845 --> 00:23:27,157
+这一天不容易，与RXR队之间的竞争很激烈
 so it was a tough day with an intense fight with Rosberg's team.
 
 371
 00:23:27,157 --> 00:23:29,774
+我们希望拿下这场排位
 Finally we, we want the qualification 
 
 372
 00:23:29,774 --> 00:23:31,822
+因为我们的失误更少
 because we don't make mistakes, 
 
 373
 00:23:31,822 --> 00:23:34,075
+这就是区别
 and that's the different point.
 
 374
 00:23:35,250 --> 00:23:37,070
+随着排位赛的落幕
 With the qualifying action over, 
 
 375
 00:23:37,070 --> 00:23:42,977
+沙特上空毒辣的太阳也终于要下山了
 it was time for the relentless Saudi sun to set on the first day of Extreme E action.
 
 376
 00:23:44,782 --> 00:23:48,000
+沙漠的美景并不止步于晚上
 The beauty of the desert doesn't stop at night. 
 
 377
 00:23:48,010 --> 00:23:50,616
+落日沉没到地平线下后
 As after the sun dips below the horizon, 
 
 378
 00:23:50,616 --> 00:23:55,660
+夜空以一种大城市中未有的方式照亮大地
 the night sky illuminates in a way you will never see in populated cities.
 
 379
 00:23:55,660 --> 00:24:01,594
+这些星星对于这片区域的古人有很重要的作用
 To the ancient people of the region, the stars played an important everyday part in life.
 
 380
 00:24:01,594 --> 00:24:05,112
+一方面作为这片巨大沙漠的地图
 Acting both as a road map to navigate the vast terrains. 
 
 381
 00:24:05,112 --> 00:24:09,533
+另一方面帮助预测沙特阿拉伯沙漠的季节
 and helping predict the many seasons that occur in the Saudi Arabian Desert. 
 
 382
 00:24:10,045 --> 00:24:12,255
+月亮或太阳的位置
 The location of the moon or the sun, 
 
 383
 00:24:12,255 --> 00:24:16,735
+对于我们了解阳历或阴历是很重要的
 is very significant for us to know the lunar calendar or the solar calendar.
 
 384
 00:24:16,735 --> 00:24:18,540
+通过这样的方式，我们可以区分不同的季节
 This way, we know the different seasons.
 
 385
 00:24:18,540 --> 00:24:21,612
+对于这些人，利用星星是很重要的技能
 For them to use the stars was very, very crucial 
 
 386
 00:24:21,612 --> 00:24:24,990
-because of the nature of european peninsula.
+因为欧洲半岛的天然特性
+because of the nature of European peninsula.
 
 387
 00:24:24,990 --> 00:24:26,285
+这是个残酷的沙漠
 It's a harsh desert 
 
 388
 00:24:26,285 --> 00:24:30,387
+这里有极低温的严寒
 where it has both extremes, very extreme cold in the winter, 
 
 389
 00:24:30,387 --> 00:24:33,263
+也有极高温的酷暑
 and then extreme heat in the in the summer.
 
 390
 00:24:34,280 --> 00:24:38,118
+当然，他们更多是借助星星在夜晚出行而不是白天
 Of course, they relied on the stars to travel at night more than the daytime, 
 
 391
 00:24:38,118 --> 00:24:40,188
+为了避开日光的炎热
 to escape the heat of the sun.
 
 392
 00:24:40,188 --> 00:24:44,604
+因为他们要长途跋涉
 And also because of the long distances that they had cross for them. 
 
 393
 00:24:44,604 --> 00:24:48,123
+所以了解水源的位置，
 That was very important to know where the water sources are 
 
 394
 00:24:48,123 --> 00:24:49,964
+了解村庄的位置，
 where the next villages are,
 
 395
 00:24:49,964 --> 00:24:51,939
+下一个绿洲可能的位置，是很重要的
 the next oasis might be
 
 396
 00:24:51,939 --> 00:24:56,390
+对于他们来说基本就是为了生存
 For them to just keep alive basically. 
 
 397
 00:24:56,390 --> 00:24:58,780
+观星定位对于他们
 For them to know the stars,
 
 398
 00:24:58,780 --> 00:25:02,760
- know their location was so common sense that even kids know the stars.
+是很基本的尝试，甚至孩子们都知道如何观星
+know their location was so common sense that even kids know the stars.
 
 399
 00:25:02,760 --> 00:25:04,860
+如果你问一位阿拉伯人
 If you were to ask an Arab person, 
 
 400
 00:25:04,860 --> 00:25:06,076
+你了解这片天空吗
 do you know about the sky , 
 
 401
 00:25:06,076 --> 00:25:07,164
+他会为你感到丢脸
 he would be shame on you, 
 
 402
 00:25:07,164 --> 00:25:10,426
+我怎么能不了解我自家的屋顶？
 how can I not know the ceiling of my own house?
 
 403
 00:25:12,940 --> 00:25:16,691
+有些人在仰望沙漠上的星空
 While some gazed up at the starry skies above the Saudi deserts, 
 
 404
 00:25:16,691 --> 00:25:20,716
+但是Extreme E的队员们仍然在努力工作
 many of the Extreme E teams were still hard at work.
 
 405
 00:25:20,716 --> 00:25:24,428
+为X-Prix的第二天做好准备
 Preparing for what day two of the Desert X-Prix would bring.
 
 406
 00:25:25,800 --> 00:25:27,639
+下期Electric Odyssey中
 Next time on Electric Odyssey, 
 
 407
 00:25:27,639 --> 00:25:29,614
+我们终于能看到
 we finally get to see what happened 
 
 408
 00:25:29,614 --> 00:25:32,661
+各车队轮对轮比赛
 when the teams lined up to go wheel to wheel racing.
 
 409
 00:25:33,594 --> 00:25:35,650
+三车并排前进
 Side by side now, 
 
 410
 00:25:36,721 --> 00:25:38,676
+Carlos Sainz抽头
 Carlos Sainz is in the lead here. 
 
 411
 00:25:39,248 --> 00:25:40,391
+Loeb追上他了！
 Loeb's got him!
 
