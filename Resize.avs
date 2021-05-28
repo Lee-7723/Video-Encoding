@@ -1,18 +1,19 @@
 SetMemoryMax(6000)
-LWLibavVideoSource("E:\[GreatMoonAroma] I make amazing VR art gallery in VRchat!!! -NIsypLFrQfg.mkv", format="YUV420P8")
-DuplicateFrame(1)
+LWLibavVideoSource("E:\[GreatMoonAroma]  You're my friend now VRChat funny Highlights #62-rWtoSmdbXrc.mkv", format="YUV420P8")
+#DuplicateFrame(1)
 #trim(1,18196)
 
 ##Resize:
-#eedi3_rpow2(clip, rfactor=4)#非常慢
-#JincResize(2560,1440,tap=8)#明显artifact
-#nnedi3_rpow2(rfactor=2, nsize=0, nns=3, qual=1, etype=0, pscrn=2, threads=0, opt=0, fapprox=15)
-#Lanczos4Resize(2560,1440, src_left=0.0, src_top=0.0)
+#clip=eedi3_rpow2(clip, rfactor=4)#非常慢
+#clip=JincResize(2560,1440,tap=8)#明显artifact
+#clip=nnedi3_rpow2(rfactor=4, nsize=0, nns=3, qual=1, etype=0, pscrn=2, threads=0, opt=0, fapprox=15)
+#clip=Lanczos4Resize(2560,1440, src_left=0.0, src_top=0.0)
 
 ##Sharpen:
-#aWarpSharp2(thresh=128, blur=2, type=0, depth=20, chroma=3)
-#vsMSharpen(threshold=10,strength=60,chroma=true)
-#aSharp(T=2.0, D=4.0, B=-1.0, hqbf=false)#for 4k
-aSharp(T=0.6, D=4.0, B=-1.0, hqbf=false)#for 1080P
+#clip=aWarpSharp2(thresh=255, blur=2, type=0, depth=20, chroma=3)
+#clip=vsMSharpen(threshold=10,strength=60,chroma=true)
+clip=aSharp(T=4.0, D=4.0, B=-1.0, hqbf=false)#for 4k
+#clip=aSharp(T=0.6, D=4.0, B=-1.0, hqbf=false)#for 1080P
 
-TextSub(file="E:\[GreatMoonAroma] I make amazing VR art gallery in VRchat!!!  .ass",  fps=60)
+clip=TextSub(file="E:\GMA.ass",  fps=clip.FrameRate())
+clip

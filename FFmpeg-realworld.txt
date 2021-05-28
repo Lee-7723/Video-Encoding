@@ -1,20 +1,5 @@
-ffmpeg `
--re `
--rtbufsize 10M `
--i "encrypt_test.mp4" `
--c copy `
--f flv `
--ignore_io_errors 1 `
-"rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=def5381fa58bcc8e2f235d250f2888a7&schedule=rtmp"
+ffmpeg -hwaccel dxva2 -i "E:\Learn English with Teacher Brad.mp4" -vf subtitles="Learn English with Teacher Brad.ass" -c:a copy -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 60M Brad.mp4
 
-
-ffmpeg -hwaccel dxva2 -i "E:\[VRFunny] MY PATREON IS WHOLESOME _ VRCHAT Funny Moments-JqRrJLubkgo.mkv" -lavfi "
-[0:v]trim=0:354.521,setpts=PTS-STARTPTS[a],
-[0:v]trim=start=401.36,setpts=PTS-STARTPTS[c],
-[0:a]atrim=0:354.521,asetpts=PTS-STARTPTS[aa],
-[0:a]atrim=start=401.36,asetpts=PTS-STARTPTS[ca],
-[a][aa][c][ca]concat=n=2:a=1[out][outa]
-" -map [out] -map [outa] -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 8M -c:a aac -ab 320k blur.mkv
 
 
 在线播放
@@ -178,10 +163,9 @@ for($i=1;$i-lt 20;$i--) `
 "rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=def5381fa58bcc8e2f235d250f2888a7&schedule=rtmp"}
 
 
-$url=$(youtube-dl -g https://www.twitch.tv/sugarcube );`
+$url="https://video-weaver.yto01.hls.ttvnw.net/v1/playlist/CqAFGV2qsWgeEIM5Uuy7Kht5bb_N03LDtK3iSBs9Si5HUgGJzppkvYdo2PXLxRradOaqeElsz28oKFQQtT2MotRNjOCK-mLE7k_Lpc6uFoidpQ5L2xjvGygkDkKG5CQPFKf6opqHpB6ckaaSCJGWLuiYBeMAYsK8eSkQGYCodZr6SZu7TfnNz5VNA_1KQLHsYXxHmnBLYh7fLMTB0E0xyHR0sJsRTJ1N7r7UzTnZQDUqqLx8CATj-n-139d7E1pUQmYiRZFb1kYp_cILNlZa69Up7Vh_3M8cX24ijypmAzd-a-EIMxzFF2r3UJIyu9GHRoGUrI2UEXah0Rqg7-sn6HKT6ApzoFhAlotO2gT_fOTWiBS1pc8Ji1oMtGtQm70F6W6nyyOztPvxVtllqcnazp-xBDa-JzDPyOvT56NO9gFONq1fFI1UtUTspo9kfVBQE0i1oCbA1dcCGfmkhz7IY9O-3uzbhIo5xUkedpoFqyAw1RZ4W3rsX7ZdkP6bR4rF5wo9wqUjjqrb4XUSMMPGrkbCC7YMN2gT-RJDUu6ikBjyamqO74EhWhLmXOS4Vra072E1h7gS3I2X4C5Xr9puJuLnO5i_XXWNq1PhhW2QC3NaxIQ3KMGiAzaXn28CTRJ4LIKvlaXoawKnv_Jy9z7PMj1UYThkOxj6X1DMXmVgVCPgp9xFiHz1saoZMCgrp7qDhhjeZekoOUGm3qhtvwHdLkhEtfYQZVJ2LfFiNcJvRg-k0XC3gmzft_SemAQ9OyhgihYSByStVyzS8pv-qQXgMdiM1irFDliP9HBO2FdrLibEfWyjI-Wf9BqYtxVupD8p7MYn61pXqfUsryg2fanGx4dxR_WUuuf1O50xX-__vDg9a-a1cKIyZaOz5kHmQQRdkrUtEhAj9C4hrkA8R6MBIMv2Vo0bGgwJ8vMf8L3YK8eQBa4.m3u8 ";`
 for($i=1;$i-lt 20;$i--) `
 {ffmpeg `
--re `
 -rtbufsize 10M `
 -i "$url" `
 -c copy `
