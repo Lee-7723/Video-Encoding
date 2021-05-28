@@ -1,5 +1,5 @@
 SetMemoryMax(6000)
-LWLibavVideoSource("E:\[GreatMoonAroma]  You're my friend now VRChat funny Highlights #62-rWtoSmdbXrc.mkv", format="YUV420P8")
+LWLibavVideoSource("E:\Electric Odyssey sub-proj\Electric Odyssey S01E01 - Build Up to Desert X Prix - Extreme E .mkv", format="YUV420P8")
 #DuplicateFrame(1)
 #trim(1,18196)
 
@@ -12,8 +12,8 @@ LWLibavVideoSource("E:\[GreatMoonAroma]  You're my friend now VRChat funny Highl
 ##Sharpen:
 #clip=aWarpSharp2(thresh=255, blur=2, type=0, depth=20, chroma=3)
 #clip=vsMSharpen(threshold=10,strength=60,chroma=true)
-clip=aSharp(T=4.0, D=4.0, B=-1.0, hqbf=false)#for 4k
-#clip=aSharp(T=0.6, D=4.0, B=-1.0, hqbf=false)#for 1080P
+#clip=aSharp(T=4.0, D=4.0, B=-1.0, hqbf=false)#for 4k
+clip=aSharp(T=0.6, D=4.0, B=-1.0, hqbf=false)#for 1080P
 
-clip=TextSub(file="E:\GMA.ass",  fps=clip.FrameRate())
+clip=TextSub(file="E:\Electric Odyssey sub-proj\[Extreme E] Electric Odyssey S01E01 _ Build Up to Desert X Prix _ Extreme E.ass",  fps=clip.FrameRate())
 clip
