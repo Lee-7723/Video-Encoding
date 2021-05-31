@@ -1,4 +1,4 @@
-ffmpeg -hwaccel dxva2 -i "E:\Learn English with Teacher Brad.mp4" -vf subtitles="Learn English with Teacher Brad.ass" -c:a copy -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 60M Brad.mp4
+ffmpeg -hwaccel dxva2 -i "D:\OneDrive - lijingze\文档\Video Encoding\Resize.avs" -hwaccel dxva2 -i "E:\[Extreme E] Electric Odyssey S01E02 _ Coral Reefs, Saudi History and JBXE! _ Extreme E.mp4" -map 0 -map 1:a -c:a copy -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 16M ElectricOdysseyE02.mkv
 
 
 
@@ -277,6 +277,4 @@ mp4加上 -movflags +faststart。这样分享文件给别人的时候可以边�
 
 
 编码预设
--c:a aac -ab 529k 
-
--c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 10M
+-c:a aac -ab 529k -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 10M

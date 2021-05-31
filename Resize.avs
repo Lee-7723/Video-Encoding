@@ -1,5 +1,5 @@
 SetMemoryMax(6000)
-LWLibavVideoSource("E:\Electric Odyssey sub-proj\Electric Odyssey S01E01 - Build Up to Desert X Prix - Extreme E .mkv", format="YUV420P8")
+LWLibavVideoSource("E:\[Extreme E] Electric Odyssey S01E02 _ Coral Reefs, Saudi History and JBXE! _ Extreme E-uNMuWK-UQYo.mkv", format="YUV420P8")
 #DuplicateFrame(1)
 #trim(1,18196)
 
@@ -15,5 +15,5 @@ LWLibavVideoSource("E:\Electric Odyssey sub-proj\Electric Odyssey S01E01 - Build
 #clip=aSharp(T=4.0, D=4.0, B=-1.0, hqbf=false)#for 4k
 clip=aSharp(T=0.6, D=4.0, B=-1.0, hqbf=false)#for 1080P
 
-clip=TextSub(file="E:\Electric Odyssey sub-proj\[Extreme E] Electric Odyssey S01E01 _ Build Up to Desert X Prix _ Extreme E.ass",  fps=clip.FrameRate())
+clip=TextSub(file="E:\[Extreme E] Electric Odyssey S01E02 _ Coral Reefs, Saudi History and JBXE! _ Extreme E.ass",  fps=clip.FrameRate())
 clip
