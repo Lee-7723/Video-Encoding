@@ -1,5 +1,5 @@
 SetMemoryMax(6000)
-clip=LWLibavVideoSource("E:\[GreatMoonAroma] I teach Korean meme to cute girl -TxwC4DU4ZjY.mkv", format="YUV420P8")
+clip=LWLibavVideoSource("E:\Electric Odyssey sub-proj\[Extreme E] Electric Odyssey S01E03 _ The Desert X Prix Winners! _ Extreme E-5qkfLU4vn00.mkv", format="YUV420P8")
 #DuplicateFrame(1)
 #trim(1,18196)
 
@@ -15,5 +15,5 @@ clip=LWLibavVideoSource("E:\[GreatMoonAroma] I teach Korean meme to cute girl -T
 #clip=aSharp(clip, T=4.0, D=4.0, B=-1.0, hqbf=false)#for 4k
 clip=aSharp(clip, T=0.6, D=4.0, B=-1.0, hqbf=false)#for 1080P
 
-clip=TextSub(clip, file="E:\GMA.ass",  fps=clip.FrameRate())
+clip=TextSub(clip, file="E:\Electric Odyssey sub-proj\[Extreme E] Electric Odyssey S01E03 _ The Desert X Prix Winners! _ Extreme E-5qkfLU4vn00.ass",  fps=clip.FrameRate())
 clip

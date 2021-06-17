@@ -1,22 +1,13 @@
-ffmpeg -hwaccel dxva2 -i "E:\[Sugarcube] Showing a little too much...-HArIbQHHqOA.mkv" -lavfi "
-[0:v]trim=0:181 ,setpts=PTS-STARTPTS[a],
-[0:v]trim=181:189.1,gblur=100 ,setpts=PTS-STARTPTS[ab],
-[0:v]trim=start=189.1 ,setpts=PTS-STARTPTS[b],
-[0:a]atrim=0:204 ,asetpts=PTS-STARTPTS[aa],
-sine=1000:duration=2s ,asetpts=PTS-STARTPTS[ba],
-[0:a]atrim=start=206 ,asetpts=PTS-STARTPTS[ca],
-[a][ab][b]concat=n=3[outv],
-[aa][ba][ca]concat=n=3:v=0:a=1[outa]
-" -map [outv] -map [outa] -c:a aac -ab 529k -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 7.5M blur.mkv
+ffmpeg -hwaccel dxva2 -i "D:\OneDrive - lijingze\文档\Video Encoding\Resize.avs" -i "E:\Electric Odyssey sub-proj\[Extreme E] Electric Odyssey S01E03 _ The Desert X Prix Winners! _ Extreme E-5qkfLU4vn00.mkv" -map 0 -map 1:a -c:a aac -ab 529k -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 20M "Electric OdysseyS01E03.mkv"
 
 
 在线播放
 
 阿里云盘：
-mpv --http-header-fields='referer:https://www.aliyundrive.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://bj29.cn-beijing.data.alicloudccp.com/0MiZrUQ8%2F845445%2F6082d61592903e82500b4e6d849761c77bdc78a4%2F6082d615c9392e73b3634413bec4754b4e5efcac?di=bj29&dr=845445&f=6082d61592903e82500b4e6d849761c77bdc78a4&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27Live.Free.or.Die.Hard.2007.BluRay.1080p.x264.DTS-HD.MA.5.1-HDChina.mkv&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1620826109&x-oss-signature=x55gqzrbYZUQx6bvwlgeJgm0wqKqUq%2FcYFMFra8sbCs%3D&x-oss-signature-version=OSS2"
+mpv --http-header-fields='referer:https://www.aliyundrive.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://bj29.cn-beijing.data.alicloudccp.com/5fc46d6b59793ab4a0a244a0bcbd602252317e22%2F5fc46d6b3483e294cf1f4e448c2bc1fc57bc34e5?di=bj29&dr=845445&f=5fc46d6b59793ab4a0a244a0bcbd602252317e22&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27Alita.Battle.Angel.2019.1080p.BluRay.x264.DTS-WiKi.mkv&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1623340174&x-oss-signature=8G%2Bky1bsq0wRQ8rrgQfRX6Iqxo15Cg8cmFLMzAhHP0U%3D&x-oss-signature-version=OSS2"
 
 B站：
-mpv --http-header-fields='referer:https://www.bilibili.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://cn-sxty2-cu-v-05.bilivideo.com/upgcxcode/82/40/329954082/329954082_nb2-1-80.flv?e=ig8euxZM2rNcNbU3hwdVhoMBnwdVhwdEto8g5X10ugNcXBlqNxHxNEVE5XREto8KqJZHUa6m5J0SqE85tZvEuENvNo8g2ENvNo8i8o859r1qXg8xNEVE5XREto8GuFGv2U7SuxI72X6fTr859r1qXg8gNEVE5XREto8z5JZC2X2gkX5L5F1eTX1jkXlsTXHeux_f2o859IB_&uipk=5&nbs=1&deadline=1620112599&gen=playurlv2&os=vcache&oi=1026793212&trid=ed7cba696eed4047aba32d117c11345ep&platform=pc&upsig=28a3af08f1f67029d7e7fd981324b49b&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&cdnid=10927&mid=310265481&orderid=0,3&agrr=1&logo=80000000" --audio-file="a"
+mpv --http-header-fields='referer:https://www.bilibili.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://cn-tj2-cmcc-bcache-03.bilivideo.com/upgcxcode/82/40/329954082/329954082_nb2-1-30112.m4s?e=ig8euxZM2rNcNbdlhoNvNC8BqJIzNbfqXBvEuENvNC8aNEVEtEvE9IMvXBvE2ENvNCImNEVEIj0Y2J_aug859IB_&uipk=5&nbs=1&deadline=1623692536&gen=playurlv2&os=bcache&oi=3746054009&trid=0000619918a14af7443f8d613b4cf66fea4at&platform=android_tv_yst&upsig=3e675ad37e2d549919ccb184e40bf0ee&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&cdnid=6774&mid=310265481&bvc=vod&orderid=0,3&logo=80000000" --audio-file="a"
 
 Onedrive：
 mpv --http-header-fields='cookie: MicrosoftApplicationsTelemetryDeviceId=5dee9d4a-2ca5-45db-8d5d-8b37dfde7ae4; MicrosoftApplicationsTelemetryFirstLaunchTime=2021-06-01T16:26:57.577Z; rtFa=vgws1pgojsLBSNC2HynN768A8LX1AkHGbCS13e/G08QmQ0RGNDg5NjEtNTdBOS00MTE0LTk3NzYtN0FCNTVFQTU1RTFDk9wJbg3Q1nvxCGhkOjnTpW3TBWmKRufpmuUtzJ0/0r5jag7fOmIMOJW96Mly4f6wmG26jeWEJWBPnpLkV6yRN2+YvnDZ44u4DW23GNGX7waRev4W5vjWWHQCFnw/RAW5ssFYyPSDmakg+eGQuOmCL2qxKsPk/GbTWOL4w8B7LMsHtFRYVZtsCaM3duXqF5poWasWF6obFxBzMFzwpVMsDc8mAjhXwznwMSTxbteGfCPVPhd5AUvkO/G4m6epQ0DnEPq1wnpirUj43VFpx68FYfu/H8RK70U1olKq1E9rKLYrECtqjN/6+X8ntuNF0tQ9sm8IUhz9m9D7iM07RujgnEUAAAA=; FedAuth=77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48U1A+VjEwLDBoLmZ8bWVtYmVyc2hpcHwxMDAzMjAwMTEzYTU3YWI1QGxpdmUuY29tLDAjLmZ8bWVtYmVyc2hpcHxhZHQtNDYxOUBidXB0LmVkdS5jbiwxMzI1NzE2NDU1MDAwMDAwMDAsMTMyNTY5NzMwNzUwMDAwMDAwLDEzMjY3NDcwMzkxMTQxMzgzMyw0NS44OC4xNzkuMzUsMyxjZGY0ODk2MS01N2E5LTQxMTQtOTc3Ni03YWI1NWVhNTVlMWMsLGFkOGQ5ODU5LWRiMGMtNDU1Mi05MjJiLTY4ODE4Mzg0ZGM5NiwyYmE5Y2Q5Zi03MGIxLTIwMDAtZmU5ZC1mZGI5ZTQwNjRmNGEsMmJhOWNkOWYtNzBiMS0yMDAwLWZlOWQtZmRiOWU0MDY0ZjRhLCwwLDEzMjY3MTI0NzkxMTEwMTM0OSwxMzI2NzI5NzU5MTExMDEzNDksLCxleUo0YlhOZlkyTWlPaUpiWENKRFVERmNJbDBpTENKNGJYTmZjM050SWpvaU1TSjksMjY1MDQ2Nzc0Mzk5OTk5OTk5OSwxMzI2NzAzODM5MDAwMDAwMDAsZmZmOTJjYjQtM2ZmOS00ZWY4LTgzOTQtNDA4ZmYxMjM1YmExLCwsLCwsYjdhSmh1cTFGYUoyd21qcExwTURrWGlzNUYzVUczaElDak9ubGdybCtLQXJHU2ZNTTMwRUJ5THRGSTlaSkczRDhJRjBUb3RIdnU3bWtyZW1yQ3k0QXFwOGtjQmJtSkwvU1MxNjZabUV1dGNJdndvNi9VSE82WkVFczloS3NzTlRtQnc3YXhFdHJ2QUYrWVB4VC9GQmN0Y2ZzdUZieW1DOVhneFdNZFYycXVTOEpJWjR0Sm9va2ZqbU5yTU42QmtYOG5VVTYySEJkQ1dTd3NHQVZ6RHcvWVV1MjMzRU5xUXhmWnNVRVNiZmNpQlNneHhMR1grWEIxZnlzNktrT1hvVFdnL2pJT1Jrb0FsK3oxeU9qQzB6NEdzV0VkNHQ2dUYvVDA0bGtLdUpVdHdrUCthWENDUEtjQXdmejRxR3R3ZWpUVWNXYklERXhxaXVkdUljNXErUmV3PT08L1NQPg==; CCSInfo=MjAyMS82LzYgMjI6MTU6MTYgXkfUGLkdrLEblwFtUV/EB4NVqESxRqcuL2v4g62Uyi9UCptq6TnSZNmhGcmgOth0QVnqHgbDYdZjNg4hf1R6Lc1PkNSSyjatrT4MS6nB4P5l1JR2t+UsPGv5K6f+hzxOkUSKbWHETRgNIfHMOHHYNDq9GxmoRGCdD9dUj840hRYUYU6KaXG76z5rA0cFlwWHOgm+nmBuj0x3xtSshwbWM7ao94FLQ1WCbBLC68iEVWtiyND0P/iFewednZoCCwPBlKEXp/NqIx2QJzrIY2+pk+grt9LquNnaqzw8y7MoGhushkFwn8eHuLmQ9hKDjmwlkqtcG5IxB7mQj8ZBqkTUEQAAAA==; cucg=1' "https://bupteducn-my.sharepoint.com/personal/adt-4619_bupt_edu_cn/_layouts/15/download.aspx?UniqueId=474d891d%2D8f77%2D4fc9%2D98da%2D04f1ed764739"
@@ -180,12 +171,12 @@ for($i=1;$i-lt 20;$i--) `
 -ignore_io_errors 1 `
 "rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=def5381fa58bcc8e2f235d250f2888a7&schedule=rtmp"}
 
-
-$url="https://video-weaver.yto01.hls.ttvnw.net/v1/playlist/CqAFGV2qsWgeEIM5Uuy7Kht5bb_N03LDtK3iSBs9Si5HUgGJzppkvYdo2PXLxRradOaqeElsz28oKFQQtT2MotRNjOCK-mLE7k_Lpc6uFoidpQ5L2xjvGygkDkKG5CQPFKf6opqHpB6ckaaSCJGWLuiYBeMAYsK8eSkQGYCodZr6SZu7TfnNz5VNA_1KQLHsYXxHmnBLYh7fLMTB0E0xyHR0sJsRTJ1N7r7UzTnZQDUqqLx8CATj-n-139d7E1pUQmYiRZFb1kYp_cILNlZa69Up7Vh_3M8cX24ijypmAzd-a-EIMxzFF2r3UJIyu9GHRoGUrI2UEXah0Rqg7-sn6HKT6ApzoFhAlotO2gT_fOTWiBS1pc8Ji1oMtGtQm70F6W6nyyOztPvxVtllqcnazp-xBDa-JzDPyOvT56NO9gFONq1fFI1UtUTspo9kfVBQE0i1oCbA1dcCGfmkhz7IY9O-3uzbhIo5xUkedpoFqyAw1RZ4W3rsX7ZdkP6bR4rF5wo9wqUjjqrb4XUSMMPGrkbCC7YMN2gT-RJDUu6ikBjyamqO74EhWhLmXOS4Vra072E1h7gS3I2X4C5Xr9puJuLnO5i_XXWNq1PhhW2QC3NaxIQ3KMGiAzaXn28CTRJ4LIKvlaXoawKnv_Jy9z7PMj1UYThkOxj6X1DMXmVgVCPgp9xFiHz1saoZMCgrp7qDhhjeZekoOUGm3qhtvwHdLkhEtfYQZVJ2LfFiNcJvRg-k0XC3gmzft_SemAQ9OyhgihYSByStVyzS8pv-qQXgMdiM1irFDliP9HBO2FdrLibEfWyjI-Wf9BqYtxVupD8p7MYn61pXqfUsryg2fanGx4dxR_WUuuf1O50xX-__vDg9a-a1cKIyZaOz5kHmQQRdkrUtEhAj9C4hrkA8R6MBIMv2Vo0bGgwJ8vMf8L3YK8eQBa4.m3u8 ";`
+$env:http_proxy="http://127.0.0.1:10809";`
 for($i=1;$i-lt 20;$i--) `
-{ffmpeg `
+{$url=(youtube-dl -g https://www.twitch.tv/kromia);`
+ffmpeg `
 -rtbufsize 10M `
--i "$url" `
+-re -i "$url" `
 -c copy `
 -f flv `
 -ignore_io_errors 1 `
@@ -274,13 +265,12 @@ ffmpeg -i "E:\SSIM_test\clips\high.mkv" -c copy -metadata:s:v:0 title="Enlarged 
 mp4\mov视频加密解密
 https://www.jianshu.com/p/ea0761f6aa04
 
-ffmpeg -hwaccel dxva2 -i "E:\[Extreme E] Electric Odyssey S01E01 _ Build Up to Desert X Prix _ Extreme E.mp4" -encryption_scheme cenc-aes-ctr -encryption_key 6B305A0E073A9A7C6B305A0E073A9A7C -encryption_kid 6B305A0E073A9A7C6B305A0E073A9A7C -c copy encrypt_test.mp4
+ffmpeg -hwaccel dxva2 -i "D:\迅雷下载\victoria_together_presents_the_long_weekender_1080_6000_kb_enc_dash_track1_init.mp4" -encryption_scheme cenc-aes-ctr -encryption_key 6B305A0E073A9A7C6B305A0E073A9A7C -encryption_kid 6B305A0E073A9A7C6B305A0E073A9A7C -c copy encrypt_test.mp4
 
 
-ffplay -decryption_key 6B305A0E073A9A7C6B305A0E073A9A7C test.mp4
+ffplay -decryption_key "a72173c3eab36ae5a6f59cb62a79fd17" "D:\迅雷下载\victoria_together_presents_the_long_weekender_1080_6000_kb_enc_dash_track1_init.mp4"
 
-mpv --demuxer-lavf-o=decryption_key=6B305A0E073A9A7C6B305A0E073A9A7C encrypt_test.mp4
-
+cd d
 
 HDR元数据
 ffmpeg -i "E:\SSIM_test\clips\00910.m2ts" -vf zscale=p=2020:t=smpte2084:m=2020_ncl:pin=709:tin=bt709:min=709:npl=200,format=yuv420p10 -c:v libx265 -x265-params "level=6:colorprim=bt2020:colormatrix=bt2020nc:transfer=smpte2084:master-display=G(8500,39850)B(6550,2300)R(35400,14600)WP(15635,16450)L(10000000,50)" -b:v 20000k -preset fast -c:a aac -ac 2 -ab 320k "test-HDR.mkv"
