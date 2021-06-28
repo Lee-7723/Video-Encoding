@@ -1,0 +1,708 @@
+QSVEncC (x64) 5.05 (r2369) by rigaya, Jun 12 2021 12:48:47 (VC 1928/Win)
+ reader: raw, avi, avs, vpy, avqsv [H.264/AVC, H.265/HEVC, MPEG2, VP8, VP9, AV1]
+Usage: QSVEncC [Options] -i <filename> -o <filename>
+
+When video codec could be decoded by QSV, any format or protocol supported
+by ffmpeg library could be used as a input.
+Also,  input can be avi, avs, vpy, raw YUV or YUV4MPEG2(y4m) format.
+when raw(default), fps, input-res are also necessary.
+
+output format will be automatically set by the output extension.
+when output filename is set to "-", H.264/AVC ES output is thrown to stdout.
+
+Example:
+  QSVEncC -i "<avsfilename>" -o "<outfilename>"
+  avs2pipemod -y4mp "<avsfile>" | QSVEncC --y4m -i - -o "<outfilename>"
+
+Example for Benchmark:
+  QSVEncC -i "<avsfilename>" --benchmark "<benchmark_result.txt>"
+
+Information Options:
+-h,-? --help                    show help
+-v,--version                    show version info
+   --check-hw                   check if QuickSyncVideo is available
+   --check-lib                  check lib API version installed
+   --check-features [<string>]  check encode/vpp features
+                                 with no option value, result will on stdout,
+                                 otherwise, it is written to file path set
+                                 and opened by default application.
+                                 when writing to file, txt/html/csv format
+                                 is available, chosen by the extension
+                                 of the output file.
+   --check-features-html [<string>]
+                                check encode/vpp features and write html report to
+                                 specified path. With no value, "qsv_check.html"
+                                 will be created to current directory.
+   --check-environment          check environment info
+   --check-avversion            show dll version
+   --check-codecs               show codecs available
+   --check-encoders             show audio encoders available
+   --check-decoders             show audio decoders available
+   --check-profiles <string>    show profile names available for specified audio codec
+   --check-formats              show in/out formats available
+   --check-protocols            show in/out protocols available
+   --check-filters              show filters available
+   --option-list                show option list
+
+
+Basic Encoding Options:
+
+-i,--input <filename>           set input filename
+-o,--output <filename>          set output filename
+
+ Input formats (auto detected from extension of not set)
+   --raw                        set input as raw format
+   --y4m                        set input as y4m format
+   --avi                        set input as avi format
+   --avs                        set input as avs format
+   --vpy                        set input as vpy format
+   --vpy-mt                     set input as vpy(mt) format
+   --avhw                       use libavformat + hw decode for input
+   --avsw                       set input to use avcodec + sw decoder
+   --input-res <int>x<int>        set input resolution
+   --crop <int>,<int>,<int>,<int> crop pixels from left,top,right,bottom
+                                    left crop is unavailable with avhw reader
+   --output-res <int>x<int>     set output resolution
+   --fps <int>/<int> or <float> set framerate
+   --interlace <string>         set input as interlaced
+                                  tff, bff
+   --input-csp <string>           set input colorspace for raw reader
+                                Invalid, nv12, yv12, yuv420p, yuv422p
+                                yuv444p, yuv420p9le, yuv420p10le
+                                yuv420p12le, yuv420p14le, yuv420p16le, p010
+                                yuv422p9le, yuv422p10le, yuv422p12le
+                                yuv422p14le, yuv422p16le, yuv444p9le
+                                yuv444p10le, yuv444p12le, yuv444p14le
+                                yuv444p16le
+                                 default: yv12
+
+-c,--codec <string>             set encode codec
+                                 - h264(default), hevc, mpeg2, raw
+   --level <string>             set codec level
+                                - H.264: auto(default), 1, 1b, 1.1, 1.2, 1.3
+                                         2, 2.1, 2.2, 3, 3.1, 3.2, 4, 4.1, 4.2
+                                         5, 5.1, 5.2, 6, 6.1, 6.2
+                                - HEVC:  auto(default), 1, 2, 2.1, 3, 3.1, 4
+                                         4.1, 5, 5.1, 5.2, 6, 6.1, 6.2
+                                - MPEG2: auto(default), low, main, high
+                                         high1440
+   --profile <string>           set codec profile
+                                - H.264: auto(default), Baseline, Main, High
+                                - HEVC:  auto(default), main, main10, main444
+                                - MPEG2: auto(default), Simple, Main, High
+   --tier <string>              set codec tier
+                                - HEVC: main(default), high
+
+   --output-depth <int>        output bit depth (default: 8)
+   --output-csp <string>       output colorspace (default: i420)
+                                 - i420, i422, i444
+
+
+   --fixed-func                 use fixed func instead of GPU EU (default:off)
+
+Frame buffer Options:
+ frame buffers are selected automatically by default.
+ d3d9 memory is faster than d3d11, so d3d9 frames are used whenever possible,
+ except decode/vpp only mode (= no encoding mode, system frames are used).
+ On particular cases, such as runnning on a system with dGPU, or running
+ vpp-rotate, will require the uses of d3d11 surface.
+ Options below will change this default behavior.
+
+   --disable-d3d                disable using d3d surfaces
+   --d3d                        use d3d9/d3d11 surfaces
+   --d3d9                       use d3d9 surfaces
+   --d3d11                      use d3d11 surfaces
+
+Encode Mode Options:
+ EncMode default: --cqp
+   --cqp <int> or               encode in Constant QP, default 24:26:27
+         <int>:<int>:<int>      set qp value for i:p:b frame
+   --la <int>                   set bitrate in Lookahead mode (kbps)
+   --la-hrd <int>               set bitrate in HRD-Lookahead mode (kbps)
+   --icq <int>                  encode in Intelligent Const. Quality mode
+                                  default value: 24
+   --la-icq <int>               encode in ICQ mode with Lookahead
+                                  default value: 26
+   --cbr <int>                  set bitrate in CBR mode (kbps)
+   --vbr <int>                  set bitrate in VBR mode (kbps)
+   --avbr <int>                 set bitrate in AVBR mode (kbps)
+                                 AVBR mode is only supported with API v1.3
+   --avbr-unitsize <int>        avbr calculation period in x100 frames
+                                 default 27 (= unit size 2300 frames)
+   --qvbr <int>                 set bitrate in Quality VBR mode.
+                                 requires --qvbr-q option to be set as well
+   --qvbr-quality <int>         set quality used in qvbr mode. default: 23
+   --vcm <int>                  set bitrate in VCM mode (kbps)
+
+Other Encode Options:
+   --fallback-rc                enable fallback of ratecontrol mode, when
+                                 platform does not support new ratecontrol modes.
+-a,--async-depth                set async depth for QSV pipeline. (0-16)
+                                 default: 0 (=auto, 3)
+   --max-bitrate <int>          set max bitrate(kbps)
+   --qp-min <int> or            set min QP, default 0 (= unset)
+           <int>:<int>:<int>
+   --qp-max <int> or            set max QP, default 0 (= unset)
+           <int>:<int>:<int>
+   --qp-offset <int>[:<int>][:<int>]...
+                                set qp offset of each pyramid reference layers.
+                                 default 0 (= unset).
+-u,--quality <string>           encode quality
+                                  - best, higher, high, balanced(default)
+                                    fast, faster, fastest
+   --la-depth <int>             set Lookahead Depth, 10-100
+   --la-window-size <int>       enables Lookahead Windowed Rate Control mode,
+                                  and set the window size in frames.
+   --la-quality <string>        set lookahead quality.
+                                 - auto(default), fast, medium, slow
+   --(no-)extbrc                enables extbrc
+   --(no-)mbbrc                 enables per macro block rate control
+                                 default: auto
+   --ref <int>                  reference frames
+                                  default 0 (auto)
+-b,--bframes <int>              number of sequential b frames
+                                  default 3(HEVC) / 3(others)
+   --(no-)b-pyramid             enables B-frame pyramid reference (default:off)
+   --(no-)direct-bias-adjust    lower usage of B frame Direct/Skip type.
+   --gop-len <int>              (max) gop length, default 0 (auto)
+                                  when auto, fps x 10 will be set.
+   --(no-)open-gop              enables open gop (default:off)
+   --strict-gop                 force gop structure
+   --(no-)i-adapt               enables adaptive I frame insert (default:off)
+   --(no-)b-adapt               enables adaptive B frame insert (default:off)
+   --(no-)weightp               enable weighted prediction for P frame
+   --(no-)weightb               enable weighted prediction for B frame
+   --(no-)adapt-ltr             enable adaptive LTR frames
+                                 --extbrc is also required.
+   --(no-)repartition-check     [H.264] enable prediction from small partitions
+   --(no-)fade-detect           enable fade detection
+   --trellis <string>           set trellis mode used in encoding
+                                 - auto(default), off, i, ip, all
+   --mv-scaling                 set mv cost scaling
+                                 - 0  set MV cost to be 0
+                                 - 1  set MV cost 1/2 of default
+                                 - 2  set MV cost 1/4 of default
+                                 - 3  set MV cost 1/8 of default
+   --slices <int>               number of slices, default 0 (auto)
+   --vbv-bufsize <int>          set vbv buffer size (kbit) / default: auto
+   --no-deblock                 [h264] disables H.264 deblock feature
+   --tskip                      [hevc] enable transform skip
+   --sao <string>               [hevc]
+                                 - auto    default
+                                 - none    disable sao
+                                 - luma    enable sao for luma
+                                 - chroma  enable sao for chroma
+                                 - all     enable sao for luma & chroma
+   --ctu <int>                  [hevc] max ctu size
+                                 - auto(default), 16, 32, 64
+
+
+   --sar <int>:<int>            set Sample Aspect Ratio
+   --dar <int>:<int>            set Display Aspect Ratio
+   --bluray                     for H.264 bluray encoding
+
+   --aud                        insert aud nal unit to ouput stream.
+   --pic-struct                 insert pic-timing SEI with pic_struct.
+
+   --chromaloc <int>            set chroma location flag [ 0 ... 5 ]
+                                  default: 0 = unspecified
+   --videoformat <string>       undef, ntsc, component, pal, secam, mac
+                                 default: undef
+   --colormatrix <string>       undef, auto, auto_res, bt709, smpte170m
+                                bt470bg, smpte240m, YCgCo, fcc, GBR
+                                bt2020nc, bt2020c, derived-ncl, derived-cl
+                                ictco, 2100-lms
+                                 default: undef
+   --colorprim <string>         undef, unknown, auto, auto_res, bt709
+                                smpte170m, bt470m, bt470bg, smpte240m, film
+                                bt2020, st428, st431-2, st432-1, ebu3213-e
+                                 default: undef
+   --transfer <string>          undef, unknown, auto, auto_res, bt709
+                                smpte170m, bt470m, bt470bg, smpte240m
+                                linear, log100, log316, iec61966-2-4
+                                bt1361e, iec61966-2-1, bt2020-10, bt2020-12
+                                smpte2084, smpte428, arib-std-b67
+                                 default: undef
+   --colorrange <string>        undef, limited, tv, full, pc, auto
+                                 default: undef
+   --max-cll <int>,<int>        set MaxCLL/MaxFall in nits. e.g. "1000,300"
+   --master-display <string>    set Mastering display data.
+   e.g. "G(13250,34500)B(7500,3000)R(34000,16000)WP(15635,16450)L(10000000,1)"
+   --atc-sei <string> or <int>  undef, unknown, auto, auto_res, bt709
+                                smpte170m, bt470m, bt470bg, smpte240m
+                                linear, log100, log316, iec61966-2-4
+                                bt1361e, iec61966-2-1, bt2020-10, bt2020-12
+                                smpte2084, smpte428, arib-std-b67
+                                 default: unknown
+   --input-analyze <int>        set time (sec) which reader analyze input file.
+                                 default: 5 (seconds).
+                                 could be only used with avhw/avsw reader.
+                                 use if reader fails to detect audio stream.
+   --input-probesize <int>      set size in bytes which reader analyze input file.
+   --video-track <int>          set video track to encode in track id
+                                 1 (default)  highest resolution video track
+                                 2            next high resolution video track
+                                   ...
+                                 -1           lowest resolution video track
+                                 -2           next low resolution video track
+                                   ...
+   --video-streamid <int>       set video track to encode in stream id
+   --video-tag <string>         specify video tag
+   --video-metadata <string>    set metadata for video track.
+                                 - copy ... copy metadata from input
+                                 - clear ... do not set metadata (default)
+   --audio-source <string>      input extra audio file.
+   --audio-file [<int>?][<string>:]<string>
+                                extract audio into file.
+                                 could be only used with avhw/avsw reader.
+                                 below are optional,
+                                  in [<int>?], specify track number to extract.
+                                  in [<string>?], specify output format.
+   --trim <int>:<int>[,<int>:<int>]...
+                                trim video for the frame range specified.
+                                 frame range should not overwrap each other.
+   --seek [<int>:][<int>:]<int>[.<int>] (hh:mm:ss.ms)
+                                skip video for the time specified,
+                                 seek will be inaccurate but fast.
+   --input-format <string>      set input format of input file.
+                                 this requires use of avhw/avsw reader.
+-f,--output-format <string>     set output format of output file.
+                                 if format is not specified, output format will
+                                 be guessed from output file extension.
+                                 set "raw" for H.264/ES output.
+   --audio-copy [<int>[,...]]   mux audio with video during output.
+                                 could be only used with
+                                 avhw/avsw reader and avcodec muxer.
+                                 by default copies all audio tracks.
+                                 "--audio-copy 1,2" will extract
+                                 audio track #1 and #2.
+   --audio-codec [<int>?]<string>
+                                encode audio to specified format.
+                                  in [<int>?], specify track number to encode.
+   --audio-profile [<int>?]<string>
+                                specify audio profile.
+                                  in [<int>?], specify track number to apply.
+   --audio-bitrate [<int>?]<int>
+                                set encode bitrate for audio (kbps).
+                                  in [<int>?], specify track number of audio.
+   --audio-ignore-decode-error <int>  (default: 10)
+                                set numbers of continuous packets of audio decode
+                                 error to ignore, replaced by silence.
+   --audio-samplerate [<int>?]<int>
+                                set sampling rate for audio (Hz).
+                                  in [<int>?], specify track number of audio.
+   --audio-resampler <string>   set audio resampler.
+                                  swr (swresampler: default), soxr (libsoxr)
+   --audio-delay [<int>?]<int>  set audio delay (ms).
+   --audio-stream [<int>?][<string1>][:<string2>][,[<string1>][:<string2>]][..
+       set audio streams in channels.
+         in [<int>?], specify track number to split.
+         in <string1>, set input channels to use from source stream.
+           if unset, all input channels will be used.
+         in <string2>, set output channels to mix.
+           if unset, all input channels will be copied without mixing.
+       example1: --audio-stream FL,FR
+         splitting dual mono audio to each stream.
+       example2: --audio-stream :stereo
+         mixing input channels to stereo.
+       example3: --audio-stream 5.1,5.1:stereo
+         keeping 5.1ch audio and also adding downmixed stereo stream.
+       usable symbols
+         mono       = FC
+         stereo     = FL + FR
+         2.1        = FL + FR + LFE
+         3.0        = FL + FR + FC
+         3.0(back)  = FL + FR + BC
+         3.1        = FL + FR + FC + LFE
+         4.0        = FL + FR + FC + BC
+         quad       = FL + FR + BL + BR
+         quad(side) = FL + FR + SL + SR
+         5.0        = FL + FR + FC + SL + SR
+         5.1        = FL + FR + FC + LFE + SL + SR
+         6.0        = FL + FR + FC + BC + SL + SR
+         6.0(front) = FL + FR + FLC + FRC + SL + SR
+         hexagonal  = FL + FR + FC + BL + BR + BC
+         6.1        = FL + FR + FC + LFE + BC + SL + SR
+         6.1(front) = FL + FR + LFE + FLC + FRC + SL + SR
+         7.0        = FL + FR + FC + BL + BR + SL + SR
+         7.0(front) = FL + FR + FC + FLC + FRC + SL + SR
+         7.1        = FL + FR + FC + LFE + BL + BR + SL + SR
+         7.1(wide)  = FL + FR + FC + LFE + FLC + FRC + SL + SR
+   --audio-filter [<int>?]<string>
+                                set audio filter.
+                                  in [<int>?], specify track number of audio.
+   --audio-disposition [<int>?]<string>
+                                set disposition for the specified audio track.
+                                disposition for the unspecified tracks will be reset.
+   --audio-metadata [<int>?]<string>
+                                set metadata for the specified audio track.
+                                 - copy ... copy metadata from input (default)
+                                 - clear ... do not set metadata
+   --chapter-copy               copy chapter to output file.
+   --chapter <string>           set chapter from file specified.
+   --chapter-no-trim            do not apply --trim to --chapter.
+   --sub-source <string>        input extra subtitle file.
+   --sub-copy [<int>[,...]]     copy subtitle to output file.
+                                 these could be only used with
+                                 avhw/avsw reader and avcodec muxer.
+                                 below are optional,
+                                  in [<int>?], specify track number to copy.
+   --sub-disposition [<int>?]<string>
+                                set disposition for the specified subtitle track.
+                                disposition for the unspecified tracks will be reset.
+   --sub-metadata [<int>?]<string>
+                                set metadata for the specified audio track.
+                                 - copy ... copy metadata from input (default)
+                                 - clear ... do not set metadata
+   --caption2ass [<string>]     enable caption2ass during encode.
+                                  !! This feature requires Caption.dll !!
+                                 supported formats ... srt (default), ass
+   --data-copy [<int>[,...]]       copy data stream to output file.
+   --attachment-copy [<int>[,...]] copy attachment stream to output file.
+
+   --avsync <string>            method for AV sync (default: cfr)
+                                 cfr      ... assume cfr
+                                 forcecfr ... check timestamp and force cfr
+                                 vfr      ... honor source timestamp and enable vfr output.
+                                              only available for avsw/avhw reader,
+                                              and could not be used with --trim.
+  --input-option <string1>:<string2>
+                                set input option name and value.
+                                 these could be only used with avhw/avsw reader.
+-m,--mux-option <string1>:<string2>
+                                set muxer option name and value.
+                                 these could be only used with
+                                 avhw/avsw reader and avcodec muxer.
+   --metadata <string>          set metadata for output file.
+                                 - copy ... copy metadata from input (default)
+                                 - clear ... do not set metadata
+
+   --timecode [<string>]        output timecode file.
+
+
+VPP Options:
+   --vpp-denoise <int>          use vpp denoise, set strength (0-100)
+   --vpp-mctf ["auto" or <int>] use vpp motion compensated temporal filter(mctf)
+                                  set strength (1-20), default: 0 (auto)
+   --vpp-detail-enhance <int>   use vpp detail enahancer, set strength (0-100)
+   --vpp-deinterlace <string>   set vpp deinterlace mode
+                                 - none     disable deinterlace
+                                 - normal   normal deinterlace
+                                 - it       inverse telecine
+                                 - bob      double framerate
+   --vpp-image-stab <string>    set image stabilizer mode
+                                 - none, upscale, box
+
+   --vpp-colorspace [<param1>=<value>][,<param2>=<value>][...]
+     Converts colorspace of the video.
+    params
+      matrix=<from>:<to>
+        bt709, smpte170m, bt470bg, smpte240m, YCgCo, fcc, GBR,
+        bt2020nc, bt2020c
+      colorprim=<from>:<to>
+        bt709, smpte170m, bt470m, bt470bg, smpte240m, film, bt2020
+      transfer=<from>:<to>
+        bt709, smpte170m, bt470m, bt470bg, smpte240m, linear,
+        log100, log316, iec61966-2-4, iec61966-2-1,
+        bt2020-10, bt2020-12, smpte2084, arib-srd-b67
+      range=<from>:<to>
+        limited, full
+      hdr2sdr=<string>     Enables HDR10 to SDR.
+                             hable, mobius, reinhard, bt2390, none
+      source_peak=<float>     (default: 1000.0)
+      ldr_nits=<float>        (default: 100.0)
+      desat_base=<float>      (default: 0.18)
+      desat_strength=<float>  (default: 0.75)
+      desat_exp=<float>       (default: 1.50)
+   --vpp-delogo <string>[,<param1>=<value>][,<param2>=<value>][...]
+     remove half-transparent logo with the specified logo file.
+     the logo file should be created by logoscan.auf.
+    params
+      select=<string>           set target logo name or auto select file
+                                 or logo index starting from 1.
+      pos=<int>:<int>           set delogo pos offset.
+      depth=<int>               set delogo depth. [default:128]
+      y=<int>                   set delogo y  param.
+      cb=<int>                  set delogo cb param.
+      cr=<int>                  set delogo cr param.
+   --vpp-afs [<param1>=<value>][,<param2>=<value>][...]
+     enable auto field shift deinterlacer
+    params
+      preset=<string>
+          default, triple, double, anime, cinema, min_afterimg,
+          24fps, 24fps_sd, 30fps
+      ini=<string>
+          read setting from ini file specified (output of afs.auf)
+
+      !! params from preset & ini will be overrided by user settings below !!
+
+                   Aviutl????????
+      top=<int>           (?)         clip range to scan (default=16)
+      bottom=<int>        (?)         clip range to scan (default=16)
+      left=<int>          (?)         clip range to scan (default=32)
+      right=<int>         (?)         clip range to scan (default=32)
+                                        left & right must be muitiple of 4
+      method_switch=<int> (???)     (default=0, 0-256)
+      coeff_shift=<int>   (???)     (default=192, 0-256)
+      thre_shift=<int>    (?(???)) stripe(shift)thres (default=128, 0-1024)
+      thre_deint=<int>    (?(??))   stripe(deint)thres (default=48, 0-1024)
+      thre_motion_y=<int> (Y??)      Y motion threshold (default=112, 0-1024)
+      thre_motion_c=<int> (C??)      C motion threshold (default=224, 0-1024)
+      level=<int>         (??Lv)     set deint level    (default=3, 0-4
+      shift=<bool>  (????????) enable field shift (default=on)
+      drop=<bool>   (????)         enable frame drop  (default=off)
+      smooth=<bool> (??????)     enable smoothing   (default=off)
+      24fps=<bool>  (24fps?)          force 30fps->24fps (default=off)
+      tune=<bool>   (?????)       show scan result   (default=off)
+      timecode=<bool>                  output timecode    (default=off)
+      log=<bool>                       output log         (default=off)
+
+   --vpp-nnedi [<param1>=<value>][,<param2>=<value>][...]
+     enable nnedi deinterlacer
+    params
+      field=<string>
+          auto (default)    Generate latter field from first field.
+          top               Generate bottom field using top field.
+          bottom            Generate top field using bottom field.
+      nns=<int>             Neurons of neural net (default: 32)
+                              16, 32, 64, 128, 256
+      nszie=<int>x<int>     Area size neural net uses to generate a pixel.
+                              8x6, 16x6, 32x6, 48x6, 8x4, 16x4, 32x4(default)
+      quality=<string>      quality settings
+                              fast (default), slow
+      prescreen=<string>    (default: new_block)
+          none              No pre-screening is done and all pixels will be
+                            generated by neural net.
+          original          Runs prescreener to determine which pixel to apply
+          new               neural net, other pixels will be generated from
+                            simple interpolation.
+          original_block    GPU optimized ver of original/new.
+          new_block
+      errortype=<string>    Select weight parameter for neural net.
+                              abs (default), square
+      prec=<string>         Select calculation precision.
+                              auto (default), fp16, fp32
+      weightfile=<string>   Set path of weight file. By default (not specified),
+                              internal weight params will be used.
+
+   --vpp-decimate [<param1>=<value>][,<param2>=<value>][...]
+     drop duplicated frame.
+    params
+      cycle=<int>               num of frame from which a frame will be droppped.
+                                  (default=5)
+      thredup=<float>           duplicate threshold. (default=1.1, 0 - 100)
+      thresc=<float>            scene change threshold. (default=15.0, 0 - 100)
+      blockx=<int>              block size of x direction (default=32).
+      blocky=<int>              block size of y direction (default=32).
+                                  block size could be 4, 8, 16, 32, 64.
+      chroma=<bool>             consdier chroma (default: off)
+      log=<bool>                output log file (default: on).
+
+   --vpp-mpdecimate [<param1>=<value>][,<param2>=<value>][...]
+     drop duplicated frame.
+    params
+      hi=<int>                  the frame might be dropped if no 8x8 block difference
+                                is more than "hi" (default=768 (8x8x12)).
+      lo=<int>                  the frame might be dropped if the fraction of 8x8 blocks
+      frac=<float>              with difference smaller than "lo" is more than "frac".
+                                  (lo default=320 (8x8x5), frac default=0.330)
+      max=<bool>                Max consecutive frames which can be dropped (positive)
+                                min interval between dropped frames (if negative)
+                                  (default: 0)
+      log=<bool>                output log file (default: off).
+   --vpp-resize <string>        auto, bilinear, spline16, spline36, spline64
+                                lanczos2, lanczos3, lanczos4, bilinear
+                                advanced, simple, fine
+                                 default: auto
+   --vpp-resize-mode <string>   auto, lowpower, quality
+                                 default: auto
+   --vpp-knn [<param1>=<value>][,<param2>=<value>][...]
+     enable denoise filter by K-nearest neighbor.
+    params
+      radius=<int>              radius of knn (default=3)
+      strength=<float>          strength of knn (default=0.08, 0.0-1.0)
+      lerp=<float>              balance of orig & blended pixel (default=0.20)
+                                  lower value results strong denoise.
+      th_lerp=<float>           edge detect threshold (default=0.80, 0.0-1.0)
+                                  higher value will preserve edge.
+
+   --vpp-pmd [<param1>=<value>][,<param2>=<value>][...]
+     enable denoise filter by pmd.
+    params
+      apply_count=<int>         count to apply pmd denoise (default=2)
+      strength=<float>          strength of pmd (default=100.00, 0.0-100.0)
+      threshold=<float>         threshold of pmd (default=100.00, 0.0-255.0)
+                                  lower value will preserve edge.
+
+   --vpp-smooth [<param1>=<value>][,<param2>=<value>][...]
+     enable smooth filter.
+    params
+      quality=<int>         quality of filter (high=higher quality but slow)
+                             (default=3, 1-6)
+      qp=<float>            strength of filter (default=0.00, 0.0-100.0)
+      prec=<string>         Select calculation precision.
+                              auto (default), fp16, fp32
+
+   --vpp-subburn [<param1>=<value>][,<param2>=<value>][...]
+     Burn in specified subtitle to the video.
+    params
+      track=<int>               subtitle track of the input file to burn in.
+      filename=<string>         subtitle file path to burn in.
+      charcode=<string>         subtitle charcter code.
+      shaping=<string>          rendering quality of text.
+      scale=<float>             scaling multiplizer for bitmap subtitles.
+      transparency=<float>      adds additional transparency.
+                                  (default=0.0, 0.0 - 1.0)
+      brightness=<float>        modifies brightness of the subtitle.
+                                  (default=0.0, -1.0 - 1.0)
+      contrast=<float>          modifies contrast of the subtitle.
+                                  (default=1.0, -2.0 - 2.0)
+      vid_ts_offset=<bool>      add timestamp offset to match the first timestamp of
+                                  the video file (default: on)
+                                  (when "track" is used this options is always on)
+      ts_offset=<float>         add offset in seconds to subtitle timestamps.
+      fontsdir=<string>         directory with fonts used.
+
+   --vpp-unsharp [<param1>=<value>][,<param2>=<value>][...]
+     enable unsharp filter.
+    params
+      radius=<int>              filter range for edge detection (default=3, 1-9)
+      weight=<float>            strength of filter (default=0.50, 0-10)
+      threshold=<float>         min brightness change to be sharpened (default=10.00, 0-255)
+
+   --vpp-edgelevel [<param1>=<value>][,<param2>=<value>][...]
+     edgelevel filter to enhance edge.
+    params
+      strength=<float>          strength (default=0, -31 - 31)
+      threshold=<float>         threshold to ignore noise (default=20.0, 0-255)
+      black=<float>             allow edge to be darker on edge enhancement
+                                  (default=0.0, 0-31)
+      white=<float>             allow edge to be brighter on edge enhancement
+                                  (default=0.0, 0-31)
+
+   --vpp-warpsharp [<param1>=<value>][,<param2>=<value>][...]
+     warpsharp filter to enhance edge.
+    params
+      threshold=<float>         edge mask threshold (default=128.0, 0-255)
+      blur=<int>                number of times to blur the edge mask.
+                                  (default=2, 0-)
+      type=<int>                blur type, 0...13x13, 1...5x5 (default=0)
+      depth=<float>             how far to warp (default=16.0, -128 - 128)
+      chroma=<int>              0...use luma mask, 1...create chroma mask
+                                  (default=0)
+
+   --vpp-tweak [<param1>=<value>][,<param2>=<value>][...]
+     apply brightness, constrast, gamma, hue adjustment.
+    params
+      brightness=<float>        (default=0.0, -1.0 - 1.0)
+      contrast=<float>          (default=1.0, -2.0 - 2.0)
+      gamma=<float>             (default=1.0,  0.1 - 10.0)
+      saturation=<float>        (default=1.0,  0.0 - 3.0)
+      hue=<float>               (default=0.0, -180 - 180)
+
+   --vpp-rotate <int>           rotate video (90, 180, 270)
+
+   --vpp-transform [<param1>=<value>][,<param2>=<value>][...]
+    params
+      flip_x=<bool>
+      flip_y=<bool>
+      transpose=<bool>
+
+   --vpp-deband [<param1>=<value>][,<param2>=<value>][...]
+     enable deband filter.
+    params
+      range=<int>               range (default=15, 0-127)
+      sample=<int>              sample (default=1, 0-2)
+      thre=<int>                threshold for y, cb & cr
+      thre_y=<int>              threshold for y (default=15, 0-31)
+      thre_cb=<int>             threshold for cb (default=15, 0-31)
+      thre_cr=<int>             threshold for cr (default=15, 0-31)
+      dither=<int>              strength of dither for y, cb & cr
+      dither_y=<int>            strength of dither for y (default=15, 0-31)
+      dither_c=<int>            strength of dither for cb/cr (default=15, 0-31)
+      seed=<int>                rand seed (default=1234)
+      blurfirst                 blurfirst (default=off)
+      rand_each_frame           generate rand for each frame (default=off)
+
+   --vpp-pad <int>,<int>,<int>,<int>
+     add padding to left,top,right,bottom (in pixels)
+
+   --input-buf <int>            buffer size for input in frames (1-16)
+                                 default   hw: 3,  sw: 1
+                                 cannot be used with avqsv reader.
+   --mfx-thread <int>          set mfx thread num (-1 (auto), 2, 3, ...)
+                                 note that mfx thread cannot be less than 2.
+   --min-memory                 minimize memory usage of QSVEncC.
+                                 same as --output-thread 0 --audio-thread 0
+                                   --mfx-thread 2 -a 1 --input-buf 1 --output-buf 0
+                                 this will cause lower performance!
+   --(no-)timer-period-tuning   enable(disable) timer period tuning
+                                  default: enabled
+
+
+   --log <string>               set log file name
+   --log-level <string>         set log level
+                                  debug, info(default), warn, error
+   --log-framelist              output debug info for avsw/avhw reader.
+   --log-packets                output debug info for avsw/avhw reader.
+
+   --option-file <string>       read commanline options written in file.
+   --max-procfps <int>          limit encoding speed for lower utilization.
+                                 default:0 (no limit)
+   --lowlatency                 minimize latency (might have lower throughput).
+   --output-buf <int>           buffer size for output in MByte
+                                 default 8 MB (0-128)
+   --output-thread <int>        set output thread num
+                                 -1: auto (= default)
+                                  0: disable (slow, but less memory usage)
+                                  1: use one thread
+
+   --avsdll <string>            specifies AviSynth DLL location to use.
+
+   --process-codepage <string>  utf8 ... use UTF-8 (default)
+                                os   ... use the codepage set in Operating System.
+
+   --perf-monitor [<string>][,<string>]...
+       check performance info of encoder and output to log file
+       select counter from below, default = all
+
+     counters for perf-monitor
+                                 all          ... monitor all info
+                                 cpu_total    ... cpu total usage (%)
+                                 cpu_kernel   ... cpu kernel usage (%)
+                                 cpu_main     ... cpu main thread usage (%)
+                                 cpu_enc      ... cpu encode thread usage (%)
+                                 cpu_in       ... cpu input thread usage (%)
+                                 cpu_out      ... cpu output thread usage (%)
+                                 cpu_aud_proc ... cpu aud proc thread usage (%)
+                                 cpu_aud_enc  ... cpu aud enc thread usage (%)
+                                 cpu          ... monitor all cpu info
+                                 gpu_load    ... gpu usage (%)
+                                 gpu_clock   ... gpu avg clock
+                                 vee_load    ... gpu video encoder usage (%)
+                                 ved_load    ... gpu video decoder usage (%)
+                                 gpu         ... monitor all gpu info
+                                 queue       ... queue usage
+                                 mem_private ... private memory (MB)
+                                 mem_virtual ... virtual memory (MB)
+                                 mem         ... monitor all memory info
+                                 io_read     ... io read  (MB/s)
+                                 io_write    ... io write (MB/s)
+                                 io          ... monitor all io info
+                                 fps         ... encode speed (fps)
+                                 fps_avg     ... encode avg. speed (fps)
+                                 bitrate     ... encode bitrate (kbps)
+                                 bitrate_avg ... encode avg. bitrate (kbps)
+                                 frame_out   ... written_frames
+
+   --perf-monitor-interval <int> set perf monitor check interval (millisec)
+                                 default 500, must be 50 or more
+
+   --python <string>            set python path for --perf-monitor-plot
+                                 default: python
+
+   --benchmark <string>         run in benchmark mode
+                                 and write result in txt file
+   --bench-quality "all" or <string>[,<string>][,<string>]...
+                                 default: "best,balanced,fastest"
+                                list of target quality to check on benchmark

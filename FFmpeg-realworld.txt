@@ -1,5 +1,12 @@
-ffmpeg -hwaccel dxva2 -i "D:\OneDrive - lijingze\文档\Video Encoding\Resize.avs" -i "E:\Electric Odyssey sub-proj\[Extreme E] Electric Odyssey S01E03 _ The Desert X Prix Winners! _ Extreme E-5qkfLU4vn00.mkv" -map 0 -map 1:a -c:a aac -ab 529k -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 20M "Electric OdysseyS01E03.mkv"
-
+ffmpeg -hwaccel dxva2 -i "E:\[VTuber Cafe _ VRFunny] WE JUST WANNA SEE YOUR BODY _ VRCHAT Funny Moments-14GofNRXCZ4.mkv" -lavfi "
+[0:v]trim=0:{2*60+41.174} ,setpts=PTS-STARTPTS[a],
+[0:v]trim=161.147:190.714 ,setpts=PTS-STARTPTS[b],
+[0:v]trim=161.147:190.714 ,gblur=100,setpts=PTS-STARTPTS[bb],
+[bb]crop=x=0:y=120:h=760:w=in_w,setpts=PTS-STARTPTS[bbc],
+[b][bbc]overlay=x=0:y=120,setpts=PTS-STARTPTS[b],
+[0:v]trim=start=190.714 ,setpts=PTS-STARTPTS[c],
+[a][b][c]concat=n=3[outv]
+" -map [outv] -map 0:a -c:a aac -ab 529k -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 7.5M blur.mkv
 
 在线播放
 
@@ -10,20 +17,20 @@ B站：
 mpv --http-header-fields='referer:https://www.bilibili.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://cn-tj2-cmcc-bcache-03.bilivideo.com/upgcxcode/82/40/329954082/329954082_nb2-1-30112.m4s?e=ig8euxZM2rNcNbdlhoNvNC8BqJIzNbfqXBvEuENvNC8aNEVEtEvE9IMvXBvE2ENvNCImNEVEIj0Y2J_aug859IB_&uipk=5&nbs=1&deadline=1623692536&gen=playurlv2&os=bcache&oi=3746054009&trid=0000619918a14af7443f8d613b4cf66fea4at&platform=android_tv_yst&upsig=3e675ad37e2d549919ccb184e40bf0ee&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&cdnid=6774&mid=310265481&bvc=vod&orderid=0,3&logo=80000000" --audio-file="a"
 
 Onedrive：
-mpv --http-header-fields='cookie: MicrosoftApplicationsTelemetryDeviceId=5dee9d4a-2ca5-45db-8d5d-8b37dfde7ae4; MicrosoftApplicationsTelemetryFirstLaunchTime=2021-06-01T16:26:57.577Z; rtFa=vgws1pgojsLBSNC2HynN768A8LX1AkHGbCS13e/G08QmQ0RGNDg5NjEtNTdBOS00MTE0LTk3NzYtN0FCNTVFQTU1RTFDk9wJbg3Q1nvxCGhkOjnTpW3TBWmKRufpmuUtzJ0/0r5jag7fOmIMOJW96Mly4f6wmG26jeWEJWBPnpLkV6yRN2+YvnDZ44u4DW23GNGX7waRev4W5vjWWHQCFnw/RAW5ssFYyPSDmakg+eGQuOmCL2qxKsPk/GbTWOL4w8B7LMsHtFRYVZtsCaM3duXqF5poWasWF6obFxBzMFzwpVMsDc8mAjhXwznwMSTxbteGfCPVPhd5AUvkO/G4m6epQ0DnEPq1wnpirUj43VFpx68FYfu/H8RK70U1olKq1E9rKLYrECtqjN/6+X8ntuNF0tQ9sm8IUhz9m9D7iM07RujgnEUAAAA=; FedAuth=77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48U1A+VjEwLDBoLmZ8bWVtYmVyc2hpcHwxMDAzMjAwMTEzYTU3YWI1QGxpdmUuY29tLDAjLmZ8bWVtYmVyc2hpcHxhZHQtNDYxOUBidXB0LmVkdS5jbiwxMzI1NzE2NDU1MDAwMDAwMDAsMTMyNTY5NzMwNzUwMDAwMDAwLDEzMjY3NDcwMzkxMTQxMzgzMyw0NS44OC4xNzkuMzUsMyxjZGY0ODk2MS01N2E5LTQxMTQtOTc3Ni03YWI1NWVhNTVlMWMsLGFkOGQ5ODU5LWRiMGMtNDU1Mi05MjJiLTY4ODE4Mzg0ZGM5NiwyYmE5Y2Q5Zi03MGIxLTIwMDAtZmU5ZC1mZGI5ZTQwNjRmNGEsMmJhOWNkOWYtNzBiMS0yMDAwLWZlOWQtZmRiOWU0MDY0ZjRhLCwwLDEzMjY3MTI0NzkxMTEwMTM0OSwxMzI2NzI5NzU5MTExMDEzNDksLCxleUo0YlhOZlkyTWlPaUpiWENKRFVERmNJbDBpTENKNGJYTmZjM050SWpvaU1TSjksMjY1MDQ2Nzc0Mzk5OTk5OTk5OSwxMzI2NzAzODM5MDAwMDAwMDAsZmZmOTJjYjQtM2ZmOS00ZWY4LTgzOTQtNDA4ZmYxMjM1YmExLCwsLCwsYjdhSmh1cTFGYUoyd21qcExwTURrWGlzNUYzVUczaElDak9ubGdybCtLQXJHU2ZNTTMwRUJ5THRGSTlaSkczRDhJRjBUb3RIdnU3bWtyZW1yQ3k0QXFwOGtjQmJtSkwvU1MxNjZabUV1dGNJdndvNi9VSE82WkVFczloS3NzTlRtQnc3YXhFdHJ2QUYrWVB4VC9GQmN0Y2ZzdUZieW1DOVhneFdNZFYycXVTOEpJWjR0Sm9va2ZqbU5yTU42QmtYOG5VVTYySEJkQ1dTd3NHQVZ6RHcvWVV1MjMzRU5xUXhmWnNVRVNiZmNpQlNneHhMR1grWEIxZnlzNktrT1hvVFdnL2pJT1Jrb0FsK3oxeU9qQzB6NEdzV0VkNHQ2dUYvVDA0bGtLdUpVdHdrUCthWENDUEtjQXdmejRxR3R3ZWpUVWNXYklERXhxaXVkdUljNXErUmV3PT08L1NQPg==; CCSInfo=MjAyMS82LzYgMjI6MTU6MTYgXkfUGLkdrLEblwFtUV/EB4NVqESxRqcuL2v4g62Uyi9UCptq6TnSZNmhGcmgOth0QVnqHgbDYdZjNg4hf1R6Lc1PkNSSyjatrT4MS6nB4P5l1JR2t+UsPGv5K6f+hzxOkUSKbWHETRgNIfHMOHHYNDq9GxmoRGCdD9dUj840hRYUYU6KaXG76z5rA0cFlwWHOgm+nmBuj0x3xtSshwbWM7ao94FLQ1WCbBLC68iEVWtiyND0P/iFewednZoCCwPBlKEXp/NqIx2QJzrIY2+pk+grt9LquNnaqzw8y7MoGhushkFwn8eHuLmQ9hKDjmwlkqtcG5IxB7mQj8ZBqkTUEQAAAA==; cucg=1' "https://bupteducn-my.sharepoint.com/personal/adt-4619_bupt_edu_cn/_layouts/15/download.aspx?UniqueId=474d891d%2D8f77%2D4fc9%2D98da%2D04f1ed764739"
+mpv --http-header-fields='authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im5PbzNaRHJPRFhFSzFqS1doWHNsSFJfS1hFZyIsImtpZCI6Im5PbzNaRHJPRFhFSzFqS1doWHNsSFJfS1hFZyJ9.eyJhdWQiOiJodHRwczovL3dlYnNoZWxsLnN1aXRlLm9mZmljZS5jb20iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9jZGY0ODk2MS01N2E5LTQxMTQtOTc3Ni03YWI1NWVhNTVlMWMvIiwiaWF0IjoxNjI0Njc0MjIyLCJuYmYiOjE2MjQ2NzQyMjIsImV4cCI6MTYyNDY3ODEyMiwiYWNyIjoiMSIsImFpbyI6IkUyWmdZR2c5Wk1obkk1MS9TK3ZMdk1tL1BiV2xkM3lkTDNGMWx1OEozUitHZXZKWk54MEIiLCJhbXIiOlsicHdkIl0sImFwcGlkIjoiODliZWUxZjctNWU2ZS00ZDhhLTlmM2QtZWNkNjAxMjU5ZGE3IiwiYXBwaWRhY3IiOiIwIiwiZmFtaWx5X25hbWUiOiLmnY4iLCJnaXZlbl9uYW1lIjoi56ue5oupIiwiaXBhZGRyIjoiMjIzLjcyLjEwNS4zMiIsImxvZ2luX2hpbnQiOiJPLkNpUm1abVk1TW1OaU5DMHpabVk1TFRSbFpqZ3RPRE01TkMwME1EaG1aakV5TXpWaVlURVNKR05rWmpRNE9UWXhMVFUzWVRrdE5ERXhOQzA1TnpjMkxUZGhZalUxWldFMU5XVXhZeG9VUVVSVUxUUTJNVGxBWW5Wd2RDNWxaSFV1WTI0Z1dRPT0iLCJuYW1lIjoi5p2O56ue5oupIiwib2lkIjoiZmZmOTJjYjQtM2ZmOS00ZWY4LTgzOTQtNDA4ZmYxMjM1YmExIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiQURULTQ2MTlAYnVwdC5lZHUuY24iLCJwdWlkIjoiMTAwMzIwMDExM0E1N0FCNSIsInB3ZF9leHAiOiIwIiwicHdkX3VybCI6Imh0dHBzOi8vcG9ydGFsLm1pY3Jvc29mdG9ubGluZS5jb20vQ2hhbmdlUGFzc3dvcmQuYXNweCIsInJoIjoiMC5BUzhBWVluMHphbFhGRUdYZG5xMVhxVmVIUGZodm9sdVhvcE5uejNzMWdFbG5hY3ZBQncuIiwic2NwIjoiU2hlbGxTZXR0aW5ncy5SZWFkIiwic3ViIjoiem9EZXFwWkNSS2ZsSXRjc3BVSU5QUDZpOEpoOXJfOGlUYlc2dVdxblpmQSIsInRpZCI6ImNkZjQ4OTYxLTU3YTktNDExNC05Nzc2LTdhYjU1ZWE1NWUxYyIsInVuaXF1ZV9uYW1lIjoiQURULTQ2MTlAYnVwdC5lZHUuY24iLCJ1cG4iOiJBRFQtNDYxOUBidXB0LmVkdS5jbiIsInV0aSI6IlRrTW40cE5wM0U2d2lrV04zaDBGQUEiLCJ2ZXIiOiIxLjAifQ.bAe5pOwiOPzTeCDxa9pUBQDBUzqS8z3ISWifxwfVagI29hZoiEQgTrsNC-KeS7IViXxOZUrEcBUoZEA9VL1s7ALLC60fiwZSJOpwoO5O8LrTd591kZn4XdR3jN8VeF03GSJM57V2V8uXbs_p5h5zFYqRJUJAsT52DcZ-atRK6m8GH256fJnHvxk3KUM6_DtLeprOXxkiKRaXk0oRlOvigY_VPTPwwjuUOgI5JIiXc7ALsnNdNNqJYiXGxk_i91RAxZsZoosOltx_Nl0wuX1gohVb-q10roaY9S7dI6TIqVnhuja1WS7MSDN1SwER1IHFCrPVuDkJj8OkVw4Gx9yaIw, cookie: ClientStorageCookie=QIDxJIp9ergCPPoR2Lktvm3ErdvgqsnkUs4EOz18NEw%3D%26jqhrtbNUIP%2B3yb%2FhwcNkNQ%3D%3D' "https://bupteducn-my.sharepoint.com/personal/adt-4619_bupt_edu_cn/_layouts/15/download.aspx?UniqueId=474d891d%2D8f77%2D4fc9%2D98da%2D04f1ed764739"
 
 
 Referer下载视频：
 
 B站：
-ffplay -headers "referer:https://www.bilibili.com/" -headers "user-agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39"  -i "https://cn-tj2-cmcc-bcache-07.bilivideo.com/upgcxcode/62/68/337726862/337726862-1-30116.m4s?e=ig8euxZM2rNcNbdlhoNvNC8BqJIzNbfqXBvEqxTEto8BTrNvN0GvT90W5JZMkX_YN0MvXg8gNEV4NC8xNEV4N03eN0B5tZlqNxTEto8BTrNvNeZVuJ10Kj_g2UB02J0mN0B5tZlqNCNEto8BTrNvNC7MTX502C8f2jmMQJ6mqF2fka1mqx6gqj0eN0B599M=&uipk=5&nbs=1&deadline=1620875584&gen=playurlv2&os=bcache&oi=3746062530&trid=0000a03d330e7cef4e239f26d0a15b65efe1u&platform=pc&upsig=d885c7ca9ca7d5b7af41c44f33818a70&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&cdnid=6778&mid=310265481&orderid=0,3&agrr=0&logo=80000000" 
+ffplay -headers "referer:https://www.bilibili.com/" -headers "user-agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39"  -i "https://cn-tj2-cmcc-bcache-10.bilivideo.com/upgcxcode/63/03/12440363/12440363-1-80.flv?e=ig8euxZM2rNcNbTzhbUVhoMjhzNBhwdEto8g5X10ugNcXBlqNxHxNEVE5XREto8KqJZHUa6m5J0SqE85tZvEuENvNo8g2ENvNo8i8o859r1qXg8xNEVE5XREto8GuFGv2U7SuxI72X6fTr859r1qXg8gNEVE5XREto8z5JZC2X2gkX5L5F1eTX1jkXlsTXHeux_f2o859IB_&uipk=5&nbs=1&deadline=1624861791&gen=playurlv2&os=bcache&oi=3746049178&trid=00002577c1b06fcb481fb0a82aad5d22ec66p&platform=pc&upsig=7eef46ad9b84c8d71ed81d4b9063fd01&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&cdnid=6781&mid=310265481&bvc=vod&orderid=0,3&agrr=1&logo=80000000" 
 
 阿里云盘
 ffplay -headers "referer:https://www.aliyundrive.com/" -user_agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39" -i "https://bj29.cn-beijing.data.alicloudccp.com/5fc351dac3b639b7c82e49d7a927f551ba17a8c1%2F5fc351daefd6f532f9d347e2bc8930f04fd6a612?di=bj29&dr=845445&f=5fc351dac3b639b7c82e49d7a927f551ba17a8c1&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27Formula.1.Drive.to.Survive.S01E10.2019.Netflix.WEB-DL.4k.HEVC.DDP-AREY.mkv&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1619109646&x-oss-signature=HkzFUEM2e8AkweC%2B6m4A1xi7j91Pfw%2FpJSuS%2F1nIU4w%3D&x-oss-signature-version=OSS2" 
 
 
 Powershell批量
-get-childitem -name -r *.png | foreach-object {ffmpeg -i $_  -vf scale=25*25 font\$_}
+get-childitem -name -r *.png | foreach-object {ffmpeg -i $_  -vf scale=750*750:flags=lanczos test\$_}
 
 
 多轨道截取
@@ -173,15 +180,33 @@ for($i=1;$i-lt 20;$i--) `
 
 $env:http_proxy="http://127.0.0.1:10809";`
 for($i=1;$i-lt 20;$i--) `
-{$url=(youtube-dl -g https://www.twitch.tv/kromia);`
+{$url=(youtube-dl -g https://www.twitch.tv/beavecio );`
 ffmpeg `
+-reconnect_at_eof  1 `
+-reconnect_streamed 1  `
 -rtbufsize 10M `
--re -i "$url" `
+-bitexact `
+-i "$url" `
 -c copy `
+-probesize 5000000`
 -f flv `
 -ignore_io_errors 1 `
+-metadata:g 'encoding_tool=Lee7723_Encoding' `
+-metadata:s:v:0 'encoder=Lee7723_Encoding' `
+-metadata:s:a:0 'encoder=Lee7723_Encoding' `
 "rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=def5381fa58bcc8e2f235d250f2888a7&schedule=rtmp"}
 
+
+本地直播配合http.server
+$env:http_proxy="http://127.0.0.1:10809"; `
+for($i=1;$i-lt 20;$i--) {`
+ffmpeg `
+-stream_loop -1 `
+-hwaccel dxva2 `
+-re `
+-i (youtube-dl -g -f 137 https://www.youtube.com/watch?v=CTjtcmilqUg) -i (youtube-dl -g -f 140 https://www.youtube.com/watch?v=CTjtcmilqUg) `
+-ignore_io_errors 1 `
+-c copy -map 0 -map 1 -f hls -hls_wrap 10 hls/index.m3u8}
 
 
 转m3u8
@@ -236,7 +261,7 @@ ffmpeg  -f image2 -i "D:\Drivers\QQfiles\1981671849\FileRecv\MobileFile\mono\下
 ffmpeg -i "C:\Users\19816\Documents\Video Encoding\SSIM.avs" -f null -
 
 计算SSIM(ffmpeg)
-ffmpeg -i "E:\2160p.120fps-mvtools.mp4"  -i "D:\迅雷下载\[拉伸4K-含120fps-英字]Once Upon a Snowman.m4s"  -lavfi [0:v]crop=iw:ih-200:0:200[ref];[1:v]crop=iw:ih-200:0:200[com];[ref][com]ssim="stats_file=/SSIM_test/ssim-ffmpeg/bilibili-web.log" -f null -
+ffmpeg -hwaccel dxva2 -i "E:\[Furtrap] xQcOw VS Furtrap Anime Battle _ 'Is Fizzi a Furry'.mp4" -hwaccel dxva2 -i "E:\[Furtrap] xQcOw VS Furtrap Anime Battle _ 'Is Fizzi a Furry'-jmL83rF1dyk.mkv"  -lavfi [1:v][0]ssim="stats_file=ssim.csv" -f null -
 
 
 计算PSNR
@@ -289,3 +314,6 @@ mp4加上 -movflags +faststart。这样分享文件给别人的时候可以边�
 
 编码预设
 -c:a aac -ab 529k -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 10M
+
+
+qsvencc --avhw -i "E:\[Furtrap] xQcOw VS Furtrap Anime Battle _ 'Is Fizzi a Furry'-jmL83rF1dyk.mkv" -u best --vbr 7500 --la-depth 60 --audio-copy -o test.mp4

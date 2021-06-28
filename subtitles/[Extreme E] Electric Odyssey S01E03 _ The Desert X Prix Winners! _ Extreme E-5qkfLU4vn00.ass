@@ -20,9 +20,9 @@ Audio File: [Extreme E] Electric Odyssey S01E03 _ The Desert X Prix Winners! _ E
 Video File: [Extreme E] Electric Odyssey S01E03 _ The Desert X Prix Winners! _ Extreme E-5qkfLU4vn00.mkv
 Video AR Value: 1.777778
 Video Zoom Percent: 0.375000
-Scroll Position: 676
-Active Line: 682
-Video Position: 29416
+Scroll Position: 181
+Active Line: 191
+Video Position: 9915
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
@@ -224,57 +224,57 @@ Dialogue: 2,0:06:00.31,0:06:01.70,ElectricOdyssey-ch-not_comment,,0,0,0,,他追�
 Dialogue: 1,0:06:00.31,0:06:01.70,ElectricOdyssey-en,,0,0,0,,He hit the back of the car
 Dialogue: 2,0:06:01.70,0:06:03.27,ElectricOdyssey-ch-not_comment,,0,0,0,,这不是我们希望看到的
 Dialogue: 1,0:06:01.70,0:06:03.27,ElectricOdyssey-en,,0,0,0,,That's not what we wanted to see
-Dialogue: 0,0:06:03.78,0:06:04.94,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\pos(424,808)}她
-Dialogue: 0,0:06:04.02,0:06:04.94,ElectricOdyssey-ch,,0,0,0,,{\1c&H0074D405\1a00\3aff\4aff\fscx200\fscy200\pos(677.333,808)}停车了
-Dialogue: 0,0:06:04.94,0:06:04.98,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\pos(274.667,808)}她
-Dialogue: 0,0:06:04.94,0:06:04.98,ElectricOdyssey-ch,,0,0,0,,{\1c&H0074D405\1a00\3aff\4aff\fscx200\fscy200\pos(528,808)}停车了
-Dialogue: 0,0:06:04.98,0:06:05.10,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\pos(568,808)}她
-Dialogue: 0,0:06:05.10,0:06:05.78,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\pos(426.667,808)}她
-Dialogue: 0,0:06:05.26,0:06:05.78,ElectricOdyssey-ch,,0,0,0,,{\1c&H0074D405\1a00\3aff\4aff\fscx200\fscy200\pos(670,808)}停车了
-Dialogue: 0,0:06:05.82,0:06:06.38,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\pos(312,755)}我
-Dialogue: 0,0:06:05.98,0:06:06.38,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\pos(445.334,755)}的
-Dialogue: 0,0:06:06.10,0:06:06.38,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\pos(576,755)}天
-Dialogue: 0,0:06:06.22,0:06:06.38,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\pos(709.334,755)}呐
-Dialogue: 0,0:06:06.74,0:06:07.18,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\pos(426.667,808)}她
-Dialogue: 0,0:06:07.02,0:06:07.18,ElectricOdyssey-ch,,0,0,0,,{\1c&H0074D405\1a00\3aff\4aff\fscx200\fscy200\pos(635,808)}停在
-Dialogue: 0,0:06:07.26,0:06:07.34,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\pos(900,808)}我
-Dialogue: 0,0:06:07.34,0:06:07.42,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\pos(900,808)}我{\1c&H0074D405}前
-Dialogue: 0,0:06:07.42,0:06:07.54,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\pos(900,808)}我{\1c&H0074D405}前面
-Dialogue: 0,0:06:07.54,0:06:09.22,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\pos(900,808)}我{\1c&H0074D405}前面{\1c}了
-Dialogue: 0,0:06:09.22,0:06:09.86,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\pos(543.333,672)}我们
-Dialogue: 0,0:06:09.30,0:06:09.90,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\pos(727.333,672)\1c&H0074D405}都
-Dialogue: 0,0:06:09.86,0:06:10.46,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\pos(543.334,770)}我们
-Dialogue: 0,0:06:10.02,0:06:10.46,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\pos(727.333,770)\1c&H0074D405}都
-Dialogue: 0,0:06:10.22,0:06:10.46,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\pos(905,772)}停了
-Dialogue: 0,0:06:10.46,0:06:11.14,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\pos(351.334,676.667)}我
-Dialogue: 0,0:06:10.54,0:06:11.14,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\pos(540,676.667)\1c&H0074D405}没事
-Dialogue: 0,0:06:11.26,0:06:11.42,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\1c&H0074D405\move(668,740,600,740,)}她
-Dialogue: 0,0:06:11.42,0:06:11.58,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\1c&H0074D405\move(640,740,590,740,)}她停
-Dialogue: 0,0:06:11.58,0:06:11.82,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\1c&H0074D405\move(640,740,590,740,)}她停住
-Dialogue: 0,0:06:11.82,0:06:12.26,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\1c&H0074D405\move(640,740,640,740,0,260)}她停住了
-Dialogue: 0,0:06:12.26,0:06:13.58,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx250\fscy250\pos(413.333,960)}兄弟
-Dialogue: 0,0:06:13.66,0:06:14.58,ElectricOdyssey-ch,,0,0,0,,{\bord0\blur100\t(0,180,\blur0)\1a00\3aff\4aff\fscx200\fscy200\pos(856,990)}全是
-Dialogue: 0,0:06:13.86,0:06:14.58,ElectricOdyssey-ch,,0,0,0,,{\bord0\blur100\t(0,180,\blur0)\1a00\3aff\4aff\fscx200\fscy200\pos(1040,990)}土
-Dialogue: 0,0:06:14.62,0:06:15.22,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\1c&H0074D405\move(2234,766,-400,766,20,580)}啊啊啊啊啊啊啊啊啊
-Dialogue: 0,0:06:15.22,0:06:16.58,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\pos(532,888)}什么
-Dialogue: 0,0:06:15.30,0:06:16.58,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\pos(828,888)\1c&H0074D405}情况？
-Dialogue: 0,0:06:17.58,0:06:18.94,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\pos(464,1040)}你没
-Dialogue: 0,0:06:17.66,0:06:18.94,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\pos(760,1040)}事吧？
-Dialogue: 0,0:06:18.94,0:06:20.30,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\pos(532,888)}什么
-Dialogue: 0,0:06:19.02,0:06:20.30,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\pos(828,888)\1c&H0074D405}情况？
-Dialogue: 0,0:06:21.18,0:06:22.62,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\1c&H0074D405\pos(728,1024)}你
-Dialogue: 0,0:06:21.54,0:06:22.62,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\1c&H0074D405\pos(856,1024)}撞
-Dialogue: 0,0:06:21.70,0:06:22.62,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\1c&H0074D405\pos(992,1024)}到
-Dialogue: 0,0:06:21.86,0:06:22.62,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\1c&H0074D405\pos(1124,1024)}我
-Dialogue: 0,0:06:21.86,0:06:22.62,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\1c&H0074D405\pos(1252,1024)}了
-Dialogue: 0,0:06:22.62,0:06:23.94,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx400\fscy400\pos(1014,890)}哦
-Dialogue: 0,0:06:23.98,0:06:24.50,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\kf34\2aff\move(1020,1024,980,1024,20,300)}感觉像你
-Dialogue: 0,0:06:24.50,0:06:24.62,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\move(980,1024,980,1124,0,140)\clip(406,886,1688,1034)}感觉像你
-Dialogue: 0,0:06:24.50,0:06:25.26,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\move(980,930,980,1024,20,140)\1c&H0074D405\clip(406,886,1688,1034)}停下了
-Dialogue: 0,0:06:25.26,0:06:25.98,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\pos(780,426)}没有
-Dialogue: 0,0:06:26.02,0:06:26.58,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\2aff\pos(594,836)}{\kf30}我撞你的时候
-Dialogue: 0,0:06:26.62,0:06:29.02,ElectricOdyssey-ch,,0,0,0,,{\bord0\blur12\t(0,300,\blur0)\1a00\3aff\4aff\fscx300\fscy300\2aff\1c&H0074D405\move(952,948,544,948,20,340)}{\kf34}速度很快
-Dialogue: 0,0:06:29.10,0:06:30.26,ElectricOdyssey-ch,,0,0,0,,{\bord0\1a00\3aff\4aff\fscx200\fscy200\2aff\pos(1126,848)}{\k6}实{\k10}在{\k15}抱{\k10}歉
+Dialogue: 0,0:06:03.78,0:06:04.94,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(424,808)}她
+Dialogue: 0,0:06:04.02,0:06:04.94,ElectricOdyssey-ch,,0,0,0,,{\1c&H0087FF16\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(690,808)}停车了
+Dialogue: 0,0:06:04.94,0:06:04.98,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(274.667,808)}她
+Dialogue: 0,0:06:04.94,0:06:04.98,ElectricOdyssey-ch,,0,0,0,,{\1c&H0087FF16\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(540,808)}停车了
+Dialogue: 0,0:06:04.98,0:06:05.10,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(568,808)}她
+Dialogue: 0,0:06:05.10,0:06:05.78,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(426.667,808)}她
+Dialogue: 0,0:06:05.26,0:06:05.78,ElectricOdyssey-ch,,0,0,0,,{\1c&H0087FF16\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(690,808)}停车了
+Dialogue: 0,0:06:05.82,0:06:06.38,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(312,755)}我
+Dialogue: 0,0:06:05.98,0:06:06.38,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(445.334,755)}的
+Dialogue: 0,0:06:06.10,0:06:06.38,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(576,755)}天
+Dialogue: 0,0:06:06.22,0:06:06.38,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(709.334,755)}呐
+Dialogue: 0,0:06:06.74,0:06:07.18,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(426.667,808)}她
+Dialogue: 0,0:06:07.02,0:06:07.18,ElectricOdyssey-ch,,0,0,0,,{\1c&H0087FF16\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(635,808)}停在
+Dialogue: 0,0:06:07.26,0:06:07.34,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(900,808)}我
+Dialogue: 0,0:06:07.34,0:06:07.42,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(900,808)}我{\1c&H0087FF16}前
+Dialogue: 0,0:06:07.42,0:06:07.54,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(900,808)}我{\1c&H0087FF16}前面
+Dialogue: 0,0:06:07.54,0:06:09.22,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(900,808)}我{\1c&H0087FF16}前面{\1c}了
+Dialogue: 0,0:06:09.22,0:06:09.86,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(543.333,672)}我们
+Dialogue: 0,0:06:09.30,0:06:09.90,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(727.333,672)\1c&H0087FF16}都
+Dialogue: 0,0:06:09.86,0:06:10.46,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(543.334,770)}我们
+Dialogue: 0,0:06:10.02,0:06:10.46,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(727.333,770)\1c&H0087FF16}都
+Dialogue: 0,0:06:10.22,0:06:10.46,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(905,772)}停了
+Dialogue: 0,0:06:10.46,0:06:11.14,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(351.334,676.667)}我
+Dialogue: 0,0:06:10.54,0:06:11.14,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(540,676.667)\1c&H0087FF16}没事
+Dialogue: 0,0:06:11.26,0:06:11.42,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\1c&H0087FF16\move(668,740,600,740,)}她
+Dialogue: 0,0:06:11.42,0:06:11.58,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\1c&H0087FF16\move(640,740,590,740,)}她停
+Dialogue: 0,0:06:11.58,0:06:11.82,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\1c&H0087FF16\move(640,740,590,740,)}她停住
+Dialogue: 0,0:06:11.82,0:06:12.26,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\1c&H0087FF16\move(640,740,640,740,0,260)}她停住了
+Dialogue: 0,0:06:12.26,0:06:13.58,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx360\fscy240\pos(450,960)}兄弟
+Dialogue: 0,0:06:13.66,0:06:14.58,ElectricOdyssey-ch,,0,0,0,,{\bord0\blur100\t(0,180,\blur0)\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(856,990)}全是
+Dialogue: 0,0:06:13.86,0:06:14.58,ElectricOdyssey-ch,,0,0,0,,{\bord0\blur100\t(0,180,\blur0)\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(1040,990)}土
+Dialogue: 0,0:06:14.62,0:06:15.22,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\1c&H0087FF16\move(2234,766,-400,766,20,580)}啊啊啊啊啊啊啊啊啊
+Dialogue: 0,0:06:15.22,0:06:16.58,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(532,888)}什么
+Dialogue: 0,0:06:15.30,0:06:16.58,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(850,888)\1c&H0087FF16}情况？
+Dialogue: 0,0:06:17.58,0:06:18.94,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(464,1040)}你没
+Dialogue: 0,0:06:17.66,0:06:18.94,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(720,1040)}事吧
+Dialogue: 0,0:06:18.94,0:06:20.30,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(532,888)}什么
+Dialogue: 0,0:06:19.02,0:06:20.30,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(790,888)\1c&H0087FF16}情况
+Dialogue: 0,0:06:21.18,0:06:22.62,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\1c&H0087FF16\pos(728,1024)}你
+Dialogue: 0,0:06:21.54,0:06:22.62,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\1c&H0087FF16\pos(856,1024)}撞
+Dialogue: 0,0:06:21.70,0:06:22.62,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\1c&H0087FF16\pos(992,1024)}到
+Dialogue: 0,0:06:21.86,0:06:22.62,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\1c&H0087FF16\pos(1124,1024)}我
+Dialogue: 0,0:06:21.86,0:06:22.62,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\1c&H0087FF16\pos(1252,1024)}了
+Dialogue: 0,0:06:22.62,0:06:23.94,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx480\fscy360\pos(1014,890)}哦
+Dialogue: 0,0:06:23.98,0:06:24.50,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\kf34\2aff\move(1020,1024,980,1024,20,300)}感觉像你
+Dialogue: 0,0:06:24.50,0:06:24.62,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\move(980,1024,980,1124,0,140)\clip(406,886,1688,1034)}感觉像你
+Dialogue: 0,0:06:24.50,0:06:25.26,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\move(980,930,980,1024,20,140)\1c&H0087FF16\clip(406,886,1688,1034)}停下了
+Dialogue: 0,0:06:25.26,0:06:25.98,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\pos(780,426)}没有
+Dialogue: 0,0:06:26.02,0:06:26.58,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\2aff\pos(594,836)}{\kf30}我撞你的时候
+Dialogue: 0,0:06:26.62,0:06:29.02,ElectricOdyssey-ch,,0,0,0,,{\bord0\blur12\t(0,300,\blur0)\fn造字工房体（非商用）\2aff\1a00\3aff\4aff\fscx360\fscy240\1c&H0087FF16\move(952,948,544,948,20,340)}{\kf34}速度很快
+Dialogue: 0,0:06:29.10,0:06:30.26,ElectricOdyssey-ch,,0,0,0,,{\bord0\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\2aff\pos(1150,848)}{\k6}实{\k10}在{\k15}抱{\k10}歉
 Dialogue: 2,0:06:32.45,0:06:34.41,ElectricOdyssey-ch-not_comment,,0,0,0,,我没事，但我简直不敢相信这次事故
 Dialogue: 1,0:06:32.45,0:06:34.41,ElectricOdyssey-en,,0,0,0,,I'm here and I cannot believe what happened
 Dialogue: 2,0:06:34.56,0:06:37.61,ElectricOdyssey-ch-not_comment,,0,0,0,,我再一次从山坡上冲下来
@@ -571,12 +571,12 @@ Dialogue: 2,0:15:03.08,0:15:05.53,ElectricOdyssey-ch-not_comment,,0,0,0,,他在�
 Dialogue: 1,0:15:03.08,0:15:05.53,ElectricOdyssey-en,,0,0,0,,He was really struggling at up in turn two
 Dialogue: 2,0:15:05.53,0:15:07.22,ElectricOdyssey-ch-not_comment,,0,0,0,,我们再看一下
 Dialogue: 1,0:15:05.53,0:15:07.22,ElectricOdyssey-en,,0,0,0,,We'll see as the lap unfold
-Dialogue: 0,0:15:07.54,0:15:08.58,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx200\fscy200\t(0,60,\fscx300\fscy300)\pos(845.333,635.333)}没有
-Dialogue: 0,0:15:07.82,0:15:08.54,ElectricOdyssey-ch,,0,0,0,,{\1c&H0074D405\1a00\3aff\4aff\fscx250\fscy250\pos(1230,808)}转向
-Dialogue: 0,0:15:08.14,0:15:08.54,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx250\fscy250\pos(1520.666,970.667)}助力
-Dialogue: 0,0:15:08.58,0:15:10.02,ElectricOdyssey-ch,,0,0,0,,{\1c&H0074D405\1a00\3aff\4aff\fscx300\fscy300\pos(845.333,635.333)}没有
-Dialogue: 0,0:15:08.90,0:15:10.02,ElectricOdyssey-ch,,0,0,0,,{\1a00\3aff\4aff\fscx250\fscy250\pos(1230,808)}转向
-Dialogue: 0,0:15:08.98,0:15:10.02,ElectricOdyssey-ch,,0,0,0,,{\1c&H0074D405\1a00\3aff\4aff\fscx250\fscy250\pos(1520.666,970.667)}助力
+Dialogue: 0,0:15:07.54,0:15:08.58,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx260\fscy180\t(0,60,\fscx360\fscy240)\pos(845.333,635.333)}没有
+Dialogue: 0,0:15:07.82,0:15:08.54,ElectricOdyssey-ch,,0,0,0,,{\1c&H0087FF16\fn造字工房体（非商用）\1a00\3aff\4aff\fscx340\fscy220\pos(1230,808)}转向
+Dialogue: 0,0:15:08.14,0:15:08.54,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx340\fscy220\pos(1520.666,970.667)}助力
+Dialogue: 0,0:15:08.58,0:15:10.02,ElectricOdyssey-ch,,0,0,0,,{\1c&H0087FF16\fn造字工房体（非商用）\1a00\3aff\4aff\fscx360\fscy240\pos(845.333,635.333)}没有
+Dialogue: 0,0:15:08.90,0:15:10.02,ElectricOdyssey-ch,,0,0,0,,{\fn造字工房体（非商用）\1a00\3aff\4aff\fscx340\fscy220\pos(1230,808)}转向
+Dialogue: 0,0:15:08.98,0:15:10.02,ElectricOdyssey-ch,,0,0,0,,{\1c&H0087FF16\fn造字工房体（非商用）\1a00\3aff\4aff\fscx340\fscy220\pos(1520.666,970.667)}助力
 Dialogue: 2,0:15:11.46,0:15:13.55,ElectricOdyssey-ch-not_comment,,0,0,0,,Johan在前面拉开了
 Dialogue: 1,0:15:11.46,0:15:13.55,ElectricOdyssey-en,,0,0,0,,Up at the front though Kristoffersson has pulled
 Dialogue: 2,0:15:13.92,0:15:15.25,ElectricOdyssey-ch-not_comment,,0,0,0,,他拉开了很大的距离优势
