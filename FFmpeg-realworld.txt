@@ -32,6 +32,8 @@ ffplay -headers "referer:https://www.aliyundrive.com/" -user_agent "Mozilla/5.0 
 Powershell批量
 get-childitem -name -r *.png | foreach-object {ffmpeg -i $_  -vf scale=750*750:flags=lanczos test\$_}
 
+get-childitem -name -r *.ts | foreach-object {$a=($_ -replace(".ts","-HDR.mp4"));ffmpeg -i $_ -c copy "$a"}
+
 
 多轨道截取
 ffmpeg -ss 00:00:00 -i "E:\Frozen.II.2019.1080p.TWN.Blu-ray.AVC.DTS-HD.MA.7.1-nLiBRA\BDMV\STREAM\00906.m2ts" -t 00:01:02.60 -map 0:v -c:v copy  -map 0:a -c:a copy -map 0:s -c:s copy -map_metadata 0  -max_muxing_queue_size 9999 "J:\temp\AIF-pt2.mkv"
@@ -180,15 +182,15 @@ for($i=1;$i-lt 20;$i--) `
 
 $env:http_proxy="http://127.0.0.1:10809";`
 for($i=1;$i-lt 20;$i--) `
-{$url=(youtube-dl -g https://www.twitch.tv/beavecio );`
+{$url=(youtube-dl -g https://www.twitch.tv/rosedoodle );`
 ffmpeg `
+-stream_loop -1 `
 -reconnect_at_eof  1 `
 -reconnect_streamed 1  `
 -rtbufsize 10M `
 -bitexact `
 -i "$url" `
 -c copy `
--probesize 5000000`
 -f flv `
 -ignore_io_errors 1 `
 -metadata:g 'encoding_tool=Lee7723_Encoding' `
@@ -204,9 +206,21 @@ ffmpeg `
 -stream_loop -1 `
 -hwaccel dxva2 `
 -re `
--i (youtube-dl -g -f 137 https://www.youtube.com/watch?v=CTjtcmilqUg) -i (youtube-dl -g -f 140 https://www.youtube.com/watch?v=CTjtcmilqUg) `
+-i (youtube-dl -g https://www.twitch.tv/seanvr) `
 -ignore_io_errors 1 `
--c copy -map 0 -map 1 -f hls -hls_wrap 10 hls/index.m3u8}
+-c copy -map 0 -f hls -hls_wrap 10 -hls_list_size 8 hls/index.m3u8}
+
+
+$env:http_proxy="http://127.0.0.1:10809"; `
+get-childitem -name -r *.mkv | foreach-object `
+{`
+ffmpeg `
+-hwaccel dxva2 `
+-re `
+-i $_ `
+-ignore_io_errors 1 `
+-bitexact `
+-c:v copy -c:a aac -window_size 8 -remove_at_exit 1 -extra_window_size 2 -adaptation_sets "id=0,streams=v id=1,streams=a" -f dash E:/hls/index.mpd}
 
 
 转m3u8
@@ -295,7 +309,6 @@ ffmpeg -hwaccel dxva2 -i "D:\迅雷下载\victoria_together_presents_the_long_we
 
 ffplay -decryption_key "a72173c3eab36ae5a6f59cb62a79fd17" "D:\迅雷下载\victoria_together_presents_the_long_weekender_1080_6000_kb_enc_dash_track1_init.mp4"
 
-cd d
 
 HDR元数据
 ffmpeg -i "E:\SSIM_test\clips\00910.m2ts" -vf zscale=p=2020:t=smpte2084:m=2020_ncl:pin=709:tin=bt709:min=709:npl=200,format=yuv420p10 -c:v libx265 -x265-params "level=6:colorprim=bt2020:colormatrix=bt2020nc:transfer=smpte2084:master-display=G(8500,39850)B(6550,2300)R(35400,14600)WP(15635,16450)L(10000000,50)" -b:v 20000k -preset fast -c:a aac -ac 2 -ab 320k "test-HDR.mkv"
@@ -307,13 +320,16 @@ master-display=G(13250,34500)B(7500,3000)R(34000,16000)WP(15635,16450)L(10000000
 （master-display P3）
 
 HDR元数据 不重编码
-ffmpeg -i "E:\Show Yourself(From Frozen 2019)\粤语.mp4" -c:v copy -color_primaries bt2020 -colorspace bt2020nc -color_trc smpte2084 "F:\test HDR add.mkv"
+ffmpeg -bitexact -i "D:\迅雷下载\只狼-剑圣苇名一心.mp4" -c copy -color_primaries bt2020 -colorspace bt2020nc -color_trc smpte2084 -bitexact "test-HDR.mp4"
+
+get-childitem -name -r *.mp4 | foreach-object {$a=($_ -replace(".mp4","-HDR.mp4"));ffmpeg -hwaccel dxva2 -bitexact -i _$ -c copy -bsf:v h264_metadata=colour_primaries=9:transfer_characteristics=16:matrix_coefficients=9 -color_primaries bt2020 -colorspace bt2020nc -color_trc smpte2084 "$a"
+
 
 mp4加上 -movflags +faststart。这样分享文件给别人的时候可以边下边看。
 
 
 编码预设
--c:a aac -ab 529k -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 10M
+-c:a aac -ab 529k -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 10M -minrate 4M -bufsize 5M
 
 
 qsvencc --avhw -i "E:\[Furtrap] xQcOw VS Furtrap Anime Battle _ 'Is Fizzi a Furry'-jmL83rF1dyk.mkv" -u best --vbr 7500 --la-depth 60 --audio-copy -o test.mp4
