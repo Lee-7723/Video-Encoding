@@ -1,0 +1,6 @@
+SetMemoryMax(6000)
+LWLibavVideoSource("D:\temp\[Furtrap] Summer Camp For Cuties (But in VR ) Long Compilation feat. TFMJony-Y36l-oGRzRM.jpg")
+#ConvertToRGB64(matrix="Rec601")
+#ConvertBits(10)
+nnedi3_rpow2(rfactor=4, nsize=0, nns=3, qual=1, etype=0, pscrn=2, threads=0, opt=0, fapprox=15)
+#z_ConvertFormat(colorspace_op="2020ncl:st2084:2020=>709:709:709", nominal_luminance=100)

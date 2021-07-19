@@ -1,17 +1,16 @@
-ffmpeg -hwaccel dxva2 -i "E:\[VTuber Cafe _ VRFunny] WE JUST WANNA SEE YOUR BODY _ VRCHAT Funny Moments-14GofNRXCZ4.mkv" -lavfi "
-[0:v]trim=0:{2*60+41.174} ,setpts=PTS-STARTPTS[a],
-[0:v]trim=161.147:190.714 ,setpts=PTS-STARTPTS[b],
-[0:v]trim=161.147:190.714 ,gblur=100,setpts=PTS-STARTPTS[bb],
-[bb]crop=x=0:y=120:h=760:w=in_w,setpts=PTS-STARTPTS[bbc],
-[b][bbc]overlay=x=0:y=120,setpts=PTS-STARTPTS[b],
-[0:v]trim=start=190.714 ,setpts=PTS-STARTPTS[c],
-[a][b][c]concat=n=3[outv]
-" -map [outv] -map 0:a -c:a aac -ab 529k -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 7.5M blur.mkv
+
+HDR直播测试（frame drop issue）
+ffmpeg -hwaccel cuda -hide_banner -video_size 1920x1080 -framerate 30 -pixel_format nv12 -f dshow -rtbufsize 1000M -i video="OBS Virtual Camera":audio="virtual-audio-capturer" -vf zscale=p=2020:t=smpte2084:m=2020_ncl:pin=709:tin=bt709:min=709:npl=200,format=yuv420p -c:a aac -ab 529k -c:v h264_nvenc -preset p7 -vb 8M -minrate 2M -bufsize 5M -f flv -ignore_io_errors 1 "rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=def5381fa58bcc8e2f235d250f2888a7&schedule=rtmp"
+
 
 在线播放
 
+芒果TV
+mpv --http-header-fields='Referer: https://www.mgtv.com/' 'https://pcvideohwyunott.titan.mgtv.com/c1/2021/05/21_0/DAFCD9CBBCB935E35A9D075D5556A7F1_20210522_1_1_1079_mp4/5AD60833574161A43552F5345EC61B2A.m3u8?arange=0&pm=13peejy5CWGhHAkZK9Rr_dPYjO8qiNRY74x2AVyhxcm7Dvt~N_hf2d5aueb0XBicxtkon49mpWScSGh_24ixp0uWeoK6KMa1xai1OTbptV_gtrGXk5VW1_Xy0aMYHOpaHt0KOsUQjyFbGsordAT795KO3sr8BDnK~tO_kq8eGW1GWgKrh52pLAGAE_P_d8iGMMM9fGcWny4sRGr_uLjEu38NSaTVXHO5upQUeUWCZ3q4irG8PR6Q0ITsLZWZFnaS7gdkfkJ04lOw8Fg_cnEqkrkcDg6QPGJRoNne0iMlEwYSNXkZBP11OIaThZG3lzYIdS1AEfZBdvX5sTHyqmTyT99HR4D5Xha8IqD8k1IS3u6JstPVBfNA_6Dk8clkwjqvP6Z~PiWm~rJ2Sw1gNfsgUmqyfgax1ZBR5Zpf1wWMb51KUJfwNWi_ec7KodFmBVD88sENria5MJImiOLcl0crR6OPwq17NZz3I5TeY58MnCaa6zTHWeYbGQ--&mr=WJu6KCKMJSaeUhsDy36lQm1CfRa70k~Gq82wM4rMfcf6WrmcxGnc1l_U5DCNpLTQze0t0bapS84SKw648yyR_LP85lcSooQCj8oaubHEtFpzUu11dZbr26sl7k1ZLLpgMoW959Qn585hLAYbHisyeqFoRn5gtuqfJyEvQW3~LzPuJk9scVclT1tm32mT_bJpIJ1FbI7QYEJUB99~2c~TGJ8sPdyT9zCskZVQmxFuaIEkhEsJEk5MXxWBziBW_K1xJxJoDk2lteXc4U0e_9qzvjd5vvtO7AFh7xj1L7uRIqy4fjg~TO7wucqibbAZuNrcn2wNwfcr5MQq2lQSCjLyLQ~ZRu5ebmlTgXndjIurYbooCaZQ96P3mV85XL4MkpNl~UAoGltPQxTbZ1rX7cfAHXj5BcYXmabsm2XexnxpeIU2Ty65LVhgenfGOPXesFQ9UVVDgzeJFD50SJz48nAzRNfPflGzBW3v0pmIOd2JVu0a4o6ebeWnXRNy6RkIIjO~DFEvWrLRqxKIWlCSTG8Zg1UQo6rxIP7KFaDdq~rd3N4NR2QVPFI~YZ_g60pzqtVWFR399JhYZJxcTF_Mygli210Gj~baddJSS3Lmdx5LvvDRMmvNo93vHAqhyZLIdiRZERpTMRN33D1lFUx_6GShM_pa365zi8HL1S6oWRe_ehJVMgXy0KuD3MRq9CQdU1uPm0xtnJmuCNaGLDlJAzN9C1f6C5dv1iy8fsKUV1XIz9VD5ZBH2BVv8UBwDF4FybgIaJECb9gD_adGFDDnB9i06RLfzkp0B2jJM2zv5XCotbY-&vcdn=0&scid=25065&cpno=6i06rp&ruid=ce7e4e2d867042bf'
+
+
 阿里云盘：
-mpv --http-header-fields='referer:https://www.aliyundrive.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://bj29.cn-beijing.data.alicloudccp.com/5fc46d6b59793ab4a0a244a0bcbd602252317e22%2F5fc46d6b3483e294cf1f4e448c2bc1fc57bc34e5?di=bj29&dr=845445&f=5fc46d6b59793ab4a0a244a0bcbd602252317e22&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27Alita.Battle.Angel.2019.1080p.BluRay.x264.DTS-WiKi.mkv&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1623340174&x-oss-signature=8G%2Bky1bsq0wRQ8rrgQfRX6Iqxo15Cg8cmFLMzAhHP0U%3D&x-oss-signature-version=OSS2"
+mpv --http-header-fields='referer:https://www.aliyundrive.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://bj29.cn-beijing.data.alicloudccp.com/mmybZNx5%2F845445%2F60e989b17dbb324558df4304951fe7aeba11a094%2F60e989b19349b739c3e54a77af564e0fb07be2c5?di=bj29&dr=845445&f=60e989b17dbb324558df4304951fe7aeba11a094&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27WIO-120fps.mp4&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1626343681&x-oss-signature=6QfjzxWHp%2F1r50xxtnp3Ash91EF%2F236fgIBknMH1%2FsI%3D&x-oss-signature-version=OSS2"
 
 B站：
 mpv --http-header-fields='referer:https://www.bilibili.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://cn-tj2-cmcc-bcache-03.bilivideo.com/upgcxcode/82/40/329954082/329954082_nb2-1-30112.m4s?e=ig8euxZM2rNcNbdlhoNvNC8BqJIzNbfqXBvEuENvNC8aNEVEtEvE9IMvXBvE2ENvNCImNEVEIj0Y2J_aug859IB_&uipk=5&nbs=1&deadline=1623692536&gen=playurlv2&os=bcache&oi=3746054009&trid=0000619918a14af7443f8d613b4cf66fea4at&platform=android_tv_yst&upsig=3e675ad37e2d549919ccb184e40bf0ee&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&cdnid=6774&mid=310265481&bvc=vod&orderid=0,3&logo=80000000" --audio-file="a"
@@ -173,7 +172,7 @@ for($i=1;$i-lt 20;$i--) `
 -f hls  `
 -reconnect_at_eof  1 `
 -reconnect_streamed 1  `
--rtbufsize 10M `
+-rtbufsize 40M `
 -i "$url" `
 -c copy `
 -f flv `
@@ -182,12 +181,11 @@ for($i=1;$i-lt 20;$i--) `
 
 $env:http_proxy="http://127.0.0.1:10809";`
 for($i=1;$i-lt 20;$i--) `
-{$url=(youtube-dl -g https://www.twitch.tv/rosedoodle );`
+{$url='https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1626378962/ei/cj7wYNPXMe2RsfIP1vqu0Ao/ip/138.199.9.203/id/7dSTarz5dIw.2/itag/301/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D299/hls_chunk_host/r6---sn-a5mlrn7z.googlevideo.com/playlist_duration/30/manifest_duration/30/vprv/1/playlist_type/DVR/initcwndbps/5400/mh/pp/mm/44/mn/sn-a5mlrn7z/ms/lva/mv/m/mvi/6/pl/23/dover/11/keepalive/yes/fexp/24001373,24007246/mt/1626357177/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,playlist_duration,manifest_duration,vprv,playlist_type/sig/AOq0QJ8wRQIgNTYZhVG-CtY8MPJYZ-LA1KGC5ZQrhX9tYaQgV7bKcxICIQCHFa_ay10kTHjHdMe_s7M5bU65QFOzfCdFQjYpLLWZEA%3D%3D/lsparams/hls_chunk_host,initcwndbps,mh,mm,mn,ms,mv,mvi,pl/lsig/AG3C_xAwRQIhAKPjHleeTHtej3iB0fRqzcO3j4kPnh_BWD40va_ED-U4AiBYJC9waI2WUFjiozd3nylS76ZpsyKkTEkWaPiO2eGHSg%3D%3D/playlist/index.m3u8';`
 ffmpeg `
 -stream_loop -1 `
--reconnect_at_eof  1 `
 -reconnect_streamed 1  `
--rtbufsize 10M `
+-rtbufsize 40M `
 -bitexact `
 -i "$url" `
 -c copy `
@@ -221,6 +219,10 @@ ffmpeg `
 -ignore_io_errors 1 `
 -bitexact `
 -c:v copy -c:a aac -window_size 8 -remove_at_exit 1 -extra_window_size 2 -adaptation_sets "id=0,streams=v id=1,streams=a" -f dash E:/hls/index.mpd}
+
+
+HDR直播测试（frame drop issue）
+ffmpeg -hwaccel cuda -hide_banner -video_size 1920x1080 -framerate 30 -pixel_format nv12 -f dshow -rtbufsize 1000M -i video="OBS Virtual Camera":audio="virtual-audio-capturer" -vf zscale=p=2020:t=smpte2084:m=2020_ncl:pin=709:tin=bt709:min=709:npl=100,format=yuv420p  -color_primaries bt2020 -colorspace bt2020nc -color_trc smpte2084 -muxrate 1M -c:a aac -ab 529k -c:v h264_nvenc -preset p7 -vb 8M -minrate 2M -bufsize 5M -f flv -ignore_io_errors 1  -user_agent 'libobs version 27.0.0' "rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=def5381fa58bcc8e2f235d250f2888a7&schedule=rtmp"
 
 
 转m3u8
@@ -331,5 +333,6 @@ mp4加上 -movflags +faststart。这样分享文件给别人的时候可以边�
 编码预设
 -c:a aac -ab 529k -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 10M -minrate 4M -bufsize 5M
 
+-c:a aac -ab 529k -c:v h264_nvenc -preset p7 -rc-lookahead 120 -2pass 1 -vb 10M -minrate 2M -bufsize 5M
 
 qsvencc --avhw -i "E:\[Furtrap] xQcOw VS Furtrap Anime Battle _ 'Is Fizzi a Furry'-jmL83rF1dyk.mkv" -u best --vbr 7500 --la-depth 60 --audio-copy -o test.mp4

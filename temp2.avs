@@ -1,7 +1,0 @@
-SetMemoryMax(6000)
-LWLibavVideoSource("E:\2160p.120fps-svp.mp4")
-#ConvertToRGB64(matrix="Rec601")
-#ConvertBits(10)
-z_ConvertFormat( colorspace_op="709:709:709:l=>2020ncl:st2084:2020:l",nominal_luminance=120)
-ConvertBits(bits=10)
-#z_ConvertFormat(colorspace_op="2020ncl:st2084:2020=>709:709:709", nominal_luminance=100)
