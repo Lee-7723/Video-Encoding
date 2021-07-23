@@ -3,7 +3,7 @@ SetMemoryMax(6000)
 #SetFilterMTMode("LWLibavVideoSource", 2)
 #SetFilterMTMode("TextSub", 2)
 
-clip=LWLibavVideoSource("D:\temp\[Drumsy] Trapped on Child Island.-LKMeuAwkEto.mkv", format="YUV420P8")
+clip=LWLibavVideoSource("D:\temp\[GreatMoonAroma] Im JOJO [VRchat] -v6n8doVvNUM.mkv", format="YUV420P8")
 #DuplicateFrame(1)
 #trim(1,18196)
 
@@ -19,7 +19,7 @@ clip=LWLibavVideoSource("D:\temp\[Drumsy] Trapped on Child Island.-LKMeuAwkEto.m
 #clip=aSharp(clip, T=4.0, D=4.0, B=-1.0, hqbf=false)#for 4k
 #clip=aSharp(clip, T=0.2, D=4.0, B=-1.0, hqbf=false)#for 1080P
 
-clip=TextSub(clip, file="D:\temp\[Drumsy] Trapped on Child Island.-LKMeuAwkEto.ass",  fps=clip.FrameRate())
+clip=TextSub(clip, file="D:\temp\[GreatMoonAroma] Im JOJO [VRchat] -v6n8doVvNUM.ass",  fps=clip.FrameRate())
 clip
 
 Prefetch(clip,4)

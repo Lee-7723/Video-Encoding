@@ -1,4 +1,14 @@
-ffmpeg -hwaccel dxva2 -i "\\Lee7723-laptop\d\OneDrive - lijingze\文档\Video Encoding\Subtitle.avs" -hwaccel dxva2 -i "D:\temp\[Drumsy] Trapped on Child Island.-LKMeuAwkEto.mkv" -map 0 -map 1:a -c:a aac -ab 529k -c:v h264_nvenc -preset p7 -rc-lookahead 120 -2pass 1 -vb 10M -minrate 2M -bufsize 5M sub.mkv
+ffmpeg -hwaccel dxva2 -i "D:\temp\[DarrenZeus] Dream Speedruns VRCHAT (World Record)-fjCnUXYFG-A.mkv" -lavfi "
+[0:v]trim=0:353.667 ,setpts=PTS-STARTPTS[a],
+[0:v]trim=353.667:354.8 ,gblur=60,setpts=PTS-STARTPTS[ab],
+[0:v]trim=354.8:368.5 ,setpts=PTS-STARTPTS[b],
+[0:a]atrim=0:368.5 ,asetpts=PTS-STARTPTS[aa],
+[0:v]trim=start=386.8 ,setpts=PTS-STARTPTS[c],
+[0:a]atrim=start=386.8,asetpts=PTS-STARTPTS[ba],
+[a][ab][b][c]concat=n=4[outv],
+[aa][ba]concat=n=2:v=0:a=1[outa]
+" -map [outv] -map [outa] -c:a aac -ab 529k -c:v h264_nvenc -preset p7 -rc-lookahead 120 -2pass 1 -vb 10M -minrate 2M -bufsize 5M blur.mkv
+
 
 
 在线播放
@@ -8,7 +18,7 @@ mpv --http-header-fields='Referer: https://www.mgtv.com/' 'https://pcvideoaliyun
 
 
 阿里云盘：
-mpv --http-header-fields='referer:https://www.aliyundrive.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://bj29.cn-beijing.data.alicloudccp.com/mmybZNx5%2F845445%2F60e989b17dbb324558df4304951fe7aeba11a094%2F60e989b19349b739c3e54a77af564e0fb07be2c5?di=bj29&dr=845445&f=60e989b17dbb324558df4304951fe7aeba11a094&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27WIO-120fps.mp4&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1626343681&x-oss-signature=6QfjzxWHp%2F1r50xxtnp3Ash91EF%2F236fgIBknMH1%2FsI%3D&x-oss-signature-version=OSS2"
+mpv --http-header-fields='referer:https://www.aliyundrive.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://bj29.cn-beijing.data.alicloudccp.com/6005e350b5674a4c6271471cbc2adfe5aff8e01d%2F6005e350449153ac3e574a83ac2877fa5065cdc5?di=bj29&dr=845445&f=6005e350b5674a4c6271471cbc2adfe5aff8e01d&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%276.Furious.6.2013.BluRay.1080p.DTS-HD.MA.5.1.x265.10bit-BeiTai.mkv&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1626921657&x-oss-signature=jNrZN4KsogagfsvPD6JR%2FAduh8PkihPTicybobAfaWw%3D&x-oss-signature-version=OSS2"
 
 B站：
 mpv --http-header-fields='referer:https://www.bilibili.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://cn-tj2-cmcc-bcache-03.bilivideo.com/upgcxcode/82/40/329954082/329954082_nb2-1-30112.m4s?e=ig8euxZM2rNcNbdlhoNvNC8BqJIzNbfqXBvEuENvNC8aNEVEtEvE9IMvXBvE2ENvNCImNEVEIj0Y2J_aug859IB_&uipk=5&nbs=1&deadline=1623692536&gen=playurlv2&os=bcache&oi=3746054009&trid=0000619918a14af7443f8d613b4cf66fea4at&platform=android_tv_yst&upsig=3e675ad37e2d549919ccb184e40bf0ee&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&cdnid=6774&mid=310265481&bvc=vod&orderid=0,3&logo=80000000" --audio-file="a"
