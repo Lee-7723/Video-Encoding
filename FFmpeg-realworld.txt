@@ -1,13 +1,7 @@
-ffmpeg -hwaccel dxva2 -i "D:\temp\[DarrenZeus] Dream Speedruns VRCHAT (World Record)-fjCnUXYFG-A.mkv" -lavfi "
-[0:v]trim=0:353.667 ,setpts=PTS-STARTPTS[a],
-[0:v]trim=353.667:354.8 ,gblur=60,setpts=PTS-STARTPTS[ab],
-[0:v]trim=354.8:368.5 ,setpts=PTS-STARTPTS[b],
-[0:a]atrim=0:368.5 ,asetpts=PTS-STARTPTS[aa],
-[0:v]trim=start=386.8 ,setpts=PTS-STARTPTS[c],
-[0:a]atrim=start=386.8,asetpts=PTS-STARTPTS[ba],
-[a][ab][b][c]concat=n=4[outv],
-[aa][ba]concat=n=2:v=0:a=1[outa]
-" -map [outv] -map [outa] -c:a aac -ab 529k -c:v h264_nvenc -preset p7 -rc-lookahead 120 -2pass 1 -vb 10M -minrate 2M -bufsize 5M blur.mkv
+ffmpeg -hwaccel cuda -i "D:\temp\[GreatMoonAroma] Virgin smug -  VRchat-aAGV4ieYsaw.mkv" -vf crop=840:850:1920-840:1080-850,scdet=t=15 -f null -
+
+
+ffmpeg -hwaccel dxva2 -i "\\Lee7723-laptop\d\OneDrive - lijingze\文档\Video Encoding\Subtitle.avs" -i "D:\temp\[Drumsy] Exposing Our Secret Photos #2-HaOmKMIZ4jQ.mkv" -map 0 -map 1:a -c:a aac -ab 529k -c:v h264_nvenc -preset p7 -rc-lookahead 120 -2pass 1 -vb 10M -minrate 2M -bufsize 5M Drumsy.mkv
 
 
 
@@ -18,7 +12,7 @@ mpv --http-header-fields='Referer: https://www.mgtv.com/' 'https://pcvideoaliyun
 
 
 阿里云盘：
-mpv --http-header-fields='referer:https://www.aliyundrive.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://bj29.cn-beijing.data.alicloudccp.com/6005e350b5674a4c6271471cbc2adfe5aff8e01d%2F6005e350449153ac3e574a83ac2877fa5065cdc5?di=bj29&dr=845445&f=6005e350b5674a4c6271471cbc2adfe5aff8e01d&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%276.Furious.6.2013.BluRay.1080p.DTS-HD.MA.5.1.x265.10bit-BeiTai.mkv&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1626921657&x-oss-signature=jNrZN4KsogagfsvPD6JR%2FAduh8PkihPTicybobAfaWw%3D&x-oss-signature-version=OSS2"
+mpv --http-header-fields='referer:https://www.aliyundrive.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://bj29.cn-beijing.data.alicloudccp.com/1C2XWoaR%2F163811%2F61026d356df9cace52b942ec910a829b01761e97%2F61026d3582565ccfc1ab47d2abfb696a978f383d?di=bj29&dr=845445&f=6104b2f9500c0bcf95df4bed80f0ac6d9c1249f4&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%279.F9.2021.2160p.WEB-DL.DDP5.1.Atmos.HDR.HEVC-EVO.mkv&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1627699858&x-oss-signature=RN%2BmjQc5mpR1fyW5VO9C83uiDmy7kDoTkfJkUal3ts0%3D&x-oss-signature-version=OSS2"
 
 B站：
 mpv --http-header-fields='referer:https://www.bilibili.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://cn-tj2-cmcc-bcache-03.bilivideo.com/upgcxcode/82/40/329954082/329954082_nb2-1-30112.m4s?e=ig8euxZM2rNcNbdlhoNvNC8BqJIzNbfqXBvEuENvNC8aNEVEtEvE9IMvXBvE2ENvNCImNEVEIj0Y2J_aug859IB_&uipk=5&nbs=1&deadline=1623692536&gen=playurlv2&os=bcache&oi=3746054009&trid=0000619918a14af7443f8d613b4cf66fea4at&platform=android_tv_yst&upsig=3e675ad37e2d549919ccb184e40bf0ee&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&cdnid=6774&mid=310265481&bvc=vod&orderid=0,3&logo=80000000" --audio-file="a"
@@ -30,10 +24,10 @@ mpv --http-header-fields='authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1
 Referer下载视频：
 
 B站：
-ffplay -headers "referer:https://www.bilibili.com/" -headers "user-agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39"  -i "https://cn-tj2-cmcc-bcache-10.bilivideo.com/upgcxcode/63/03/12440363/12440363-1-80.flv?e=ig8euxZM2rNcNbTzhbUVhoMjhzNBhwdEto8g5X10ugNcXBlqNxHxNEVE5XREto8KqJZHUa6m5J0SqE85tZvEuENvNo8g2ENvNo8i8o859r1qXg8xNEVE5XREto8GuFGv2U7SuxI72X6fTr859r1qXg8gNEVE5XREto8z5JZC2X2gkX5L5F1eTX1jkXlsTXHeux_f2o859IB_&uipk=5&nbs=1&deadline=1624861791&gen=playurlv2&os=bcache&oi=3746049178&trid=00002577c1b06fcb481fb0a82aad5d22ec66p&platform=pc&upsig=7eef46ad9b84c8d71ed81d4b9063fd01&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&cdnid=6781&mid=310265481&bvc=vod&orderid=0,3&agrr=1&logo=80000000" 
+ffplay -referer "https://www.bilibili.com/" -user_agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39"  -i "https://upos-sz-mirrorkodoo1.bilivideo.com/upgcxcode/68/65/375426568/375426568-1-30106.m4s?e=ig8euxZM2rNcNbdlhoNvNC8BqJIzNbfqXBvEqxTEto8BTrNvN0GvT90W5JZMkX_YN0MvXg8gNEV4NC8xNEV4N03eN0B5tZlqNxTEto8BTrNvNeZVuJ10Kj_g2UB02J0mN0B5tZlqNCNEto8BTrNvNC7MTX502C8f2jmMQJ6mqF2fka1mqx6gqj0eN0B599M=&uipk=5&nbs=1&deadline=1627101349&gen=playurlv2&os=kodoo1bv&oi=2084614345&trid=71ee79c865684255a8bb9d122a844b0bu&platform=pc&upsig=1246de43ba58e3aeb2bd4e85c9e38dd3&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&mid=310265481&bvc=vod&nettype=0&orderid=0,3&agrr=1&logo=80000000" 
 
 阿里云盘
-ffplay -headers "referer:https://www.aliyundrive.com/" -user_agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39" -i "https://bj29.cn-beijing.data.alicloudccp.com/5fc351dac3b639b7c82e49d7a927f551ba17a8c1%2F5fc351daefd6f532f9d347e2bc8930f04fd6a612?di=bj29&dr=845445&f=5fc351dac3b639b7c82e49d7a927f551ba17a8c1&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27Formula.1.Drive.to.Survive.S01E10.2019.Netflix.WEB-DL.4k.HEVC.DDP-AREY.mkv&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1619109646&x-oss-signature=HkzFUEM2e8AkweC%2B6m4A1xi7j91Pfw%2FpJSuS%2F1nIU4w%3D&x-oss-signature-version=OSS2" 
+ffplay -headers "referer:https://www.aliyundrive.com/" -user_agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39" -i "https://bj29.cn-beijing.data.alicloudccp.com/5fc8cb8a62e968228ff546e8b076ffb8b79bdaca%2F5fc8cb8acfd3e6b66aa7406e8ea277278ff2caf2?di=bj29&dr=845445&f=602e4ae86896b1c266394b6096d01eb9c16269d3&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27onlineplaytest.mp4&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1627092900&x-oss-signature=0RP%2F%2BVnSRz%2BwJ7n0X0DjLjzHYJPzKnVwvaRw2nEk%2Bmw%3D&x-oss-signature-version=OSS2" 
 
 
 Powershell批量
@@ -159,42 +153,34 @@ ffmpeg -i 00919.m2ts -filter_complex [0:v][0:s:0]overlay[v] -map [v] -map 0:a -c
 图片序列编码为视频
 ffmpeg -threads 6 -f image2 -i "E:\Adobe Premiere Pro Auto-Save\1603865541285_1_2.00x_4680x2160_thf-1.0.1_2.00x_9360x4320_thf-1.0.1_png\00%4d.png" -i "D:\FFOutput\Voicians - Empire.mp3" -c:v libx264 -crf 16 -preset slow -r 50 -c:a copy "D:\encoded.mkv"
 
-ffmpeg -threads 6 -f image2 -i "E:\Adobe Premiere Pro Auto-Save\1603865541285_1_2.00x_4680x2160_thf-1.0.1_2.00x_9360x4320_thf-1.0.1_png\00%4d.png" -i "D:\FFOutput\Voicians - Empire.mp3" -c:v hevc_nvenc -vb 20000k -r 50 -c:a copy "D:\encoded.mkv"
-
-
-
-混流
-ffmpeg -i "E:\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit-CHD\冰2-EVO+自己压制版.mkv" -i "E:\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit-CHD\Frozen II 2019 BluRay HDR 2160p Atmos TrueHD7 1 x265 10bit- Lee-7723.mp4" -map 0:0 -c:v copy -c:a aac -b:a 320k "f:\码率.mp4"
-
-
-Bilibili上传用（失效）
-ffmpeg -i "C:\Users\李竞择\Documents\avs脚本\5x动画.avs" -c:a aac -b:a 320k -vf format=yuv420p -c:v libx264 -preset slow -x264-params "keyint=230" -b:v 20000k -bufsize 3000k -maxrate 50000k -pass 1 -f mp4 NUL
+ffmpeg -threads 6 -f image2 -i "E:\Adobe Premiere Pro Auto-Save\1603865541285_1_2.00x_4680x2160_thf-1.0.1c-b:a 320k -vf format=yuv420p -c:v libx264 -preset slow -x264-params "keyint=230" -b:v 20000k -bufsize 3000k -maxrate 50000k -pass 1 -f mp4 NUL
 ffmpeg -i "C:\Users\李竞择\Documents\avs脚本\5x动画.avs" -c:a aac -b:a 320k -vf format=yuv420p -c:v libx264 -preset slow -x264-params "keyint=230" -b:v 20000k -bufsize 3000k -maxrate 50000k -pass 2 "j:\temp\Try Everything SVP 120fps.mp4"
 
 
 转播用
-$url=$(youtube-dl -g https://www.twitch.tv/radiantsoul_tv );`
+$env:http_proxy="http://127.0.0.1:10809";`
 for($i=1;$i-lt 20;$i--) `
-{ffmpeg `
--re `
+{$url=$(youtube-dl -g https://www.twitch.tv/leafions );`
+ffmpeg `
 -f hls  `
--reconnect_at_eof  1 `
 -reconnect_streamed 1  `
 -rtbufsize 40M `
+-re `
 -i "$url" `
 -c copy `
+-rw_timeout 8000 `
 -f flv `
 -ignore_io_errors 1 `
 "rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=def5381fa58bcc8e2f235d250f2888a7&schedule=rtmp"}
 
 $env:http_proxy="http://127.0.0.1:10809";`
 for($i=1;$i-lt 20;$i--) `
-{$url='https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1626378962/ei/cj7wYNPXMe2RsfIP1vqu0Ao/ip/138.199.9.203/id/7dSTarz5dIw.2/itag/301/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D299/hls_chunk_host/r6---sn-a5mlrn7z.googlevideo.com/playlist_duration/30/manifest_duration/30/vprv/1/playlist_type/DVR/initcwndbps/5400/mh/pp/mm/44/mn/sn-a5mlrn7z/ms/lva/mv/m/mvi/6/pl/23/dover/11/keepalive/yes/fexp/24001373,24007246/mt/1626357177/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,playlist_duration,manifest_duration,vprv,playlist_type/sig/AOq0QJ8wRQIgNTYZhVG-CtY8MPJYZ-LA1KGC5ZQrhX9tYaQgV7bKcxICIQCHFa_ay10kTHjHdMe_s7M5bU65QFOzfCdFQjYpLLWZEA%3D%3D/lsparams/hls_chunk_host,initcwndbps,mh,mm,mn,ms,mv,mvi,pl/lsig/AG3C_xAwRQIhAKPjHleeTHtej3iB0fRqzcO3j4kPnh_BWD40va_ED-U4AiBYJC9waI2WUFjiozd3nylS76ZpsyKkTEkWaPiO2eGHSg%3D%3D/playlist/index.m3u8';`
+{$url='https://video-weaver.prg02.hls.ttvnw.net/v1/playlist/CpYFjmOdE3Veb4Gtkt4uwV_2wTTfGXr5VEAP4R4-HITOY2N83k95amld1_mgQ1wZu7oNCcyuZSq2myEvgCuNHzHv6u9C6hs6tdtMWkMb9xvjs_osV9q2J19srepIODnVBx7mmcGmFo80Cvbd3PZOE7It1vW9fU9MjR58AG2Udl1gAN1TNcn1_-c3JqH4AEVbx79tuTSk1OfmeOes8jfwdT3UHHJaBDSHe7r5LoFZcEpzSnFgew12VZIwFm00Epxa5QG0rcgb-NIFjj_S_IALatr9DJvPH8ivQdZyaVXnhdaHR0BhPHdLf740RjcUaYuUahGpnuvcKa8lASwcr2LyDZ4i0_wSjuk7TlBu1ZO3bpi-aH-k42jJYKi3wDmp7U2jcLmv-fntK32cwE9s07VOtMTcO2Sn_X-ts-U4tn2bE9zk3A5QiLjeJCZnZzV4K4espySE6X3Mr4POOB89i4qZe1kL6qolrVTw6CsVdD0V_K8sDpLVG__la5RXhcdeab4Kw7Z-foxSx9yFhWAO9YI0tA0JIPSWTaOpYfkzgRZLlpLiYupa_wRyQyNMTBuhnSRj82Z8HT0Utg_QrmXhgI5soTGaEK2cIETjoG-iZNLPXILYna3L8RfhbeBpmM1If_52d1h6VLjNYU107Wb_dRk1zY0sZHdQQgr75E4FxLsO2VRG2l0xcecyeSTEkPAZX6oGm0DQofTJ4hkX6BdyWoPUELZVxcWH-feC4scQ-8yAKM4jBJXHY0QtkPsqpaZuOvvYH-OGiZBc3fe5Nu4t1yclHH0I42m-wZeUZJDvvC2V_HwMeF9dpjEdYkiMJQX33i22DioKU0T7Wtt0yDSNArgNEcvgPV6XUU4DgQsPp7DfE7LVGy65IsJZirUSEI9x5cHZb3ML8u953niVfCkaDAfCX1fu44SvBev_dQ.m3u8';`
 ffmpeg `
 -stream_loop -1 `
--reconnect_streamed 1  `
--rtbufsize 40M `
+-rtbufsize 60M `
 -bitexact `
+-re `
 -i "$url" `
 -c copy `
 -f flv `
@@ -202,7 +188,7 @@ ffmpeg `
 -metadata:g 'encoding_tool=Lee7723_Encoding' `
 -metadata:s:v:0 'encoder=Lee7723_Encoding' `
 -metadata:s:a:0 'encoder=Lee7723_Encoding' `
-"rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=def5381fa58bcc8e2f235d250f2888a7&schedule=rtmp"}
+"rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=def5381fa58bcc8e2f235d250f2888a7&schedule=rtmp&pflag=1"}
 
 
 本地直播配合http.server
@@ -285,7 +271,7 @@ ffmpeg  -f image2 -i "D:\Drivers\QQfiles\1981671849\FileRecv\MobileFile\mono\下
 ffmpeg -i "C:\Users\19816\Documents\Video Encoding\SSIM.avs" -f null -
 
 计算SSIM(ffmpeg)
-ffmpeg -hwaccel dxva2 -i "E:\[Furtrap] xQcOw VS Furtrap Anime Battle _ 'Is Fizzi a Furry'.mp4" -hwaccel dxva2 -i "E:\[Furtrap] xQcOw VS Furtrap Anime Battle _ 'Is Fizzi a Furry'-jmL83rF1dyk.mkv"  -lavfi [1:v][0]ssim="stats_file=ssim.csv" -f null -
+ffmpeg -hwaccel dxva2 -referer "https://www.bilibili.com/" -user_agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39"  -i "https://upos-sz-mirrorkodo.bilivideo.com/upgcxcode/68/65/375426568/375426568-1-30106.m4s?e=ig8euxZM2rNcNbdlhoNvNC8BqJIzNbfqXBvEqxTEto8BTrNvN0GvT90W5JZMkX_YN0MvXg8gNEV4NC8xNEV4N03eN0B5tZlqNxTEto8BTrNvNeZVuJ10Kj_g2UB02J0mN0B5tZlqNCNEto8BTrNvNC7MTX502C8f2jmMQJ6mqF2fka1mqx6gqj0eN0B599M=&uipk=5&nbs=1&deadline=1627143549&gen=playurlv2&os=kodobv&oi=2084615033&trid=87aad10d2e6e4e4b812ab9a326862689u&platform=pc&upsig=99c0a1ced641af1cfd51419930637c76&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&mid=310265481&bvc=vod&nettype=0&orderid=0,3&agrr=1&logo=80000000"  -hwaccel dxva2 -i "D:\temp\GMA.mkv" -lavfi "[0:v]settb=AVTB,setpts=PTS-STARTPTS[main],[1:v]settb=AVTB,setpts=PTS-STARTPTS[ref];[0:v]settb=AVTB,setpts=PTS-STARTPTS[main1],[1:v]settb=AVTB,setpts=PTS-STARTPTS[ref1];[main][ref]ssim;[main1][ref1]psnr" -f null -
 
 
 计算PSNR
