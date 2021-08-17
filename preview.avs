@@ -3,7 +3,7 @@ SetMemoryMax(6000)
 #SetFilterMTMode("LWLibavVideoSource", 2)
 #SetFilterMTMode("TextSub", 2)
 
-clip=LWLibavVideoSource("D:\temp\GreatMoonAroma Virgin smug  VRchat-aAGV4ieYsaw.mkv", format="YUV420P8")
+clip=LWLibavVideoSource("D:\temp\GMA-KR.mkv", format="YUV420P8")
 #DuplicateFrame(1)
 
 ##Resize:
@@ -17,9 +17,8 @@ clip=LWLibavVideoSource("D:\temp\GreatMoonAroma Virgin smug  VRchat-aAGV4ieYsaw.
 #clip=vsMSharpen(clip, threshold=10,strength=60,chroma=true)
 #clip=aSharp(clip, T=4.0, D=4.0, B=-1.0, hqbf=false)#for 4k
 #clip=aSharp(clip, T=0.2, D=4.0, B=-1.0, hqbf=false)#for 1080P
-clip=edgelevel(clip,strength=8, threshold=0)
 
-clip=TextSub(clip, file="D:\temp\GreatMoonAroma Virgin smug  VRchat-aAGV4ieYsaw.ass",  fps=clip.FrameRate())
+clip=TextSub(clip, file="D:\temp\GMA-KR.ass",  fps=clip.FrameRate())
 clip
 
-Prefetch(clip,16)
+Prefetch(clip,4)

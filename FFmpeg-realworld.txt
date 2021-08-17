@@ -1,7 +1,7 @@
-ffmpeg -hwaccel cuda -i "D:\temp\[GreatMoonAroma] Virgin smug -  VRchat-aAGV4ieYsaw.mkv" -vf crop=840:850:1920-840:1080-850,scdet=t=15 -f null -
+ffmpeg -hwaccel cuda -i "D:\temp\[Dacha44] F1 Grill The Grid But It's A Meme-MzsC2E0tnl0.mkv" -vf subtitles="Dacha44.ass" -c:a aac -ab 529k -c:v h264_nvenc -preset p7 -rc-lookahead 120 -2pass 1 -vb 10M -minrate 2M -bufsize 5M Dacha.mkv
 
 
-ffmpeg -hwaccel dxva2 -i "\\Lee7723-laptop\d\OneDrive - lijingze\文档\Video Encoding\Subtitle.avs" -i "D:\temp\[Drumsy] Exposing Our Secret Photos #2-HaOmKMIZ4jQ.mkv" -map 0 -map 1:a -c:a aac -ab 529k -c:v h264_nvenc -preset p7 -rc-lookahead 120 -2pass 1 -vb 10M -minrate 2M -bufsize 5M Drumsy.mkv
+ffmpeg -hwaccel dxva2 -i "\\Lee7723-laptop\d\OneDrive - lijingze\文档\Video Encoding\Subtitle.avs" -i "D:\temp\GreatMoonAroma Virgin smug  VRchat-aAGV4ieYsaw.mkv" -map 0 -map 1:a -c:a aac -ab 529k -c:v h264_nvenc -preset p7 -rc-lookahead 120 -2pass 1 -vb 8M -minrate 2M -bufsize 5M GMA.mkv
 
 
 
@@ -27,7 +27,10 @@ B站：
 ffplay -referer "https://www.bilibili.com/" -user_agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39"  -i "https://upos-sz-mirrorkodoo1.bilivideo.com/upgcxcode/68/65/375426568/375426568-1-30106.m4s?e=ig8euxZM2rNcNbdlhoNvNC8BqJIzNbfqXBvEqxTEto8BTrNvN0GvT90W5JZMkX_YN0MvXg8gNEV4NC8xNEV4N03eN0B5tZlqNxTEto8BTrNvNeZVuJ10Kj_g2UB02J0mN0B5tZlqNCNEto8BTrNvNC7MTX502C8f2jmMQJ6mqF2fka1mqx6gqj0eN0B599M=&uipk=5&nbs=1&deadline=1627101349&gen=playurlv2&os=kodoo1bv&oi=2084614345&trid=71ee79c865684255a8bb9d122a844b0bu&platform=pc&upsig=1246de43ba58e3aeb2bd4e85c9e38dd3&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&mid=310265481&bvc=vod&nettype=0&orderid=0,3&agrr=1&logo=80000000" 
 
 阿里云盘
-ffplay -headers "referer:https://www.aliyundrive.com/" -user_agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39" -i "https://bj29.cn-beijing.data.alicloudccp.com/5fc8cb8a62e968228ff546e8b076ffb8b79bdaca%2F5fc8cb8acfd3e6b66aa7406e8ea277278ff2caf2?di=bj29&dr=845445&f=602e4ae86896b1c266394b6096d01eb9c16269d3&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27onlineplaytest.mp4&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1627092900&x-oss-signature=0RP%2F%2BVnSRz%2BwJ7n0X0DjLjzHYJPzKnVwvaRw2nEk%2Bmw%3D&x-oss-signature-version=OSS2" 
+ffplay -headers "referer:https://www.aliyundrive.com/" -user_agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39" -i "https://bj29.cn-beijing.data.alicloudccp.com/5fc46d6b59793ab4a0a244a0bcbd602252317e22%2F5fc46d6b3483e294cf1f4e448c2bc1fc57bc34e5?di=bj29&dr=845445&f=5fc46d6b59793ab4a0a244a0bcbd602252317e22&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27Alita.Battle.Angel.2019.1080p.BluRay.x264.DTS-WiKi.mkv&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1628161531&x-oss-signature=F%2FkkOaj%2BN66Rgr%2F%2BryhpxqfmvnokRy2yqIY8Je5AFUQ%3D&x-oss-signature-version=OSS2" 
+
+阿里云盘+电视
+ffmpeg -rtbufsize 100 -re -headers "referer:https://www.aliyundrive.com/" -user_agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39" -i "https://bj29.cn-beijing.data.alicloudccp.com/5fc46d6b59793ab4a0a244a0bcbd602252317e22%2F5fc46d6b3483e294cf1f4e448c2bc1fc57bc34e5?di=bj29&dr=845445&f=5fc46d6b59793ab4a0a244a0bcbd602252317e22&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27Alita.Battle.Angel.2019.1080p.BluRay.x264.DTS-WiKi.mkv&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1628062550&x-oss-signature=HmcgsZ8i0jiTen8SBxEfbJ7JxsnVqVbDc7JzaRheldg%3D&x-oss-signature-version=OSS2" -c:v copy -sn -f hls - |dlnanow -
 
 
 Powershell批量
@@ -142,7 +145,7 @@ ffmpeg -ss 00:00:03.83 -i "E:\Frozen.II.2019.1080p.TWN.Blu-ray.AVC.DTS-HD.MA.7.1
 
 
 烧录字幕（需要在要编辑的视频目录下打开命令行，不能用于非文字类字幕）
-ffmpeg -i "C:\Users\19816\Documents\Video Encoding\temp.avs" -vf subtitles="Once.Upon.a.Snowman.2020.DSNYP.1080p.WEBRip.X264.Atmos-EVO(Lee-7723搬).ass" -c:v libx264 -preset slow  -crf 20 "netease.mp4"
+ffmpeg -i "D:\temp\[rosedoodle] little chibi 🤏 big adventure  😳 ✨ _ VRCHAT-fDvUdE4ny6A.mkv" -vf subtitles="[rosedoodle] little chibi 🤏 big adventure  😳 ✨ _ VRCHAT-fDvUdE4ny6A.ass" -c:v libx264 -preset slow  -crf 20 "netease.mp4"
 
 
 烧录字幕（另一种滤镜，可用于sup（PGS）图形字幕）
@@ -164,43 +167,41 @@ for($i=1;$i-lt 20;$i--) `
 ffmpeg `
 -f hls  `
 -reconnect_streamed 1  `
--rtbufsize 40M `
+-rtbufsize 80M `
 -re `
 -i "$url" `
 -c copy `
--rw_timeout 8000 `
+-rw_timeout 10000 `
 -f flv `
 -ignore_io_errors 1 `
 "rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=def5381fa58bcc8e2f235d250f2888a7&schedule=rtmp"}
 
 $env:http_proxy="http://127.0.0.1:10809";`
 for($i=1;$i-lt 20;$i--) `
-{$url='https://video-weaver.prg02.hls.ttvnw.net/v1/playlist/CpYFjmOdE3Veb4Gtkt4uwV_2wTTfGXr5VEAP4R4-HITOY2N83k95amld1_mgQ1wZu7oNCcyuZSq2myEvgCuNHzHv6u9C6hs6tdtMWkMb9xvjs_osV9q2J19srepIODnVBx7mmcGmFo80Cvbd3PZOE7It1vW9fU9MjR58AG2Udl1gAN1TNcn1_-c3JqH4AEVbx79tuTSk1OfmeOes8jfwdT3UHHJaBDSHe7r5LoFZcEpzSnFgew12VZIwFm00Epxa5QG0rcgb-NIFjj_S_IALatr9DJvPH8ivQdZyaVXnhdaHR0BhPHdLf740RjcUaYuUahGpnuvcKa8lASwcr2LyDZ4i0_wSjuk7TlBu1ZO3bpi-aH-k42jJYKi3wDmp7U2jcLmv-fntK32cwE9s07VOtMTcO2Sn_X-ts-U4tn2bE9zk3A5QiLjeJCZnZzV4K4espySE6X3Mr4POOB89i4qZe1kL6qolrVTw6CsVdD0V_K8sDpLVG__la5RXhcdeab4Kw7Z-foxSx9yFhWAO9YI0tA0JIPSWTaOpYfkzgRZLlpLiYupa_wRyQyNMTBuhnSRj82Z8HT0Utg_QrmXhgI5soTGaEK2cIETjoG-iZNLPXILYna3L8RfhbeBpmM1If_52d1h6VLjNYU107Wb_dRk1zY0sZHdQQgr75E4FxLsO2VRG2l0xcecyeSTEkPAZX6oGm0DQofTJ4hkX6BdyWoPUELZVxcWH-feC4scQ-8yAKM4jBJXHY0QtkPsqpaZuOvvYH-OGiZBc3fe5Nu4t1yclHH0I42m-wZeUZJDvvC2V_HwMeF9dpjEdYkiMJQX33i22DioKU0T7Wtt0yDSNArgNEcvgPV6XUU4DgQsPp7DfE7LVGy65IsJZirUSEI9x5cHZb3ML8u953niVfCkaDAfCX1fu44SvBev_dQ.m3u8';`
+{$url='https://video-weaver.mil02.hls.ttvnw.net/v1/playlist/CpgF1JRmryrZ9mZR3kXhpEPMwg-0nTuCZ_Vmf2cAE22Apev5pet8Kqn161N335Aiqvg6OmYJgTvGBSmDRWDm68GHimwXkIB-ickWy8nEVe67UEe4UV32C9EdQ4bXsqHrANP4j7ZvidYjrDprA3gHdvVf2CDdq7-DdJa16yIuPmfbTcgCJblzQJ21F9QQmARvr_8QiySf5gWePp_-fnR4nu0JvJ4aRYTG9GGQhee24msEfUtpcrdNOYbkTazxn1PoTJg4x34wPH_vcz80OhKxY4wlhajmgcs1X---_YDf7dy1q8DLijgol3oxQDdfkWN5sU5ajCRUdYPJmxgVs-jW0x56eGymEyxmHYSpuQVQuzrabU1k6ksG86hgFZK_HlEqXMTJte0OBSHE7Cgf6MGuWz1zcdF62yemWP-xmN4JqG15WZqcJiw9o_6FnT-i1oXawdG3ewAr0eDJEVlF9JYOeWApiNa5gn_Sr0BWyCOtNo8v1ysg6WV5wRql4MRuvNZgTmujoi6AtnDASrv4CxOyVzDmH6Fj0c6j2dWS6BiHr2_MvOv90F4ttMRnK4ASCiUnKYWma8boh4YIjFCwUzJyNYl1LsP2aeDlKVfZ4SvbeNoVJeP72Aso_K2iiiq3tp0AAUtOoIl3erNWQjjLl_9t-kOMYk_B6BGCqvOVjiOTuiM1DzHPQhbR0zZfZc8cHtdleqzIFxEHKhjJ-wwWYy2z3dynNXPoQvirl5Lq8Qoqj5QZLwGYPsDbcY08tV97hLpJ9B-BbD1qUR_9p4GNPuNhURF9t5JPcdoLORdbI9r3dtBFi4CWKXFzJSzAXMbBAU82wje7Uc0O619siEFKQeaUvCTs9ouVn7RJ3WS4gshTbkq9AaOaQRVorm1hDxIQIydocRwChD7iVO_q0wos0BoMjXDVHZp-LmxmPmkz.m3u8';`
 ffmpeg `
--stream_loop -1 `
--rtbufsize 60M `
+-rtbufsize 80M `
 -bitexact `
 -re `
 -i "$url" `
 -c copy `
 -f flv `
+-rw_timeout 10000 `
 -ignore_io_errors 1 `
--metadata:g 'encoding_tool=Lee7723_Encoding' `
--metadata:s:v:0 'encoder=Lee7723_Encoding' `
--metadata:s:a:0 'encoder=Lee7723_Encoding' `
 "rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=def5381fa58bcc8e2f235d250f2888a7&schedule=rtmp&pflag=1"}
 
 
 本地直播配合http.server
 $env:http_proxy="http://127.0.0.1:10809"; `
 for($i=1;$i-lt 20;$i--) {`
-ffmpeg `
+ffmpeg-4.4 `
 -stream_loop -1 `
 -hwaccel dxva2 `
--re `
--i (youtube-dl -g https://www.twitch.tv/seanvr) `
+-re -ss 06:06 `
+-referer "https://www.aliyundrive.com/" `
+-i 'https://bj29.cn-beijing.data.alicloudccp.com/5fc8cb8a62e968228ff546e8b076ffb8b79bdaca%2F5fc8cb8acfd3e6b66aa7406e8ea277278ff2caf2?di=bj29&dr=845445&f=602e4ae86896b1c266394b6096d01eb9c16269d3&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27onlineplaytest.mp4&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1628305536&x-oss-signature=8cQAJDwwzj2ybOMCIvgolgRIFqhQe1%2BzAcltnT3pb8A%3D&x-oss-signature-version=OSS2' `
 -ignore_io_errors 1 `
--c copy -map 0 -f hls -hls_wrap 10 -hls_list_size 8 hls/index.m3u8}
+-c:a aac -c:v copy -map 0 -sn -f hls -hls_wrap 10 -hls_list_size 8 hls/index.m3u8}
 
 
 $env:http_proxy="http://127.0.0.1:10809"; `
