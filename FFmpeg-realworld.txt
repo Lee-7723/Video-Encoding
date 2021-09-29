@@ -1,7 +1,9 @@
-ffmpeg -hwaccel cuda -i "D:\temp\[Dacha44] F1 Grill The Grid But It's A Meme-MzsC2E0tnl0.mkv" -vf subtitles="Dacha44.ass" -c:a aac -ab 529k -c:v h264_nvenc -preset p7 -rc-lookahead 120 -2pass 1 -vb 10M -minrate 2M -bufsize 5M Dacha.mkv
+
+ffmpeg -hwaccel dxva2 -i "E:\[Drumsy] Prop Hunt In VR Was A Mistake.-0VqYCtKG7Jo.mkv" -vf crop=x=700:y=920:w=520:h=110,scdet=t=20 -f null -
 
 
-ffmpeg -hwaccel dxva2 -i "\\Lee7723-laptop\d\OneDrive - lijingze\文档\Video Encoding\Subtitle.avs" -i "D:\temp\GreatMoonAroma Virgin smug  VRchat-aAGV4ieYsaw.mkv" -map 0 -map 1:a -c:a aac -ab 529k -c:v h264_nvenc -preset p7 -rc-lookahead 120 -2pass 1 -vb 8M -minrate 2M -bufsize 5M GMA.mkv
+
+ffmpeg -hwaccel dxva2 -i "D:\OneDrive - lijingze\文档\Video Encoding\Subtitle.avs" -i "E:\[Drumsy] She Ruined Yoga.-hy4FpdINJss.mkv" -map 0 -map 1:a -c:a aac -ab 529k -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 10M -minrate 4M -bufsize 5M Drumsy.mkv
 
 
 
@@ -12,7 +14,7 @@ mpv --http-header-fields='Referer: https://www.mgtv.com/' 'https://pcvideoaliyun
 
 
 阿里云盘：
-mpv --http-header-fields='referer:https://www.aliyundrive.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://bj29.cn-beijing.data.alicloudccp.com/1C2XWoaR%2F163811%2F61026d356df9cace52b942ec910a829b01761e97%2F61026d3582565ccfc1ab47d2abfb696a978f383d?di=bj29&dr=845445&f=6104b2f9500c0bcf95df4bed80f0ac6d9c1249f4&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%279.F9.2021.2160p.WEB-DL.DDP5.1.Atmos.HDR.HEVC-EVO.mkv&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1627699858&x-oss-signature=RN%2BmjQc5mpR1fyW5VO9C83uiDmy7kDoTkfJkUal3ts0%3D&x-oss-signature-version=OSS2"
+mpv --http-header-fields='referer:https://www.aliyundrive.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://bj29.cn-beijing.data.alicloudccp.com/kHLl3BoM%2F8350%2F611802c18b7920d7cd424c57bfecb127fb6cc40a%2F611802c13cb23e7fef874c0e9ab7312eaa2656c0?di=bj29&dr=845445&f=61338cba40baa93e9a34470ba96818feb7c63150&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27Transformers.Revenge.of.the.Fallen.2009.BluRay.2160p.x265.10bit.HDR.3Audio.mUHD-FRDS.MKV&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1630769279&x-oss-signature=tXlNNxCy1nPDrr7BUQFhsIqgwbRqsSr9FXtIFoRBpRE%3D&x-oss-signature-version=OSS2"
 
 B站：
 mpv --http-header-fields='referer:https://www.bilibili.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://cn-tj2-cmcc-bcache-03.bilivideo.com/upgcxcode/82/40/329954082/329954082_nb2-1-30112.m4s?e=ig8euxZM2rNcNbdlhoNvNC8BqJIzNbfqXBvEuENvNC8aNEVEtEvE9IMvXBvE2ENvNCImNEVEIj0Y2J_aug859IB_&uipk=5&nbs=1&deadline=1623692536&gen=playurlv2&os=bcache&oi=3746054009&trid=0000619918a14af7443f8d613b4cf66fea4at&platform=android_tv_yst&upsig=3e675ad37e2d549919ccb184e40bf0ee&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&cdnid=6774&mid=310265481&bvc=vod&orderid=0,3&logo=80000000" --audio-file="a"
@@ -152,6 +154,9 @@ ffmpeg -i "D:\temp\[rosedoodle] little chibi 🤏 big adventure  😳 ✨ _ VRCH
 ffmpeg -i 00919.m2ts -filter_complex [0:v][0:s:0]overlay[v] -map [v] -map 0:a -c:v h264_nvenc -c:a copy -cq 1 j:\temp\test-sub.mkv
 
 
+自动打轴
+ffmpeg -hwaccel dxva2 -i "E:\[Drumsy] She Ruined Yoga.-hy4FpdINJss.mkv" -vf crop=x=700:y=920:w=520:h=110,scdet=t=20 -f null -
+
 
 图片序列编码为视频
 ffmpeg -threads 6 -f image2 -i "E:\Adobe Premiere Pro Auto-Save\1603865541285_1_2.00x_4680x2160_thf-1.0.1_2.00x_9360x4320_thf-1.0.1_png\00%4d.png" -i "D:\FFOutput\Voicians - Empire.mp3" -c:v libx264 -crf 16 -preset slow -r 50 -c:a copy "D:\encoded.mkv"
@@ -161,9 +166,10 @@ ffmpeg -i "C:\Users\李竞择\Documents\avs脚本\5x动画.avs" -c:a aac -b:a 32
 
 
 转播用
+RTMP直播协议
 $env:http_proxy="http://127.0.0.1:10809";`
 for($i=1;$i-lt 20;$i--) `
-{$url=$(youtube-dl -g https://www.twitch.tv/leafions );`
+{$url=$(youtube-dl -g https://www.twitch.tv/beavecio );`
 ffmpeg `
 -f hls  `
 -reconnect_streamed 1  `
@@ -173,16 +179,36 @@ ffmpeg `
 -c copy `
 -rw_timeout 10000 `
 -f flv `
+-flvflags no_duration_filesize `
 -ignore_io_errors 1 `
-"rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=def5381fa58bcc8e2f235d250f2888a7&schedule=rtmp"}
+"rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=def5381fa58bcc8e2f235d250f2888a7&schedule=rtmp&pflag=9"}
+
+
+srt直播协议
+$env:http_proxy="http://127.0.0.1:10809";`
+for($i=1;$i-lt 20;$i--) `
+{$url=$(youtube-dl -g https://www.youtube.com/watch?v=4HCnrd-xmu8 );`
+ffmpeg `
+-f hls  `
+-reconnect_streamed 1  `
+-rtbufsize 80M `
+-re `
+-i "$url" `
+-c copy `
+-rw_timeout 10000 `
+-f mpegts `
+-ignore_io_errors 1 `
+"srt://live-push.bilivideo.com:1937?streamid=#!::h=live-push.bilivideo.com,r=live-bvc/?streamname=live_310265481_75466439,key=626d589ba9880ffb687eabba95245c5d,schedule=srtts,pflag=9"}
+
 
 $env:http_proxy="http://127.0.0.1:10809";`
 for($i=1;$i-lt 20;$i--) `
-{$url='https://video-weaver.mil02.hls.ttvnw.net/v1/playlist/CpgF1JRmryrZ9mZR3kXhpEPMwg-0nTuCZ_Vmf2cAE22Apev5pet8Kqn161N335Aiqvg6OmYJgTvGBSmDRWDm68GHimwXkIB-ickWy8nEVe67UEe4UV32C9EdQ4bXsqHrANP4j7ZvidYjrDprA3gHdvVf2CDdq7-DdJa16yIuPmfbTcgCJblzQJ21F9QQmARvr_8QiySf5gWePp_-fnR4nu0JvJ4aRYTG9GGQhee24msEfUtpcrdNOYbkTazxn1PoTJg4x34wPH_vcz80OhKxY4wlhajmgcs1X---_YDf7dy1q8DLijgol3oxQDdfkWN5sU5ajCRUdYPJmxgVs-jW0x56eGymEyxmHYSpuQVQuzrabU1k6ksG86hgFZK_HlEqXMTJte0OBSHE7Cgf6MGuWz1zcdF62yemWP-xmN4JqG15WZqcJiw9o_6FnT-i1oXawdG3ewAr0eDJEVlF9JYOeWApiNa5gn_Sr0BWyCOtNo8v1ysg6WV5wRql4MRuvNZgTmujoi6AtnDASrv4CxOyVzDmH6Fj0c6j2dWS6BiHr2_MvOv90F4ttMRnK4ASCiUnKYWma8boh4YIjFCwUzJyNYl1LsP2aeDlKVfZ4SvbeNoVJeP72Aso_K2iiiq3tp0AAUtOoIl3erNWQjjLl_9t-kOMYk_B6BGCqvOVjiOTuiM1DzHPQhbR0zZfZc8cHtdleqzIFxEHKhjJ-wwWYy2z3dynNXPoQvirl5Lq8Qoqj5QZLwGYPsDbcY08tV97hLpJ9B-BbD1qUR_9p4GNPuNhURF9t5JPcdoLORdbI9r3dtBFi4CWKXFzJSzAXMbBAU82wje7Uc0O619siEFKQeaUvCTs9ouVn7RJ3WS4gshTbkq9AaOaQRVorm1hDxIQIydocRwChD7iVO_q0wos0BoMjXDVHZp-LmxmPmkz.m3u8';`
+{$url='https://video-weaver.waw01.hls.ttvnw.net/v1/playlist/CrMFtbGJbV1vV1oMrSkevNgSE3dxpSeHNdQNhN0z7hQ9R1Ea7_84y-lVNtecEXJ10C5dLWgWmeQQJeZmszY1HU5jOM0b-ZpedVU39XJIX5Haik-5hEvlDYvTGEsC8jqoR67IAH4TLzuclksfD-EC1pgkL8uuIp2plyGV7Oes7VlTULyRyBxH5W_a-5WKAHgsV1FJ0WVUMf_8K0miwv4DFY_tVKubRNnwTZW18fphIjDEf_IKYU0rjkiZMU5eEHY9YbONrYimgJ807E4BZgoMc03WgRunWrv7Ie8x1TEYNITMT_GxZgIilMSrPUlF-hoTPs1aD3awukbLAbMrwXgnVMBiz51R70bOC8Ze8UWvFxWGoNlzUrF8pay69VazhNAcBWAg43jD-2Dhv4TtLEAXqvRAJ6tG-Z7KKMb9-3JPTHwS7cSCKs23D1LKWND4Q8seZxRwMe-WZicUsylSzwq0K_6DQ2fcEfqmXc2cUCk_XJuwgonGgv7-kZW2-uA7yG9FuvOmyA6w6scRepk_2rIBwlDwSn5IB1wTPeAdFO9bQcwgZP-8MRdiTdVu2D88FY6hT8nbOpGAqVFpY1eS2QqouYmC8UhLYnsk-iDUk9RJoZWm4pjJdAXvXiUNskAGzm8iZBmsgK6p4A8g_zPjQX7mM23NitCkHhbWB91xj1djpKCiBfANZQKzEzfwFkngXiaTG12RK2rAJpB3Wd6gsvN8nZs730JehgTV5JSqwOS2Rkw26cS9UJFuUFtbP9HO6soUEVbf06_28fhFcy6LvTkJlgIe0cy0qHTwsRCCt9hJwZk1ZPbIkKYibTevh72erAJmoU9vg_3mA_783n5rmnT7vzyLrKAg688uhUSPl-51i7roic6UgiJWlReS533t_w4s2UWRX2Ihi7VEHGRWSeHFvhsmUOQuURIQcPFb8h1kGJqmjynR9H0ANxoMAjffEe-OHisy_h7v.m3u8';`
 ffmpeg `
 -rtbufsize 80M `
--bitexact `
 -re `
+-reconnect 1 `
+-reconnect_delay_max 15 `
 -i "$url" `
 -c copy `
 -f flv `

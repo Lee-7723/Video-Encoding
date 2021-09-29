@@ -3,7 +3,7 @@ SetMemoryMax(6000)
 #SetFilterMTMode("LWLibavVideoSource", 2)
 #SetFilterMTMode("TextSub", 2)
 
-clip=LWLibavVideoSource("\\Lee7723-desktop\d\temp\[GreatMoonAroma] My boobs is H cup - VRchat-Pezq4pSWxTg.mkv", format="YUV420P8")
+clip=LWLibavVideoSource("E:\[Drumsy] Stuck In An Anime Train.--wg8v-pok2o.mkv", format="YUV420P8")
 #DuplicateFrame(1)
 #trim(1,18196)
 
@@ -19,7 +19,7 @@ clip=LWLibavVideoSource("\\Lee7723-desktop\d\temp\[GreatMoonAroma] My boobs is H
 #clip=aSharp(clip, T=4.0, D=4.0, B=-1.0, hqbf=false)#for 4k
 clip=aSharp(clip, T=0.6, D=4.0, B=-1.0, hqbf=false)#for 1080P
 
-clip=TextSub(clip, file="\\Lee7723-desktop\d\temp\[GreatMoonAroma] My boobs is H cup - VRchat-Pezq4pSWxTg.ass",  fps=clip.FrameRate())
+clip=TextSub(clip, file="E:\[Drumsy] Stuck In An Anime Train.--wg8v-pok2o.ass",  fps=clip.FrameRate())
 clip
 
 Prefetch(clip,4)
