@@ -3,7 +3,7 @@ SetMemoryMax(6000)
 #SetFilterMTMode("LWLibavVideoSource", 2)
 #SetFilterMTMode("TextSub", 2)
 
-clip=LWLibavVideoSource("E:\[Drumsy] Prop Hunt In VR Was A Mistake.-0VqYCtKG7Jo.mkv", format="YUV420P8")
+clip=LWLibavVideoSource("E:\[GreatMoonAroma] Squid game MrBeast in VRchat! ¡¾ VRchat ¡¿-M0Q1y1NKzdA.mkv", format="YUV420P8")
 #DuplicateFrame(1)
 
 ##Resize:
@@ -19,7 +19,7 @@ clip=LWLibavVideoSource("E:\[Drumsy] Prop Hunt In VR Was A Mistake.-0VqYCtKG7Jo.
 #clip=aSharp(clip, T=0.2, D=4.0, B=-1.0, hqbf=false)#for 1080P
 clip=edgelevel(clip,strength=8, threshold=0)
 
-clip=TextSub(clip, file="E:\[Drumsy] Prop Hunt In VR Was A Mistake.-0VqYCtKG7Jo.ass", fps=clip.FrameRate())
+clip=TextSub(clip, file="E:\[GreatMoonAroma] Squid game MrBeast in VRchat! ¡¾ VRchat ¡¿-M0Q1y1NKzdA.ass", fps=clip.FrameRate())
 clip
 
 Prefetch(clip,8)

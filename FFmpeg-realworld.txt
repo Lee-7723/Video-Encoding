@@ -1,9 +1,24 @@
+ffmpeg -hwaccel dxva2 -i "E:\[NoLogicDavid] Omegle But It's Adorable-ZqiPwy3WhKQ.mkv" -lavfi "
+[0:v]trim=0:272.833 ,setpts=PTS-STARTPTS[a],
+[0:a]atrim=0:272.833 ,asetpts=PTS-STARTPTS[aa],
+[0:v]trim=272.833:275.35 ,crop=x=0:y=622:w=600:h=1080-622,gblur=100,setpts=PTS-STARTPTS[bblur],
+[0:v]trim=272.833:275.35 ,setpts=PTS-STARTPTS[bb],
+[bb][bblur]overlay=x=0:y=622[b],
+[0:a]atrim=272.833:275.35 ,asetpts=PTS-STARTPTS[ba],
+[0:v]trim=start=275.35 ,setpts=PTS-STARTPTS[c],
+[0:a]atrim=start=275.35 ,asetpts=PTS-STARTPTS[ca],
+[a][b][c]concat=n=3[outv],
+[aa][ba][ca]concat=n=3:v=0:a=1[outa]
+" -map [outv] -map [outa] -c:a aac -ab 529k -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 8M blur.mkv
+
+
+
 
 ffmpeg -hwaccel dxva2 -i "E:\[Drumsy] Prop Hunt In VR Was A Mistake.-0VqYCtKG7Jo.mkv" -vf crop=x=700:y=920:w=520:h=110,scdet=t=20 -f null -
 
 
 
-ffmpeg -hwaccel dxva2 -i "D:\OneDrive - lijingze\文档\Video Encoding\Subtitle.avs" -i "E:\[Drumsy] She Ruined Yoga.-hy4FpdINJss.mkv" -map 0 -map 1:a -c:a aac -ab 529k -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 10M -minrate 4M -bufsize 5M Drumsy.mkv
+ffmpeg -hwaccel dxva2 -i "D:\OneDrive - lijingze\文档\Video Encoding\Subtitle.avs" -i "E:\[Drumsy] Prop Hunt In VR Was A Mistake.-0VqYCtKG7Jo.mkv" -map 0 -map 1:a -c:a aac -ab 529k -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 9.6M -minrate 4M -bufsize 5M Drumsy.mkv
 
 
 
@@ -169,7 +184,7 @@ ffmpeg -i "C:\Users\李竞择\Documents\avs脚本\5x动画.avs" -c:a aac -b:a 32
 RTMP直播协议
 $env:http_proxy="http://127.0.0.1:10809";`
 for($i=1;$i-lt 20;$i--) `
-{$url=$(youtube-dl -g https://www.twitch.tv/beavecio );`
+{$url=$(youtube-dl -g https://www.twitch.tv/poiyapng );`
 ffmpeg `
 -f hls  `
 -reconnect_streamed 1  `
@@ -181,13 +196,13 @@ ffmpeg `
 -f flv `
 -flvflags no_duration_filesize `
 -ignore_io_errors 1 `
-"rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=def5381fa58bcc8e2f235d250f2888a7&schedule=rtmp&pflag=9"}
+"rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=626d589ba9880ffb687eabba95245c5d&schedule=rtmp&pflag=9"}
 
 
 srt直播协议
 $env:http_proxy="http://127.0.0.1:10809";`
 for($i=1;$i-lt 20;$i--) `
-{$url=$(youtube-dl -g https://www.youtube.com/watch?v=4HCnrd-xmu8 );`
+{$url=$(youtube-dl -g https://www.twitch.tv/poiyapng );`
 ffmpeg `
 -f hls  `
 -reconnect_streamed 1  `
