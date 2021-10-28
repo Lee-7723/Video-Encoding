@@ -2,9 +2,10 @@ SetMemoryMax(6000)
 #SetFilterMTMode("aSharp", 2)
 #SetFilterMTMode("LWLibavVideoSource", 2)
 #SetFilterMTMode("TextSub", 2)
+LoadPlugin("D:\Program Files\AviSynth+\plugins64\VSFilterMod.dll")
 
-clip=LWLibavVideoSource("E:\[GreatMoonAroma] Squid game MrBeast in VRchat! ¡¾ VRchat ¡¿-M0Q1y1NKzdA.mkv", format="YUV420P8")
-#DuplicateFrame(1)
+clip=LWLibavVideoSource("E:\[Drumsy] We Played Squidward Game.-h8O-wW54YOA.webm", format="YUV420P8")
+clip=DuplicateFrame(clip,1)
 
 ##Resize:
 #clip=eedi3_rpow2(clip, rfactor=4)#·Ç³£Âý
@@ -19,7 +20,7 @@ clip=LWLibavVideoSource("E:\[GreatMoonAroma] Squid game MrBeast in VRchat! ¡¾ VR
 #clip=aSharp(clip, T=0.2, D=4.0, B=-1.0, hqbf=false)#for 1080P
 clip=edgelevel(clip,strength=8, threshold=0)
 
-clip=TextSub(clip, file="E:\[GreatMoonAroma] Squid game MrBeast in VRchat! ¡¾ VRchat ¡¿-M0Q1y1NKzdA.ass", fps=clip.FrameRate())
+clip=TextSub(clip, file="E:\[Drumsy] We Played Squidward Game.-h8O-wW54YOA.ass", fps=clip.FrameRate())
 clip
 
 Prefetch(clip,8)

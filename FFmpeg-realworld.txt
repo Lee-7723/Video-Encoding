@@ -1,24 +1,18 @@
-ffmpeg -hwaccel dxva2 -i "E:\[NoLogicDavid] Omegle But It's Adorable-ZqiPwy3WhKQ.mkv" -lavfi "
-[0:v]trim=0:272.833 ,setpts=PTS-STARTPTS[a],
-[0:a]atrim=0:272.833 ,asetpts=PTS-STARTPTS[aa],
-[0:v]trim=272.833:275.35 ,crop=x=0:y=622:w=600:h=1080-622,gblur=100,setpts=PTS-STARTPTS[bblur],
-[0:v]trim=272.833:275.35 ,setpts=PTS-STARTPTS[bb],
-[bb][bblur]overlay=x=0:y=622[b],
-[0:a]atrim=272.833:275.35 ,asetpts=PTS-STARTPTS[ba],
-[0:v]trim=start=275.35 ,setpts=PTS-STARTPTS[c],
-[0:a]atrim=start=275.35 ,asetpts=PTS-STARTPTS[ca],
-[a][b][c]concat=n=3[outv],
-[aa][ba][ca]concat=n=3:v=0:a=1[outa]
-" -map [outv] -map [outa] -c:a aac -ab 529k -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 8M blur.mkv
 
+ffmpeg -hwaccel dxva2 -i "E:\[Drumsy] We Played Squidward Game.mp4" -vf crop=x=730:y=924:w=in_w-730*2:h=100,scdet=t=20 -f null -
 
+ffmpeg -hwaccel auto -i "D:\OneDrive - lijingze\文档\Video Encoding\Subtitle.avs" -hwaccel auto -i "E:\[Drumsy] We Played Squidward Game.-h8O-wW54YOA.webm" -lavfi "
+[0:v]trim=9.921:13.521 ,setpts=PTS-STARTPTS[a],
+[1:a]atrim=9.921:13.521 ,asetpts=PTS-STARTPTS[aa],
+[0:v]trim=20.254:262.376 ,setpts=PTS-STARTPTS[a1],
+[1:a]atrim=20.254:262.376 ,asetpts=PTS-STARTPTS[a1a],
+smptehdbars=s=1920x1080:d=1:r=30,format=yuv420p[bars],
+anullsrc=d=1[beep],
+[0:v]trim=start=427.875 ,setpts=PTS-STARTPTS[b],
+[1:a]atrim=start=427.875 ,asetpts=PTS-STARTPTS[ba],
+[a][aa][a1][a1a][bars][beep][b][ba]concat=n=4:v=1:a=1[outv][outa]
+" -map [outv] -map [outa] -c:a aac -ab 529k -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 10M -minrate 4M -bufsize 5M Drumsy.mkv
 
-
-ffmpeg -hwaccel dxva2 -i "E:\[Drumsy] Prop Hunt In VR Was A Mistake.-0VqYCtKG7Jo.mkv" -vf crop=x=700:y=920:w=520:h=110,scdet=t=20 -f null -
-
-
-
-ffmpeg -hwaccel dxva2 -i "D:\OneDrive - lijingze\文档\Video Encoding\Subtitle.avs" -i "E:\[Drumsy] Prop Hunt In VR Was A Mistake.-0VqYCtKG7Jo.mkv" -map 0 -map 1:a -c:a aac -ab 529k -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 9.6M -minrate 4M -bufsize 5M Drumsy.mkv
 
 
 
@@ -29,10 +23,10 @@ mpv --http-header-fields='Referer: https://www.mgtv.com/' 'https://pcvideoaliyun
 
 
 阿里云盘：
-mpv --http-header-fields='referer:https://www.aliyundrive.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://bj29.cn-beijing.data.alicloudccp.com/kHLl3BoM%2F8350%2F611802c18b7920d7cd424c57bfecb127fb6cc40a%2F611802c13cb23e7fef874c0e9ab7312eaa2656c0?di=bj29&dr=845445&f=61338cba40baa93e9a34470ba96818feb7c63150&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27Transformers.Revenge.of.the.Fallen.2009.BluRay.2160p.x265.10bit.HDR.3Audio.mUHD-FRDS.MKV&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1630769279&x-oss-signature=tXlNNxCy1nPDrr7BUQFhsIqgwbRqsSr9FXtIFoRBpRE%3D&x-oss-signature-version=OSS2"
+mpv --http-header-fields='referer:https://www.aliyundrive.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://bj29.cn-beijing.data.alicloudccp.com/oFChp9VH%2F6482746%2F612c1a8e837c9d4c11064197be462075dc31de9d%2F612c1a8e7a2907d5864b470b9c24e1b91073297e?di=bj29&dr=845445&f=615fe6107e35c7f6159c4c1aaa4114f7bb2d90c4&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27Bumblebee.2018.2160p.BluRay.REMUX.HEVC.DTS-HD.MA.TrueHD.7.1.Atmos-FGT.mkv&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1633707267&x-oss-signature=DuXvMRZq%2BKkXtcGsCG2gcD8nvsXFDgZzAF1oM6fVBvw%3D&x-oss-signature-version=OSS2"
 
 B站：
-mpv --http-header-fields='referer:https://www.bilibili.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://cn-tj2-cmcc-bcache-03.bilivideo.com/upgcxcode/82/40/329954082/329954082_nb2-1-30112.m4s?e=ig8euxZM2rNcNbdlhoNvNC8BqJIzNbfqXBvEuENvNC8aNEVEtEvE9IMvXBvE2ENvNCImNEVEIj0Y2J_aug859IB_&uipk=5&nbs=1&deadline=1623692536&gen=playurlv2&os=bcache&oi=3746054009&trid=0000619918a14af7443f8d613b4cf66fea4at&platform=android_tv_yst&upsig=3e675ad37e2d549919ccb184e40bf0ee&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&cdnid=6774&mid=310265481&bvc=vod&orderid=0,3&logo=80000000" --audio-file="a"
+mpv --http-header-fields='referer:https://www.bilibili.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://cn-tj2-cmcc-bcache-02.bilivideo.com/upgcxcode/26/61/322046126/322046126-1-74.flv?e=ig8euxZM2rNcNbNz7zdVhwdlhbhahwdVhoNvNC8BqJIzNbfqXBvEqxTEto8BTrNvN0GvT90W5JZMkX_YN0MvXg8gNEV4NC8xNEV4N03eN0B5tZlqNxTEto8BTrNvNeZVuJ10Kj_g2UB02J0mN0B5tZlqNCNEto8BTrNvNC7MTX502C8f2jmMQJ6mqF2fka1mqx6gqj0eN0B599M=&uipk=5&nbs=1&deadline=1634464136&gen=playurlv2&os=bcache&oi=3746060477&trid=00000933be06129b446f851bef6913e7d241u&platform=pc&upsig=3e5688acb0c60cd901bd4d3bfe4e5764&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&cdnid=6773&mid=310265481&bvc=vod&nettype=0&orderid=0,3&agrr=1&logo=80000000" --audio-file="a"
 
 Onedrive：
 mpv --http-header-fields='authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im5PbzNaRHJPRFhFSzFqS1doWHNsSFJfS1hFZyIsImtpZCI6Im5PbzNaRHJPRFhFSzFqS1doWHNsSFJfS1hFZyJ9.eyJhdWQiOiJodHRwczovL3dlYnNoZWxsLnN1aXRlLm9mZmljZS5jb20iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9jZGY0ODk2MS01N2E5LTQxMTQtOTc3Ni03YWI1NWVhNTVlMWMvIiwiaWF0IjoxNjI0Njc0MjIyLCJuYmYiOjE2MjQ2NzQyMjIsImV4cCI6MTYyNDY3ODEyMiwiYWNyIjoiMSIsImFpbyI6IkUyWmdZR2c5Wk1obkk1MS9TK3ZMdk1tL1BiV2xkM3lkTDNGMWx1OEozUitHZXZKWk54MEIiLCJhbXIiOlsicHdkIl0sImFwcGlkIjoiODliZWUxZjctNWU2ZS00ZDhhLTlmM2QtZWNkNjAxMjU5ZGE3IiwiYXBwaWRhY3IiOiIwIiwiZmFtaWx5X25hbWUiOiLmnY4iLCJnaXZlbl9uYW1lIjoi56ue5oupIiwiaXBhZGRyIjoiMjIzLjcyLjEwNS4zMiIsImxvZ2luX2hpbnQiOiJPLkNpUm1abVk1TW1OaU5DMHpabVk1TFRSbFpqZ3RPRE01TkMwME1EaG1aakV5TXpWaVlURVNKR05rWmpRNE9UWXhMVFUzWVRrdE5ERXhOQzA1TnpjMkxUZGhZalUxWldFMU5XVXhZeG9VUVVSVUxUUTJNVGxBWW5Wd2RDNWxaSFV1WTI0Z1dRPT0iLCJuYW1lIjoi5p2O56ue5oupIiwib2lkIjoiZmZmOTJjYjQtM2ZmOS00ZWY4LTgzOTQtNDA4ZmYxMjM1YmExIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiQURULTQ2MTlAYnVwdC5lZHUuY24iLCJwdWlkIjoiMTAwMzIwMDExM0E1N0FCNSIsInB3ZF9leHAiOiIwIiwicHdkX3VybCI6Imh0dHBzOi8vcG9ydGFsLm1pY3Jvc29mdG9ubGluZS5jb20vQ2hhbmdlUGFzc3dvcmQuYXNweCIsInJoIjoiMC5BUzhBWVluMHphbFhGRUdYZG5xMVhxVmVIUGZodm9sdVhvcE5uejNzMWdFbG5hY3ZBQncuIiwic2NwIjoiU2hlbGxTZXR0aW5ncy5SZWFkIiwic3ViIjoiem9EZXFwWkNSS2ZsSXRjc3BVSU5QUDZpOEpoOXJfOGlUYlc2dVdxblpmQSIsInRpZCI6ImNkZjQ4OTYxLTU3YTktNDExNC05Nzc2LTdhYjU1ZWE1NWUxYyIsInVuaXF1ZV9uYW1lIjoiQURULTQ2MTlAYnVwdC5lZHUuY24iLCJ1cG4iOiJBRFQtNDYxOUBidXB0LmVkdS5jbiIsInV0aSI6IlRrTW40cE5wM0U2d2lrV04zaDBGQUEiLCJ2ZXIiOiIxLjAifQ.bAe5pOwiOPzTeCDxa9pUBQDBUzqS8z3ISWifxwfVagI29hZoiEQgTrsNC-KeS7IViXxOZUrEcBUoZEA9VL1s7ALLC60fiwZSJOpwoO5O8LrTd591kZn4XdR3jN8VeF03GSJM57V2V8uXbs_p5h5zFYqRJUJAsT52DcZ-atRK6m8GH256fJnHvxk3KUM6_DtLeprOXxkiKRaXk0oRlOvigY_VPTPwwjuUOgI5JIiXc7ALsnNdNNqJYiXGxk_i91RAxZsZoosOltx_Nl0wuX1gohVb-q10roaY9S7dI6TIqVnhuja1WS7MSDN1SwER1IHFCrPVuDkJj8OkVw4Gx9yaIw, cookie: ClientStorageCookie=QIDxJIp9ergCPPoR2Lktvm3ErdvgqsnkUs4EOz18NEw%3D%26jqhrtbNUIP%2B3yb%2FhwcNkNQ%3D%3D' "https://bupteducn-my.sharepoint.com/personal/adt-4619_bupt_edu_cn/_layouts/15/download.aspx?UniqueId=474d891d%2D8f77%2D4fc9%2D98da%2D04f1ed764739"
@@ -54,6 +48,14 @@ Powershell批量
 get-childitem -name -r *.png | foreach-object {ffmpeg -i $_  -vf scale=750*750:flags=lanczos test\$_}
 
 get-childitem -name -r *.ts | foreach-object {$a=($_ -replace(".ts","-HDR.mp4"));ffmpeg -i $_ -c copy "$a"}
+
+
+Discord表情包整理
+$url=(Get-Content "url_list.txt"); `
+$name=(Get-Content "name_list.txt"); `
+for($i=0;$i-lt 431;$i++) {$ext=($url[$i].Substring($url[$i].Length-13,4)); `
+$name[$i]=(-join($name[$i],$ext)); `
+aria2c --all-proxy='127.0.0.1:10809' $url[$i] -o $name[$i]}
 
 
 多轨道截取
@@ -110,9 +112,6 @@ ffmpeg -i "C:\Users\李竞择\Documents\Tencent Files\1981671849\FileRecv\3306c6
 ffmpeg -i "C:\Users\李竞择\Documents\Tencent Files\1981671849\FileRecv\3306c6.avs"  -c:v libx265 -crf 8 -preset slow -x265-params "keyint=230:repeat-headers=1:aq-mode=2:qpmin=3:qpmax=14:colorprim=bt2020:colormatrix=bt2020nc:transfer=smpte2084:master-display=G(13250,34500)B(7500,3000)R(34000,16000)WP(15635,16450)L(10000000,500)"  "E:\SVP Project\Frozen II - Ultra HD™-011---.mkv"
 
 
-gif编码
-ffmpeg -ss 00:06:25 -i "E:\Minions.2015.720p.BluRay.x264-WiKi\Minions.2015.720p.BluRay.x264-WiKi.mkv" -t 00:00:30 -c:v gif "f:\out.gif"
-
 设备
 ffmpeg -list_devices true -f dshow -i dummy
 
@@ -133,7 +132,7 @@ ffmpeg -i "C:\Users\李竞择\Documents\avs脚本\HDR转映射.avs" -c:v nvenc p
 
 
 转色域
-ffmpeg -ss 00:09:00 -i "F:\Frozen.2013.2160p.UHD.BluRay.TrueHD.7.1.Atmos.HDR.x265-BlzT.mkv" -vf zscale=t=linear:npl=100,format=gbrpf32le,zscale=p=bt709,tonemap=clip,zscale=t=bt709:m=bt709:r=pc,format=yuv420p -c:v libx264 -preset veryfast -an "E:\ITU--.mp4"
+ffmpeg -i "E:\CE2A3C1FD97807105759A866F125B7D3.mp4" -vf zscale=t=linear:npl=100,format=gbrpf32le,zscale=p=bt709,tonemap=hable,zscale=t=bt709:m=bt709:r=pc,format=yuv420p -c:v libx264 -preset veryfast -an "E:\ITU--.mp4"
 
 hable:desat=0:peak=6
 
@@ -161,8 +160,19 @@ ffmpeg -ss 00:00:00.87 -i "C:\Users\李竞择\Videos\Captures\NeedForSpeedPaybac
 ffmpeg -ss 00:00:03.83 -i "E:\Frozen.II.2019.1080p.TWN.Blu-ray.AVC.DTS-HD.MA.7.1-nLiBRA\BDMV\STREAM\00907.m2ts" -t 00:00:03.95 -vf setpts=2*PTS,crop=1600:1600:680:240,scale=320:320,setsar=1:1 -r 10 -c gif f:/out.gif
 
 
+字幕
+ffmpeg `
+-hwaccel auto `
+-i "D:\OneDrive - lijingze\文档\Video Encoding\Subtitle.avs" `
+-hwaccel auto `
+-i "E:\[GreatMoonAroma] Squid game MrBeast in VRchat! 【 VRchat 】-M0Q1y1NKzdA.mkv" `
+-map 0 -map 1:a `
+-c:a aac -ab 529k -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 10M -minrate 4M -bufsize 5M `
+GMA.mkv
+
+
 烧录字幕（需要在要编辑的视频目录下打开命令行，不能用于非文字类字幕）
-ffmpeg -i "D:\temp\[rosedoodle] little chibi 🤏 big adventure  😳 ✨ _ VRCHAT-fDvUdE4ny6A.mkv" -vf subtitles="[rosedoodle] little chibi 🤏 big adventure  😳 ✨ _ VRCHAT-fDvUdE4ny6A.ass" -c:v libx264 -preset slow  -crf 20 "netease.mp4"
+ffmpeg -i "" -vf subtitles="" -c:v libx264 -preset slow  -crf 20 ""
 
 
 烧录字幕（另一种滤镜，可用于sup（PGS）图形字幕）
@@ -183,9 +193,9 @@ ffmpeg -i "C:\Users\李竞择\Documents\avs脚本\5x动画.avs" -c:a aac -b:a 32
 转播用
 RTMP直播协议
 $env:http_proxy="http://127.0.0.1:10809";`
+$url=$(youtube-dl -g https://www.twitch.tv/pattiiiiiiii );`
 for($i=1;$i-lt 20;$i--) `
-{$url=$(youtube-dl -g https://www.twitch.tv/poiyapng );`
-ffmpeg `
+{ffmpeg `
 -f hls  `
 -reconnect_streamed 1  `
 -rtbufsize 80M `
@@ -194,7 +204,6 @@ ffmpeg `
 -c copy `
 -rw_timeout 10000 `
 -f flv `
--flvflags no_duration_filesize `
 -ignore_io_errors 1 `
 "rtmp://live-push.bilivideo.com/live-bvc/?streamname=live_310265481_75466439&key=626d589ba9880ffb687eabba95245c5d&schedule=rtmp&pflag=9"}
 
@@ -202,7 +211,7 @@ ffmpeg `
 srt直播协议
 $env:http_proxy="http://127.0.0.1:10809";`
 for($i=1;$i-lt 20;$i--) `
-{$url=$(youtube-dl -g https://www.twitch.tv/poiyapng );`
+{$url=$(youtube-dl -f 720p60 -g https://www.twitch.tv/kromia);`
 ffmpeg `
 -f hls  `
 -reconnect_streamed 1  `
@@ -235,14 +244,14 @@ ffmpeg `
 本地直播配合http.server
 $env:http_proxy="http://127.0.0.1:10809"; `
 for($i=1;$i-lt 20;$i--) {`
+$url=$(youtube-dl -g https://www.twitch.tv/krisuna);`
 ffmpeg-4.4 `
--stream_loop -1 `
--hwaccel dxva2 `
--re -ss 06:06 `
--referer "https://www.aliyundrive.com/" `
--i 'https://bj29.cn-beijing.data.alicloudccp.com/5fc8cb8a62e968228ff546e8b076ffb8b79bdaca%2F5fc8cb8acfd3e6b66aa7406e8ea277278ff2caf2?di=bj29&dr=845445&f=602e4ae86896b1c266394b6096d01eb9c16269d3&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27onlineplaytest.mp4&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1628305536&x-oss-signature=8cQAJDwwzj2ybOMCIvgolgRIFqhQe1%2BzAcltnT3pb8A%3D&x-oss-signature-version=OSS2' `
+-rtbufsize 80M `
+-re `
+-stream_loop -1 -ss 30 `
+-i "$url" `
 -ignore_io_errors 1 `
--c:a aac -c:v copy -map 0 -sn -f hls -hls_wrap 10 -hls_list_size 8 hls/index.m3u8}
+-c:a copy -c:v copy -sn -c:s webvtt -f hls -hls_wrap 10 -hls_list_size 8 -hls_flags program_date_time hls/index.m3u8}
 
 
 $env:http_proxy="http://127.0.0.1:10809"; `
