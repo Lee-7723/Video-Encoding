@@ -4,12 +4,12 @@ SetMemoryMax(6000)
 #SetFilterMTMode("TextSub", 2)
 LoadPlugin("D:\Program Files\AviSynth+\plugins64\VSFilterMod.dll")
 
-clip=LWLibavVideoSource("E:\[Drumsy] We Played Squidward Game.-h8O-wW54YOA.webm", format="YUV420P8")
-clip=DuplicateFrame(clip,1)
+clip=LWLibavVideoSource("E:\[GreatMoonAroma] Ew, what is this „Äê VRchat „Äë-5llxHAieVU8.webm", format="YUV420P8")
+#clip=DuplicateFrame(clip,1)
 
 ##Resize:
-#clip=eedi3_rpow2(clip, rfactor=4)#∑«≥£¬˝
-#clip=JincResize(clip, 2560,1440,tap=8)#√˜œ‘artifact
+#clip=eedi3_rpow2(clip, rfactor=4)#ÔøΩ«≥ÔøΩÔøΩÔøΩ
+#clip=JincResize(clip, 2560,1440,tap=8)#ÔøΩÔøΩÔøΩÔøΩartifact
 #clip=nnedi3_rpow2(clip, rfactor=4, nsize=0, nns=3, qual=1, etype=0, pscrn=2, threads=0, opt=0, fapprox=15)
 #clip=Lanczos4Resize(clip, 2560,1440, src_left=0.0, src_top=0.0)
 
@@ -20,7 +20,7 @@ clip=DuplicateFrame(clip,1)
 #clip=aSharp(clip, T=0.2, D=4.0, B=-1.0, hqbf=false)#for 1080P
 clip=edgelevel(clip,strength=8, threshold=0)
 
-clip=TextSub(clip, file="E:\[Drumsy] We Played Squidward Game.-h8O-wW54YOA.ass", fps=clip.FrameRate())
+clip=TextSub(clip, file="E:\[GreatMoonAroma] Ew, what is this „Äê VRchat „Äë-5llxHAieVU8.ass", fps=clip.FrameRate())
 clip
 
 Prefetch(clip,8)

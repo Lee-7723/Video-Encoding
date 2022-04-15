@@ -1,29 +1,28 @@
 
-ffmpeg -hwaccel dxva2 -i "E:\[Drumsy] We Played Squidward Game.mp4" -vf crop=x=730:y=924:w=in_w-730*2:h=100,scdet=t=20 -f null -
+ffmpeg -hwaccel dxva2 -i "E:\[GreatMoonAroma] GREATMOONAROMA WHO ( VRchat )-hd7NCNhnqME.webm" -vf crop=x=730:y=852:w=in_w-730*2:h=100,scdet=t=20 -f null -
 
-ffmpeg -hwaccel auto -i "D:\OneDrive - lijingze\文档\Video Encoding\Subtitle.avs" -hwaccel auto -i "E:\[Drumsy] We Played Squidward Game.-h8O-wW54YOA.webm" -lavfi "
-[0:v]trim=9.921:13.521 ,setpts=PTS-STARTPTS[a],
-[1:a]atrim=9.921:13.521 ,asetpts=PTS-STARTPTS[aa],
-[0:v]trim=20.254:262.376 ,setpts=PTS-STARTPTS[a1],
-[1:a]atrim=20.254:262.376 ,asetpts=PTS-STARTPTS[a1a],
-smptehdbars=s=1920x1080:d=1:r=30,format=yuv420p[bars],
-anullsrc=d=1[beep],
-[0:v]trim=start=427.875 ,setpts=PTS-STARTPTS[b],
-[1:a]atrim=start=427.875 ,asetpts=PTS-STARTPTS[ba],
-[a][aa][a1][a1a][bars][beep][b][ba]concat=n=4:v=1:a=1[outv][outa]
-" -map [outv] -map [outa] -c:a aac -ab 529k -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 10M -minrate 4M -bufsize 5M Drumsy.mkv
+ffmpeg -hwaccel dxva2 -i "D:\OneDrive - lijingze\文档\Video Encoding\Subtitle.avs" -hwaccel auto -i "E:\[GreatMoonAroma] This cute anime girl can make cool avatars - VRchat Epic avatars #13-6SHrrUzqoFg.webm" -map 0 -map 1:a -c:a aac -sn -ab 529k -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 10M GMA.mkv
+
+ffmpeg -hwaccel dxva2 -i "E:\[VR Lolathon] Five Nights at Freddy's - Security Breach but its VRCHAT-fmVT495RLpc.webm" -lavfi "
+[0:v]trim=0:818 ,setpts=PTS-STARTPTS[a],
+[0:a]atrim=0:818 ,asetpts=PTS-STARTPTS[aa];
+[0:v]trim=start=839.931 ,setpts=PTS-STARTPTS[c],
+[0:a]atrim=start=839.931 ,asetpts=PTS-STARTPTS[ca];
+[a][aa][c][ca]concat=n=2:v=1:a=1[outv][outa]
+" -map [outv] -map [outa] -c:a aac -ab 529k -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 8M blur.mkv
 
 
 
 
-在线播放
 
-芒果TV
+#在线播放
+
+#芒果TV
 mpv --http-header-fields='Referer: https://www.mgtv.com/' 'https://pcvideoaliyun.titan.mgtv.com/c1/2021/05/11_0/96245FF825BC7C5C42308184CC3983B6_20210511_1_1_1138_mp4/3477CED4B075A2A53D6C6E8F2EF11A19.m3u8?arange=0&pm=0~Wbixj5DSLVGSgVKSCVdAh2zTgYLYq95KNzqcLPFVOuWf9QgF9wZ9ytbM3D20lhjovURtJR1RAejAexH_soCjouIx3zO82dIUt6Qg1728l7YIRGUvFOIP1T7C_mCYAXmHjPqI6oENZle3grYbZ1ZDVRtL8vuDQ685Dmc8dHO6b4a80ESJwRyy8ZynRXvxk4EeOM9CbbruNbKnD~tC9lbJaTFn8vqUGiUJHehAmWIOSIUvoAXBuX06APoX1zm8DQD8N8CvL_tbde5cVffcowMjKM3XTTsyiQ7gv8ZNdS~xcV4BhVMINPffzy0UbPO5AsAj0q3FjLs9aLBD~FxiYnZb8Hy~LPK5hSPioVRHvYcPOReaRySmm3Xa_C5kY5pUOwNYQRs7IZdJFUSXNleXFhSEJlM9zTt~j~YPUvgxAf5YzVMHyVskBfeAvcw195ivjJ~dJ2Fac7E3rPvkMKFEFC598Wi2Eul5eaATpQ2lAY~pHYja94&mr=QbJFa6KSSBB16a~4TlXA0Q7SZCRfWotqm_MljzRP9TTmpkWE2uk4wWAIbmMZbus3GiQU1WiyYElSP1Zr4AT8WyH3Btz6t4ity_JXd4M3vMsxrHWfgvsNFAIvceATsdf1LcR8dinAgZqKhwxUJWkCPJbvmjeOePVGsj6gFCU19g8dP1EQrr6p8YYNsFW~KSsJdCF1R~ecV7bAeDaUKaUKQjrjyNldmstHp1Yt_frQotktGdoSrifP8nmai~7X8Od0QI6G34~VjaMsLE8PC4301iIIBKi5q5fAW_PEL8UQIeN9RwG3i1Ba0eoqrnJM2fpZsOpJEbbJ~AUcSVESgu8JYmmgGJ2riVqpZrxaIzVYMfN6uNGYGAgJKre6a3ahpP~Gy6z_RkBrF0PlAXK07D3s7ni8yILDNH8JqW5I979HylGqzMXydk3IOoDzVHjxuTdRKNIUYtFZVnF2YZ1x8WH~pPeI2pVibgXRBiWPXFo6oveg1~LNbS2UXM2MydWMhfDJ6hUBiN9Bj_o~aAWZLahiZnQABXv_86bCK0c3rcdt_KE5nDm9iT1P07NTuLKX~c3ARuaVFOAI7toMtDOBVzoEInOgtfUotPO7tYAMrjSKfb6nthvHN39XhcxxBS55Jb_Fvc1hc7g~2Hvoye0aL0OaYA4vjqWHGZKqfHZHhbbVf8szz47fZrqBskK_EAVxwFFhyWrveDkxrkcuNBdcNZv~cqJf1Zreaml8w1HCvqtx_LUNi30lgEKbWRbV5bI3Rhrc1z7B0bqJ~8QUNkrnkXTnANUuY3_pmUvCiEoRYW1zFCA-&vcdn=0&scid=25021&cpno=6i06rp&ruid=414c7205b8f34842'
 
 
 阿里云盘：
-mpv --http-header-fields='referer:https://www.aliyundrive.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://bj29.cn-beijing.data.alicloudccp.com/oFChp9VH%2F6482746%2F612c1a8e837c9d4c11064197be462075dc31de9d%2F612c1a8e7a2907d5864b470b9c24e1b91073297e?di=bj29&dr=845445&f=615fe6107e35c7f6159c4c1aaa4114f7bb2d90c4&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27Bumblebee.2018.2160p.BluRay.REMUX.HEVC.DTS-HD.MA.TrueHD.7.1.Atmos-FGT.mkv&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1633707267&x-oss-signature=DuXvMRZq%2BKkXtcGsCG2gcD8nvsXFDgZzAF1oM6fVBvw%3D&x-oss-signature-version=OSS2"
+mpv --http-header-fields='referer:https://www.aliyundrive.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://bj29.cn-beijing.data.alicloudccp.com/JpjI4932%2F1611016%2F6172105901db4974a3f9488c885af931ae6ff195%2F61721059906d588e8ff64141b794880b5459e7c3?di=bj29&dr=845445&f=617577bf98427e2d3545434f831325a43e23edc2&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27Dune.2021.1080p.HMAX.WEB-DL.DDP5.1.Atmos.H.264-FLUX.mkv&u=d211ced31ff2499cb8d7910249c1c193&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-additional-headers=referer&x-oss-expires=1635423857&x-oss-signature=V0Y8w4wtxtTKvU9oS9wDOVKUhvjup8fbfd6D679%2Fq%2Fs%3D&x-oss-signature-version=OSS2"
 
 B站：
 mpv --http-header-fields='referer:https://www.bilibili.com/','user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.39' "https://cn-tj2-cmcc-bcache-02.bilivideo.com/upgcxcode/26/61/322046126/322046126-1-74.flv?e=ig8euxZM2rNcNbNz7zdVhwdlhbhahwdVhoNvNC8BqJIzNbfqXBvEqxTEto8BTrNvN0GvT90W5JZMkX_YN0MvXg8gNEV4NC8xNEV4N03eN0B5tZlqNxTEto8BTrNvNeZVuJ10Kj_g2UB02J0mN0B5tZlqNCNEto8BTrNvNC7MTX502C8f2jmMQJ6mqF2fka1mqx6gqj0eN0B599M=&uipk=5&nbs=1&deadline=1634464136&gen=playurlv2&os=bcache&oi=3746060477&trid=00000933be06129b446f851bef6913e7d241u&platform=pc&upsig=3e5688acb0c60cd901bd4d3bfe4e5764&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&cdnid=6773&mid=310265481&bvc=vod&nettype=0&orderid=0,3&agrr=1&logo=80000000" --audio-file="a"
@@ -56,6 +55,22 @@ $name=(Get-Content "name_list.txt"); `
 for($i=0;$i-lt 431;$i++) {$ext=($url[$i].Substring($url[$i].Length-13,4)); `
 $name[$i]=(-join($name[$i],$ext)); `
 aria2c --all-proxy='127.0.0.1:10809' $url[$i] -o $name[$i]}
+
+
+$url=(Get-Content "url_list.txt"); `
+$name=(Get-Content "name_list.txt"); `
+for($i=0;$i-lt 21;$i++) {$name[$i]=(-join($name[$i],'.png')); `
+aria2c --all-proxy='127.0.0.1:10809' $url[$i] -o $name[$i]}
+
+从音乐tag信息提取歌词（Mediainfo）
+get-childitem -name -r *.flac | foreach-object {$lrc=$(mediainfo $_ | findstr Lyrics).split(' / ').replace('Lyrics                                   : ',''); add-content $_.replace('flac','lrc') $lrc}
+
+从音乐提取封面
+get-childitem -name -r *.mp3 | foreach-object {ffmpeg -i $_ -map 0:v -c copy $_.replace('mp3','jpg')  }
+
+封面文件名去掉单引号
+get-childitem -name -r *.jpg | foreach-object { ren $_ $_.replace("'",'')}
+
 
 
 多轨道截取
@@ -193,7 +208,7 @@ ffmpeg -i "C:\Users\李竞择\Documents\avs脚本\5x动画.avs" -c:a aac -b:a 32
 转播用
 RTMP直播协议
 $env:http_proxy="http://127.0.0.1:10809";`
-$url=$(youtube-dl -g https://www.twitch.tv/pattiiiiiiii );`
+$url=$(youtube-dl -f 720p60 -g https://www.twitch.tv/kromia );`
 for($i=1;$i-lt 20;$i--) `
 {ffmpeg `
 -f hls  `
@@ -211,7 +226,7 @@ for($i=1;$i-lt 20;$i--) `
 srt直播协议
 $env:http_proxy="http://127.0.0.1:10809";`
 for($i=1;$i-lt 20;$i--) `
-{$url=$(youtube-dl -f 720p60 -g https://www.twitch.tv/kromia);`
+{$url=$(yt-dlp -f 720p60 -g https://www.twitch.tv/glubbable );`
 ffmpeg `
 -f hls  `
 -reconnect_streamed 1  `
@@ -244,14 +259,14 @@ ffmpeg `
 本地直播配合http.server
 $env:http_proxy="http://127.0.0.1:10809"; `
 for($i=1;$i-lt 20;$i--) {`
-$url=$(youtube-dl -g https://www.twitch.tv/krisuna);`
+$url='https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1637272629/ei/1XeWYZGVGYeG6dsPo-eNSA/ip/89.46.223.240/id/5qap5aO4i9A.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/hls_chunk_host/rr2---sn-5hneknee.googlevideo.com/playlist_duration/30/manifest_duration/30/vprv/1/playlist_type/DVR/initcwndbps/10150/mh/30/mm/44/mn/sn-5hneknee/ms/lva/mv/m/mvi/2/pl/24/dover/11/keepalive/yes/fexp/24001373,24007246/mt/1637250757/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,playlist_duration,manifest_duration,vprv,playlist_type/sig/AOq0QJ8wRQIhAMwNk8ggyBxfVd5h2B28Skfkn3TJxiU7rGHPHJoxXyxnAiAh6LM7fXWA19fQJ8x-E45giZ_qHYyCczh_iWscOqn9-g%3D%3D/lsparams/hls_chunk_host,initcwndbps,mh,mm,mn,ms,mv,mvi,pl/lsig/AG3C_xAwRQIhAMS50WOVV184mrUPCOdQLvWi8r82PTito-JUnkVKmLKDAiB_ZvSndXp_Fk-Ul66x88vYXW_9jhTnKElrX4Pb3KdY7g%3D%3D/playlist/index.m3u8';`
 ffmpeg-4.4 `
 -rtbufsize 80M `
 -re `
--stream_loop -1 -ss 30 `
+-stream_loop -1 `
 -i "$url" `
 -ignore_io_errors 1 `
--c:a copy -c:v copy -sn -c:s webvtt -f hls -hls_wrap 10 -hls_list_size 8 -hls_flags program_date_time hls/index.m3u8}
+-c:a copy -c:v copy -f hls -hls_wrap 10 -hls_list_size 8 -hls_flags program_date_time hls/index.m3u8}
 
 
 $env:http_proxy="http://127.0.0.1:10809"; `
