@@ -1,6 +1,6 @@
-$video=$(Get-ChildItem -name -Include '*.mp4'); #Ñ¡ÔñÎÄ¼şÃûÀï²»´ø(1)µÄ.mp4ÎÄ¼ş
+$video=$(Get-ChildItem -name -Include '*.mp4'); #é€‰æ‹©æ–‡ä»¶åé‡Œä¸å¸¦(1)çš„.mp4æ–‡ä»¶
 for($i=0; $i-lt $video.length; $i++){
-$audio = $video[$i].replace('.mp4','.mp3'); #Ìæ»»ÎÄ¼şÃûÀï'.mp4'Îª' (1).mp4'ÒÔÆ¥ÅäÒôÆµÎÄ¼ş
+$audio = $video[$i].replace('.mp4','.mp3'); #æ›¿æ¢æ–‡ä»¶åé‡Œ'.mp4'ä¸º' (1).mp4'ä»¥åŒ¹é…éŸ³é¢‘æ–‡ä»¶
 $merge = $video[$i].replace('.mp4','-merge.mp4');
 .\ffmpeg.exe -hide_banner -i $video[$i] -i $audio -map 0:v -map 1:a -c copy $merge
 }

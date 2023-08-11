@@ -1,18 +1,18 @@
-
-ffmpeg -hwaccel dxva2 -i "E:\[GreatMoonAroma] GREATMOONAROMA WHO ( VRchat )-hd7NCNhnqME.webm" -vf crop=x=730:y=852:w=in_w-730*2:h=100,scdet=t=20 -f null -
-
-ffmpeg -hwaccel dxva2 -i "D:\OneDrive - lijingze\文档\Video Encoding\Subtitle.avs" -hwaccel auto -i "E:\[GreatMoonAroma] This cute anime girl can make cool avatars - VRchat Epic avatars #13-6SHrrUzqoFg.webm" -map 0 -map 1:a -c:a aac -sn -ab 529k -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 10M GMA.mkv
-
-ffmpeg -hwaccel dxva2 -i "E:\[VR Lolathon] Five Nights at Freddy's - Security Breach but its VRCHAT-fmVT495RLpc.webm" -lavfi "
-[0:v]trim=0:818 ,setpts=PTS-STARTPTS[a],
-[0:a]atrim=0:818 ,asetpts=PTS-STARTPTS[aa];
-[0:v]trim=start=839.931 ,setpts=PTS-STARTPTS[c],
-[0:a]atrim=start=839.931 ,asetpts=PTS-STARTPTS[ca];
-[a][aa][c][ca]concat=n=2:v=1:a=1[outv][outa]
-" -map [outv] -map [outa] -c:a aac -ab 529k -c:v h264_qsv -preset veryslow -look_ahead 1 -look_ahead_depth 60 -look_ahead_downsampling 3 -vb 8M blur.mkv
-
-
-
+#歌词适配 更改命名方式
+$name = $(ls -name);
+$song = @(0)*$name.length;
+$songname = @(0)*$name.length;
+$songext = @(0)*$name.length;
+$artists = @(0)*$name.length;
+for($i=0;$i-lt $name.length;$i++){
+    $artists[$i]=$name[$i].split(' - ')[0];
+    $song[$i]=$name[$i].split(' - ')[1];
+    $songname[$i]=$song[$i].split('.')[0];
+    $songext[$i]=$song[$i].split('.')[1];
+}
+for($i=0;$i-lt $name.length;$i++){
+    Rename-Item $name[$i] $(-join ($songname[$i],' - ',$artists[$i].replace('、','&'),'.',$songext[$i]))
+}
 
 
 #在线播放
