@@ -1,4 +1,4 @@
-function downloadFile(url, filename) {
+async function downloadFile(url, filename) {
     // 创建XMLHttpRequest对象
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
@@ -33,10 +33,10 @@ function downloadFile(url, filename) {
 }
 
 
-let all_ele = $(".popup_sound-sticker")
+let all_ele = $(".animation-sticker")//animation-sticker  popup_sound-sticker
 let url_arr = []
 for(let i = 0; i<all_ele.length; i++) {
     let str = all_ele[i].getAttribute("data-preview")
-    url_arr[i] = JSON.parse(str).popupUrl
-    downloadFile(url_arr[i], i+1)
+    url_arr[i] = JSON.parse(str).animationUrl //popupUrl   animationUrl
+    await downloadFile(url_arr[i], i+1)
 }
