@@ -1,3 +1,7 @@
+function sleep (time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
+}
+
 async function downloadFile(url, filename) {
     // 创建XMLHttpRequest对象
     var xhr = new XMLHttpRequest();
@@ -30,13 +34,19 @@ async function downloadFile(url, filename) {
   
     // 发送请求
     xhr.send();
+    await sleep(100);
 }
 
-
-let all_ele = $(".animation-sticker")//animation-sticker  popup_sound-sticker
-let url_arr = []
-for(let i = 0; i<all_ele.length; i++) {
-    let str = all_ele[i].getAttribute("data-preview")
-    url_arr[i] = JSON.parse(str).animationUrl //popupUrl   animationUrl
-    await downloadFile(url_arr[i], i+1)
+async function getElements() {
+  let all_ele = $(".animation-sticker, .popup_sound-sticker, .static-sticker")//animation-sticker  popup_sound-sticker  static-sticker
+  let url_arr = []
+  for(let i = 0; i<all_ele.length; i++) {
+      let str = all_ele[i].getAttribute("data-preview")
+      let json = JSON.parse(str)
+      url_arr[i] = json.animationUrl + json.popupUrl //popupUrl   animationUrl   staticUrl
+      if(url_arr[i] == '') url_arr[i] = json.staticUrl
+      await downloadFile(url_arr[i], i+1)
+  }
 }
+
+getElements()
