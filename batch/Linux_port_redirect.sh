@@ -1,0 +1,2 @@
+iptables -t nat -A PREROUTING -d 10.2.192.115 -p tcp -m tcp --dport 8000 -j DNAT --to-destination 192.168.2.5:8000
+iptables -t nat -A POSTROUTING -s 192.168.2.0/24 -d 192.168.2.5 -p tcp -m tcp --dport 8000 -j SNAT --to-source 192.168.2.1
